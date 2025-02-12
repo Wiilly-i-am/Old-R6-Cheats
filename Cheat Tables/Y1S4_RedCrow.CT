@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"Player"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <Color>8080FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"Health"</Description>
+          <LastState Value="120" RealAddress="BBB5AA68"/>
+          <Color>8080FF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"RainbowSixGame.exe"+03A05B58</Address>
+          <Offsets>
+            <Offset>108</Offset>
+            <Offset>D8</Offset>
+            <Offset>320</Offset>
+            <Offset>40</Offset>
+            <Offset>88</Offset>
+            <Offset>3C8</Offset>
+            <Offset>18</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>43</ID>
+      <Description>"Weapons"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <Color>80FFFF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"Ammo"</Description>
+          <LastState Value="31" RealAddress="BE7CAD60"/>
+          <Color>80FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"RainbowSixGame.exe"+03A05B20</Address>
+          <Offsets>
+            <Offset>140</Offset>
+            <Offset>D0</Offset>
+            <Offset>128</Offset>
+            <Offset>148</Offset>
+            <Offset>50</Offset>
+            <Offset>E0</Offset>
+            <Offset>48</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
