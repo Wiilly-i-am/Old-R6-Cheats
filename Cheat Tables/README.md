@@ -52,4 +52,28 @@
 
 * Y5S3_ShadowLegacy
 
+## RainbowSixAIO
+
+* Y5S4 NeonDawm
+  
+  * Map Changer
+ 
+* Y6S4 HighCalibre
+  
+  * DevMode
+ 
+  * Map Changer
+
+* Y7S2 VectorGlare
+
+  * Map
+ 
+  * Day/Night
+ 
+  * GameMode
+
+ * Y8S4 DeepFreeze TU
+
+   * Playlist
+   
 ### some source files will need updating to specific versions and rebuilding
