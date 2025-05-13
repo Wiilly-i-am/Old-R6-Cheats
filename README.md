@@ -1,16 +1,8 @@
 # Welcome to the MegaThread of Old R6S Cheats.
 
-### Whats in this Repo?
+### All Cheats are safe. Any Detections are false Positives.
 
-* Cheats
-
-* Backgrounds/Fonts
-
-* Mod Tools
-
-* Cheat Tables
-
-## All of these files WILL be accessable in thr R6 Downloader.
+## I am currently creating a Downloader for these Mods.
 
 # Got a Tool i Should add?
 
