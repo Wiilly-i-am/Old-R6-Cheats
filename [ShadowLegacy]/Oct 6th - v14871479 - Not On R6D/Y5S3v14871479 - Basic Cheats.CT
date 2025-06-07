@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>32540</ID>
+      <Description>"Hacks"</Description>
+      <Options moActivateChildrenAsWell="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32559</ID>
+          <Description>"Force-Fire - c6 80 ? ? ? ? ? eb ? 48 8b 87"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+1C70F8C)
+define(bytes,C6 80 92 00 00 00 01)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+1C70F8C)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov byte ptr [rax+00000092],00
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // mov byte ptr [rax+00000092],01
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1793D76
+
+"RainbowSix.exe"+1793D52: 48 85 C0                       -  test rax,rax
+"RainbowSix.exe"+1793D55: 48 0F 44 CA                    -  cmove rcx,rdx
+"RainbowSix.exe"+1793D59: 48 8B 09                       -  mov rcx,[rcx]
+"RainbowSix.exe"+1793D5C: 48 8B 39                       -  mov rdi,[rcx]
+"RainbowSix.exe"+1793D5F: 80 BF B3 02 00 00 00           -  cmp byte ptr [rdi+000002B3],00
+"RainbowSix.exe"+1793D66: 74 17                          -  je RainbowSix.exe+1793D7F
+"RainbowSix.exe"+1793D68: 48 85 C0                       -  test rax,rax
+"RainbowSix.exe"+1793D6B: 74 12                          -  je RainbowSix.exe+1793D7F
+"RainbowSix.exe"+1793D6D: 83 B8 84 00 00 00 00           -  cmp dword ptr [rax+00000084],00
+"RainbowSix.exe"+1793D74: 74 09                          -  je RainbowSix.exe+1793D7F
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1793D76: C6 80 92 00 00 00 01           -  mov byte ptr [rax+00000092],01
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1793D7D: EB 5F                          -  jmp RainbowSix.exe+1793DDE
+"RainbowSix.exe"+1793D7F: 48 8B 87 30 01 00 00           -  mov rax,[rdi+00000130]
+"RainbowSix.exe"+1793D86: 48 8B 00                       -  mov rax,[rax]
+"RainbowSix.exe"+1793D89: 0F 57 C0                       -  xorps xmm0,xmm0
+"RainbowSix.exe"+1793D8C: 0F 2E 80 60 01 00 00           -  ucomiss xmm0,[rax+00000160]
+"RainbowSix.exe"+1793D93: 73 49                          -  jae RainbowSix.exe+1793DDE
+"RainbowSix.exe"+1793D95: 48 89 F1                       -  mov rcx,rsi
+"RainbowSix.exe"+1793D98: BA 03 00 00 00                 -  mov edx,00000003
+"RainbowSix.exe"+1793D9D: E8 5E 7A 00 00                 -  call RainbowSix.exe+179B800
+"RainbowSix.exe"+1793DA2: 48 8B 87 30 01 00 00           -  mov rax,[rdi+00000130]
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32558</ID>
+          <Description>"UnlockAll - 34 ? 41 88 46"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+3836D34)
+define(bytes,34 01 41 88 46 51)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+3836D34)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  xor al,01
+  mov [r14+51],0
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // xor al,01
+  // mov [r14+51],al
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+33A6B24
+
+"RainbowSix.exe"+33A6B02: 48 85 C9                    -  test rcx,rcx
+"RainbowSix.exe"+33A6B05: 74 28                       -  je RainbowSix.exe+33A6B2F
+"RainbowSix.exe"+33A6B07: 48 8B 01                    -  mov rax,[rcx]
+"RainbowSix.exe"+33A6B0A: BA 11 01 00 00              -  mov edx,00000111
+"RainbowSix.exe"+33A6B0F: FF 90 B8 00 00 00           -  call qword ptr [rax+000000B8]
+"RainbowSix.exe"+33A6B15: 84 C0                       -  test al,al
+"RainbowSix.exe"+33A6B17: 74 16                       -  je RainbowSix.exe+33A6B2F
+"RainbowSix.exe"+33A6B19: 48 89 F9                    -  mov rcx,rdi
+"RainbowSix.exe"+33A6B1C: 48 89 EA                    -  mov rdx,rbp
+"RainbowSix.exe"+33A6B1F: E8 7C 00 92 FE              -  call RainbowSix.exe+1CC6BA0
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+33A6B24: 34 01                       -  xor al,01
+"RainbowSix.exe"+33A6B26: 41 88 46 51                 -  mov [r14+51],al
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+33A6B2A: E9 40 FC FF FF              -  jmp RainbowSix.exe+33A676F
+"RainbowSix.exe"+33A6B2F: 48 89 F9                    -  mov rcx,rdi
+"RainbowSix.exe"+33A6B32: 48 89 EA                    -  mov rdx,rbp
+"RainbowSix.exe"+33A6B35: E8 A6 E6 91 FE              -  call RainbowSix.exe+1CC51E0
+"RainbowSix.exe"+33A6B3A: F6 40 08 02                 -  test byte ptr [rax+08],02
+"RainbowSix.exe"+33A6B3E: 74 10                       -  je RainbowSix.exe+33A6B50
+"RainbowSix.exe"+33A6B40: 83 78 0C 00                 -  cmp dword ptr [rax+0C],00
+"RainbowSix.exe"+33A6B44: 74 0A                       -  je RainbowSix.exe+33A6B50
+"RainbowSix.exe"+33A6B46: 41 C6 46 51 00              -  mov byte ptr [r14+51],00
+"RainbowSix.exe"+33A6B4B: E9 1F FC FF FF              -  jmp RainbowSix.exe+33A676F
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32563</ID>
+          <Description>"Outlines - 74 ? 48 8d 54 24 ? 4c 89 e9 e8 ? ? ? ? eb"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+374941F)
+define(bytes,74 0F 48 8D 54 24 60)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+374941F)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  jne RainbowSix.exe+3749430
+  lea rdx,[rsp+60]
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // je RainbowSix.exe+32B8890
+  // lea rdx,[rsp+60]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B887F
+
+"RainbowSix.exe"+32B8851: 4C 8D 35 70 35 C3 02           -  lea r14,[RainbowSix.exe+5EEBDC8]
+"RainbowSix.exe"+32B8858: 4C 89 F1                       -  mov rcx,r14
+"RainbowSix.exe"+32B885B: E8 20 F4 D4 FC                 -  call RainbowSix.exe+7C80
+"RainbowSix.exe"+32B8860: 48 8D 0D B9 34 C3 02           -  lea rcx,[RainbowSix.exe+5EEBD20]
+"RainbowSix.exe"+32B8867: 48 89 DA                       -  mov rdx,rbx
+"RainbowSix.exe"+32B886A: E8 61 56 B4 FD                 -  call RainbowSix.exe+DFDED0
+"RainbowSix.exe"+32B886F: 4C 89 F1                       -  mov rcx,r14
+"RainbowSix.exe"+32B8872: E8 59 FC D4 FC                 -  call RainbowSix.exe+84D0
+"RainbowSix.exe"+32B8877: 40 88 6C 24 60                 -  mov [rsp+60],bpl
+"RainbowSix.exe"+32B887C: 45 84 E4                       -  test r12l,r12l
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B887F: 74 0F                          -  je RainbowSix.exe+32B8890
+"RainbowSix.exe"+32B8881: 48 8D 54 24 60                 -  lea rdx,[rsp+60]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B8886: 4C 89 E9                       -  mov rcx,r13
+"RainbowSix.exe"+32B8889: E8 C2 0B 00 00                 -  call RainbowSix.exe+32B9450
+"RainbowSix.exe"+32B888E: EB 1D                          -  jmp RainbowSix.exe+32B88AD
+"RainbowSix.exe"+32B8890: 66 0F EF C0                    -  pxor xmm0,xmm0
+"RainbowSix.exe"+32B8894: 66 0F 7F 44 24 50              -  movdqa [rsp+50],xmm0
+"RainbowSix.exe"+32B889A: 4C 8D 4C 24 50                 -  lea r9,[rsp+50]
+"RainbowSix.exe"+32B889F: 4C 89 E9                       -  mov rcx,r13
+"RainbowSix.exe"+32B88A2: 48 89 FA                       -  mov rdx,rdi
+"RainbowSix.exe"+32B88A5: 41 89 E8                       -  mov r8d,ebp
+"RainbowSix.exe"+32B88A8: E8 D3 07 00 00                 -  call RainbowSix.exe+32B9080
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32553</ID>
+              <Description>"Color"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>//f3 0f 10 4f ? f3 0f 59 c8 f3 0f 2c c9
+
+define(address,RainbowSix.exe+374A0F0)
+define(bytes,F3 0F 59 47 48)
+
+define(address2,RainbowSix.exe+374A0E3)
+define(bytes2,F3 0F 10 4F 4C)
+
+define(address5,RainbowSix.exe+374A0D6)
+define(bytes5,F3 0F 10 4F 50)
+
+define(address9,RainbowSix.exe+374A0C9)
+define(bytes9,F3 0F 10 4F 54)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+374A0F0)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rdi+48],(float)1
+  mulss xmm0,[rdi+48]
+  jmp return
+
+address:
+  jmp newmem
+return:
+
+assert(address2,bytes2)
+alloc(newmem2,$1000,RainbowSix.exe+374A0E3)
+
+label(code2)
+label(return2)
+
+newmem2:
+
+code2:
+  mov [rdi+4C],(float)0
+  movss xmm1,[rdi+4C]
+  jmp return2
+
+address2:
+  jmp newmem2
+return2:
+
+assert(address5,bytes5)
+alloc(newmem5,$1000,RainbowSix.exe+374A0D6)
+
+label(code5)
+label(return5)
+
+newmem5:
+
+code5:
+  mov [rdi+50],(float)1
+  movss xmm1,[rdi+50]
+  jmp return5
+
+address5:
+  jmp newmem5
+return5:
+
+assert(address9,bytes9)
+alloc(newmem9,$1000,RainbowSix.exe+374A0C9)
+
+label(code9)
+label(return9)
+
+newmem9:
+
+code9:
+  mov [rdi+54],(float)1
+  movss xmm1,[rdi+54]
+  jmp return9
+
+address9:
+  jmp newmem9
+return9:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // mulss xmm0,[rdi+48]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9550
+
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+"RainbowSix.exe"+32B9559: 88 4C 24 2B                 -  mov [rsp+2B],cl
+"RainbowSix.exe"+32B955D: 88 5C 24 2A                 -  mov [rsp+2A],bl
+"RainbowSix.exe"+32B9561: 40 88 6C 24 29              -  mov [rsp+29],bpl
+"RainbowSix.exe"+32B9566: 88 54 24 28                 -  mov [rsp+28],dl
+"RainbowSix.exe"+32B956A: 80 7E 24 00                 -  cmp byte ptr [rsi+24],00
+"RainbowSix.exe"+32B956E: 0F 84 06 01 00 00           -  je RainbowSix.exe+32B967A
+"RainbowSix.exe"+32B9574: 48 8B 5E 18                 -  mov rbx,[rsi+18]
+"RainbowSix.exe"+32B9578: 48 89 DA                    -  mov rdx,rbx
+"RainbowSix.exe"+32B957B: 48 85 DB                    -  test rbx,rbx
+}
+address2:
+  db bytes2
+  // movss xmm1,[rdi+4C]
+
+dealloc(newmem2)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9543
+
+"RainbowSix.exe"+32B9511: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9517: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+32B951B: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+"RainbowSix.exe"+32B9559: 88 4C 24 2B                 -  mov [rsp+2B],cl
+"RainbowSix.exe"+32B955D: 88 5C 24 2A                 -  mov [rsp+2A],bl
+"RainbowSix.exe"+32B9561: 40 88 6C 24 29              -  mov [rsp+29],bpl
+"RainbowSix.exe"+32B9566: 88 54 24 28                 -  mov [rsp+28],dl
+"RainbowSix.exe"+32B956A: 80 7E 24 00                 -  cmp byte ptr [rsi+24],00
+"RainbowSix.exe"+32B956E: 0F 84 06 01 00 00           -  je RainbowSix.exe+32B967A
+}
+address5:
+  db bytes5
+  // movss xmm1,[rdi+50]
+
+dealloc(newmem5)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9536
+
+"RainbowSix.exe"+32B9504: 48 83 39 00                 -  cmp qword ptr [rcx],00
+"RainbowSix.exe"+32B9508: 0F 84 BC 00 00 00           -  je RainbowSix.exe+32B95CA
+"RainbowSix.exe"+32B950E: 80 3E 00                    -  cmp byte ptr [rsi],00
+"RainbowSix.exe"+32B9511: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9517: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+32B951B: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+"RainbowSix.exe"+32B9559: 88 4C 24 2B                 -  mov [rsp+2B],cl
+"RainbowSix.exe"+32B955D: 88 5C 24 2A                 -  mov [rsp+2A],bl
+"RainbowSix.exe"+32B9561: 40 88 6C 24 29              -  mov [rsp+29],bpl
+}
+address9:
+  db bytes9
+  // movss xmm1,[rdi+54]
+
+dealloc(newmem9)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9529
+
+"RainbowSix.exe"+32B94F8: 74 0A                       -  je RainbowSix.exe+32B9504
+"RainbowSix.exe"+32B94FA: 83 79 08 00                 -  cmp dword ptr [rcx+08],00
+"RainbowSix.exe"+32B94FE: 0F 89 C6 00 00 00           -  jns RainbowSix.exe+32B95CA
+"RainbowSix.exe"+32B9504: 48 83 39 00                 -  cmp qword ptr [rcx],00
+"RainbowSix.exe"+32B9508: 0F 84 BC 00 00 00           -  je RainbowSix.exe+32B95CA
+"RainbowSix.exe"+32B950E: 80 3E 00                    -  cmp byte ptr [rsi],00
+"RainbowSix.exe"+32B9511: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9517: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+32B951B: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32975</ID>
+              <Description>"Always Show"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+374A0B1)
+define(bytes,0F 85 F8 00 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+374A0B1)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  nop
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // jne RainbowSix.exe+374A1AF
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+374A0B1
+
+"RainbowSix.exe"+374A082: 65 48 8B 14 25 58 00 00 00  -  mov rdx,gs:[00000058]
+"RainbowSix.exe"+374A08B: 48 8B 04 C2                 -  mov rax,[rdx+rax*8]
+"RainbowSix.exe"+374A08F: 8B 80 98 06 00 00           -  mov eax,[rax+00000698]
+"RainbowSix.exe"+374A095: 83 F8 02                    -  cmp eax,02
+"RainbowSix.exe"+374A098: 74 0A                       -  je RainbowSix.exe+374A0A4
+"RainbowSix.exe"+374A09A: 83 79 08 00                 -  cmp dword ptr [rcx+08],00
+"RainbowSix.exe"+374A09E: 0F 89 C6 00 00 00           -  jns RainbowSix.exe+374A16A
+"RainbowSix.exe"+374A0A4: 48 83 39 00                 -  cmp qword ptr [rcx],00
+"RainbowSix.exe"+374A0A8: 0F 84 BC 00 00 00           -  je RainbowSix.exe+374A16A
+"RainbowSix.exe"+374A0AE: 80 3E 00                    -  cmp byte ptr [rsi],00
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+374A0B1: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+374A1AF
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+374A0B7: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+374A0BB: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+374A1AF
+"RainbowSix.exe"+374A0C1: F3 0F 10 05 53 D1 92 01     -  movss xmm0,[RainbowSix.exe+507721C]
+"RainbowSix.exe"+374A0C9: E9 32 5F 84 FC              -  jmp 7FF688E90000
+"RainbowSix.exe"+374A0CE: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+374A0D2: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+374A0D6: E9 25 5F 85 FC              -  jmp 7FF688EA0000
+"RainbowSix.exe"+374A0DB: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+374A0DF: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+374A0E3: E9 18 5F 86 FC              -  jmp 7FF688EB0000
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32562</ID>
+          <Description>"No Recoil - 80 b8 ? ? ? ? ? 66 0f ef c9"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+1C44C4D)
+define(bytes,80 B8 38 0E 00 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+1C44C4D)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  cmp byte ptr [rax+00000E38],01
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // cmp byte ptr [rax+00000E38],00
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+17671B1
+
+"RainbowSix.exe"+1767175: 48 89 FA                       -  mov rdx,rdi
+"RainbowSix.exe"+1767178: E8 C3 5A 58 FF                 -  call RainbowSix.exe+CECC40
+"RainbowSix.exe"+176717D: 48 8B 0D 94 4C 93 05           -  mov rcx,[RainbowSix.exe+709BE18]
+"RainbowSix.exe"+1767184: 48 8B 89 F8 00 00 00           -  mov rcx,[rcx+000000F8]
+"RainbowSix.exe"+176718B: 48 C1 C1 3E                    -  rol rcx,3E
+"RainbowSix.exe"+176718F: 48 8B B8 70 12 00 00           -  mov rdi,[rax+00001270]
+"RainbowSix.exe"+1767196: 48 B8 2F CF CC DC 58 FB 35 64  -  mov rax,6435FB58DCCCCF2F
+"RainbowSix.exe"+17671A0: 48 31 C8                       -  xor rax,rcx
+"RainbowSix.exe"+17671A3: 48 B9 8B B9 ED C6 36 7A BD BD  -  mov rcx,BDBD7A36C6EDB98B
+"RainbowSix.exe"+17671AD: 48 8B 04 08                    -  mov rax,[rax+rcx]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+17671B1: 80 B8 38 0E 00 00 00           -  cmp byte ptr [rax+00000E38],00
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+17671B8: 66 0F EF C9                    -  pxor xmm1,xmm1
+"RainbowSix.exe"+17671BC: 75 05                          -  jne RainbowSix.exe+17671C3
+"RainbowSix.exe"+17671BE: 0F 57 D2                       -  xorps xmm2,xmm2
+"RainbowSix.exe"+17671C1: EB 37                          -  jmp RainbowSix.exe+17671FA
+"RainbowSix.exe"+17671C3: 48 B8 8F 9F 6A 97 28 F8 89 3A  -  mov rax,3A89F828976A9F8F
+"RainbowSix.exe"+17671CD: 49 33 87 1C 01 00 00           -  xor rax,[r15+0000011C]
+"RainbowSix.exe"+17671D4: 48 B9 34 AE 52 D5 EF 5E DC 6B  -  mov rcx,6BDC5EEFD552AE34
+"RainbowSix.exe"+17671DE: 48 01 C1                       -  add rcx,rax
+"RainbowSix.exe"+17671E1: 48 B8 C5 67 E5 3A ED 7E E8 24  -  mov rax,24E87EED3AE567C5
+"RainbowSix.exe"+17671EB: 48 31 C8                       -  xor rax,rcx
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32971</ID>
+          <Description>"Run and Shoot"</Description>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(forcesprint,RainbowSix.exe+369FD27)
+define(runshoot,RainbowSix.exe+2518581)
+
+{Sig for the forcesprint : 80 b9 ? ? ? ? ? 0f 84 ? ? ? ? 48 89 f1 31 d2 }
+{Sig for the runshoot : 80 b9 ? ? ? ? ? 74 ? e8 ? ? ? ? 48 8b 83 }
+
+[ENABLE]
+
+forcesprint:
+  cmp byte ptr [rcx+00000080],01
+
+runshoot:
+  cmp byte ptr [rcx+00000080],01
+
+[DISABLE]
+
+forcesprint:
+  cmp byte ptr [rcx+00000080],00
+
+runshoot:
+  cmp byte ptr [rcx+00000080],00
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32976</ID>
+          <Description>"Chams"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-07
+  Author : asus
+
+  This script does blah blah blah
+}
+// 41 0f 10 87 ? ? ? ? 4c 8b bc 24
+define(address,"RainbowSix.exe"+B75D21) //red address
+define(bytes,41 0F 10 87 D0 00 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+B75D21)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [r15+000000D0],(float)1     //red
+  mov [r15+000000D4],(float)0     //green
+  mov [r15+000000D8],(float)0.25  //blue
+  mov [r15+00000110],(float)0     //distance
+  mov [r15+0000011C],(float)3333  //opacity
+  movups xmm0,[r15+000000D0]
+  jmp return
+
+address:
+  jmp newmem
+  nop 3
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // movups xmm0,[r15+000000D0]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+B75D21
+
+"RainbowSix.exe"+B75CED: 83 C0 C7                    -  add eax,-39
+"RainbowSix.exe"+B75CF0: B9 CF 47 39 62              -  mov ecx,623947CF
+"RainbowSix.exe"+B75CF5: 41 33 8F 10 01 00 00        -  xor ecx,[r15+00000110]
+"RainbowSix.exe"+B75CFC: 66 0F 6E C0                 -  movd xmm0,eax
+"RainbowSix.exe"+B75D00: 81 C1 47 78 33 C7           -  add ecx,C7337847
+"RainbowSix.exe"+B75D06: 81 F1 10 B5 01 64           -  xor ecx,6401B510
+"RainbowSix.exe"+B75D0C: 66 0F 6E D1                 -  movd xmm2,ecx
+"RainbowSix.exe"+B75D10: 66 0F 62 D0                 -  punpckldq xmm2,xmm0
+"RainbowSix.exe"+B75D14: 66 0F 6C D1                 -  punpcklqdq xmm2,xmm1
+"RainbowSix.exe"+B75D18: 66 41 0F 7F 96 F0 01 00 00  -  movdqa [r14+000001F0],xmm2
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+B75D21: 41 0F 10 87 D0 00 00 00     -  movups xmm0,[r15+000000D0]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+B75D29: 4C 8B BC 24 98 00 00 00     -  mov r15,[rsp+00000098]
+"RainbowSix.exe"+B75D31: EB 2F                       -  jmp RainbowSix.exe+B75D62
+"RainbowSix.exe"+B75D33: 48 8B 05 76 6D 29 05        -  mov rax,[RainbowSix.exe+5E0CAB0]
+"RainbowSix.exe"+B75D3A: 48 8B 40 20                 -  mov rax,[rax+20]
+"RainbowSix.exe"+B75D3E: 48 83 C0 50                 -  add rax,50
+"RainbowSix.exe"+B75D42: 49 89 86 80 00 00 00        -  mov [r14+00000080],rax
+"RainbowSix.exe"+B75D49: 0F 28 05 D0 A5 6B 04        -  movaps xmm0,[RainbowSix.exe+5230320]
+"RainbowSix.exe"+B75D50: 41 0F 29 86 F0 01 00 00     -  movaps [r14+000001F0],xmm0
+"RainbowSix.exe"+B75D58: 0F 28 05 21 14 50 04        -  movaps xmm0,[RainbowSix.exe+5077180]
+"RainbowSix.exe"+B75D5F: 49 89 CF                    -  mov r15,rcx
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32977</ID>
+          <Description>"GunModel Fov"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-07
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+2511C4F)
+define(bytes,F3 44 0F 10 40 3C)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+2511C4F)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rax+3C],(float)1.5
+  movss xmm8,[rax+3C]
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // movss xmm8,[rax+3C]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+2511C4F
+
+"RainbowSix.exe"+2511C1D: 48 8B 40 40                 -  mov rax,[rax+40]
+"RainbowSix.exe"+2511C21: 48 8B 49 58                 -  mov rcx,[rcx+58]
+"RainbowSix.exe"+2511C25: 0F B7 40 04                 -  movzx eax,word ptr [rax+04]
+"RainbowSix.exe"+2511C29: F3 0F 10 34 01              -  movss xmm6,[rcx+rax]
+"RainbowSix.exe"+2511C2E: 0F 28 3D 5B 55 B6 02        -  movaps xmm7,[RainbowSix.exe+5077190]
+"RainbowSix.exe"+2511C35: 0F 54 FE                    -  andps xmm7,xmm6
+"RainbowSix.exe"+2511C38: 48 8B 0D 51 5E 7E 04        -  mov rcx,[RainbowSix.exe+6CF7A90]
+"RainbowSix.exe"+2511C3F: 48 8B 01                    -  mov rax,[rcx]
+"RainbowSix.exe"+2511C42: FF 90 98 00 00 00           -  call qword ptr [rax+00000098]
+"RainbowSix.exe"+2511C48: 0F 2E 3D 21 56 B6 02        -  ucomiss xmm7,[RainbowSix.exe+5077270]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+2511C4F: F3 44 0F 10 40 3C           -  movss xmm8,[rax+3C]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+2511C55: 76 43                       -  jna RainbowSix.exe+2511C9A
+"RainbowSix.exe"+2511C57: F3 45 0F 5C C8              -  subss xmm9,xmm8
+"RainbowSix.exe"+2511C5C: F3 44 0F 59 CE              -  mulss xmm9,xmm6
+"RainbowSix.exe"+2511C61: 48 8B 86 B0 05 00 00        -  mov rax,[rsi+000005B0]
+"RainbowSix.exe"+2511C68: 48 8B 88 A8 00 00 00        -  mov rcx,[rax+000000A8]
+"RainbowSix.exe"+2511C6F: 48 85 C9                    -  test rcx,rcx
+"RainbowSix.exe"+2511C72: 74 22                       -  je RainbowSix.exe+2511C96
+"RainbowSix.exe"+2511C74: 8B 15 66 D7 4C 03           -  mov edx,[RainbowSix.exe+59DF3E0]
+"RainbowSix.exe"+2511C7A: 65 48 8B 34 25 58 00 00 00  -  mov rsi,gs:[00000058]
+"RainbowSix.exe"+2511C83: 48 8B 14 D6                 -  mov rdx,[rsi+rdx*8]
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

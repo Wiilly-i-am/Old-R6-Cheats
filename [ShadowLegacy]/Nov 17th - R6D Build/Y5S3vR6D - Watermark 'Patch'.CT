@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"TTS bool"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>RainbowSix.exe+5B1F8B8</Address>
+      <Offsets>
+        <Offset>714</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Patches:"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Patch 1"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.GameBlocks::GBPredefinedId::operator=+A0FF+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Patch 2"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.exe+19E4C0E+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"Patch 3"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.exe+1A12F55+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"Force Show Watermark"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.exe+2F34905+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"Lock Operator Page and Play Page"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.exe+30A3F47+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"Patch 6"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.exe+30A4A46+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"Remove Shop Menu Option"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>RainbowSix.exe+30D3489+6</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"Main Build String"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>String</VariableType>
+      <Length>11</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>RainbowSix.exe+55201EA</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"Build String"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>String</VariableType>
+      <Length>64</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>RainbowSix.exe+56B4130</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"Build String (If empty)"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>String</VariableType>
+      <Length>2</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>RainbowSix.exe+55289DF</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"Version String (Main Build Only)"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>String</VariableType>
+      <Length>5</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>RainbowSix.exe+552D6ED</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"TS String"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>String</VariableType>
+      <Length>3</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>RainbowSix.exe+5519813</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"Set Variables"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>//alloc(buildString, $1000, RainbowSix.exe+653D70+A131)
+define(buildString, RainbowSix.exe+5A3426)
+registerSymbol(buildString)
+
+define(mainBuildString, RainbowSix.exe+55201EA)
+registerSymbol(mainBuildString)
+
+define(mainVersionString, RainbowSix.exe+552D6ED)
+registerSymbol(mainVersionString)
+
+define(forceShowWatermark, RainbowSix.exe+2F34905)
+registerSymbol(forceShowWatermark)
+
+// https://www.rapidtables.com/convert/number/ascii-to-hex.html
+
+buildString:
+db 41 52 54 45 4D 49 53 00 // ARTEMIS\0
+
+mainBuildString:
+db 76 31 2E 30 20 44 45 56 00 // v1.0 DEV\0
+
+mainVersionString:
+db 00 00 00 00 00 // \0
+
+[ENABLE]
+
+forceShowWatermark:
+cmp byte ptr [rdx+714],01
+
+RainbowSix.exe+653D70+A14C:
+nop 9
+lea rdx,[RainbowSix.exe+5A3426]
+
+[DISABLE]
+RainbowSix.exe+653D70+A14C:
+cmp byte ptr [RainbowSix.exe+56B4130],00
+db 74
+db 16
+lea rdx,[RainbowSix.exe+56B4130]
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

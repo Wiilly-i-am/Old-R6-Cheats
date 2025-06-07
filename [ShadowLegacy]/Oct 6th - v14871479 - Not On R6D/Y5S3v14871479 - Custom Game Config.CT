@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2030</ID>
+      <Description>"Customs."</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>FF00FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2028</ID>
+          <Description>"Map one."</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>FF00FF</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>RainbowSix.exe+0x6e25620</Address>
+          <Offsets>
+            <Offset>10</Offset>
+            <Offset>68</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2073</ID>
+              <Description>"Night mode."</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <Color>FF00FF</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>RainbowSix.exe+0x6e25620</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+                <Offset>68</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2029</ID>
+          <Description>"Map one gamemode."</Description>
+          <Options moManualExpandCollapse="1"/>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>FF00FF</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>RainbowSix.exe+0x6e25620</Address>
+          <Offsets>
+            <Offset>8</Offset>
+            <Offset>68</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2024</ID>
+      <Description>"No UI."</Description>
+      <LastState/>
+      <Color>C080FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>aobScanModule(nouiin, RainbowSix.exe, F0 49 83 84 24 ? ? ? ? ? 48 83 C6)
+registerSymbol(nouiin)
+[ENABLE]
+nouiin:
+       lock add qword ptr [r12+00000250],00
+[DISABLE]
+nouiin:
+       lock add qword ptr [r12+00000250],01
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

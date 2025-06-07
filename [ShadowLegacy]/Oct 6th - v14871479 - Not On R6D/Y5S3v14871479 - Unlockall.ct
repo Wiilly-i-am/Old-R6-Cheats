@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1907</ID>
+      <Description>"Unlockall go brrt"</Description>
+      <LastState Activated="1"/>
+      <Color>0061C1</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(unlockaddr,"RainbowSix.exe"+0x3836d34)
+
+
+[ENABLE]
+
+unlockaddr:
+  mov byte ptr [r14+51],00
+  nop
+
+[DISABLE]
+
+unlockaddr:
+  xor al,01
+  mov [r14+51],al
+
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

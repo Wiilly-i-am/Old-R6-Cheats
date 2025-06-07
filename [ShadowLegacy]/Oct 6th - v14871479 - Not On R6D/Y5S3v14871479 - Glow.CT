@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2103</ID>
+      <Description>"Unlock all."</Description>
+      <LastState/>
+      <Color>800080</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+3836d2f+5:
+            MOV          AL, 00
+[DISABLE]
+RainbowSix.exe+3836d2f+5:
+            XOR          AL, 01
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32165</ID>
+      <Description>"Glow, you'll need to fiddle with the values, they are ciphered.."</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>831BA5</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32155</ID>
+          <Description>"Glow red."</Description>
+          <LastState Value="0" RealAddress="1427E0722A0"/>
+          <Color>0000FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe +5DF1ED0</Address>
+          <Offsets>
+            <Offset>D0</Offset>
+            <Offset>B8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32160</ID>
+          <Description>"Glow green."</Description>
+          <LastState Value="0" RealAddress="1427E0722A4"/>
+          <Color>00FF00</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe + 5DF1ED0</Address>
+          <Offsets>
+            <Offset>D4</Offset>
+            <Offset>B8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32161</ID>
+          <Description>"Glow blue."</Description>
+          <LastState Value="0" RealAddress="1427E0722A8"/>
+          <Color>FF0000</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe + 5DF1ED0</Address>
+          <Offsets>
+            <Offset>D8</Offset>
+            <Offset>B8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32162</ID>
+          <Description>"Distance (set to zero)."</Description>
+          <LastState Value="-1.644790446E38" RealAddress="1427E0722E0"/>
+          <Color>831BA5</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe + 5DF1ED0</Address>
+          <Offsets>
+            <Offset>110</Offset>
+            <Offset>B8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32164</ID>
+          <Description>"Opacity/strength (set high, e.g. 3333)."</Description>
+          <LastState Value="-1.137043641E-28" RealAddress="1427E0722EC"/>
+          <Color>831BA5</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe + 5DF1ED0</Address>
+          <Offsets>
+            <Offset>11C</Offset>
+            <Offset>B8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32163</ID>
+          <Description>"Alpha."</Description>
+          <LastState Value="-4.951751118E16" RealAddress="1427E0722E8"/>
+          <Color>831BA5</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe + 5DF1ED0</Address>
+          <Offsets>
+            <Offset>118</Offset>
+            <Offset>B8</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32142</ID>
+      <Description>"Infinite ammo."</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+1C5D5B3:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+1C5D5B3:
+                       MOV [RAX+84], EDI
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32156</ID>
+      <Description>"Nopclip (Credits: Benjaminstrike, KillahTree, CrippledNipple, and Sigma.VA)."</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+4D9D811:
+       MOVUPS XMM12,[RCX+00000118]
+[DISABLE]
+RainbowSix.exe+4D9D811:
+       MOVUPS XMM12,[rcx+000000A0]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32147</ID>
+      <Description>"Pause timer (0B is unpaused, set to anything else to pause)."</Description>
+      <LastState Value="0B" RealAddress="141D6DF529C"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>RainbowSix.exe+6e25620</Address>
+      <Offsets>
+        <Offset>b7c</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32159</ID>
+      <Description>"Player team."</Description>
+      <LastState Value="4" RealAddress="141D6DF4D48"/>
+      <VariableType>Byte</VariableType>
+      <Address>RainbowSix.exe+6e25620</Address>
+      <Offsets>
+        <Offset>628</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32166</ID>
+      <Description>"Player FOV."</Description>
+      <LastState Value="2" RealAddress="141971A0BB8"/>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 7ED6DA8</Address>
+      <Offsets>
+        <Offset>B38</Offset>
+        <Offset>10</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32167</ID>
+      <Description>"Weapon FOV."</Description>
+      <LastState Value="2" RealAddress="141971A0BBC"/>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 7ED6DA8</Address>
+      <Offsets>
+        <Offset>B3C</Offset>
+        <Offset>10</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+</CheatTable>

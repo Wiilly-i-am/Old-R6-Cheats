@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2029</ID>
+      <Description>"Map one gamemode."</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="0000016FCADD6380" RealAddress="1707AC9CDC8"/>
+      <ShowAsHex>1</ShowAsHex>
+      <Color>FF00FF</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>RainbowSix.exe+0x6e25620</Address>
+      <Offsets>
+        <Offset>8</Offset>
+        <Offset>68</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2080</ID>
+          <Description>"TDM - Warmup Value"</Description>
+          <LastState Value="0000016FCADD6380" RealAddress="16FAA5E7E68"/>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>FF00FF</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>"RainbowSix.exe"+05F58310</Address>
+          <Offsets>
+            <Offset>7A8</Offset>
+            <Offset>68</Offset>
+            <Offset>80</Offset>
+            <Offset>148</Offset>
+            <Offset>A0</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

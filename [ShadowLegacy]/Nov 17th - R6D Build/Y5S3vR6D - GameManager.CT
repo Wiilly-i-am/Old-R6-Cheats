@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"GameManager"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>RainbowSix.exe+6E3FF30</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Playlist (+68)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>RainbowSix.exe+6E3FF30</Address>
+          <Offsets>
+            <Offset>68</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5</ID>
+              <Description>"Gamemode (+8)"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>RainbowSix.exe+6E3FF30</Address>
+              <Offsets>
+                <Offset>8</Offset>
+                <Offset>68</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>6</ID>
+                  <Description>"Resource Id (+10)"</Description>
+                  <DropDownList DisplayValueAsItem="1">00000000138BDF6E:Bomb
+00000000A934BDF6:Hostage
+0000000076337AA1:Secure Area
+0000000067FDB2DB:Extract Hostage (TH)
+0000000058A02A91:Protect Hostage (TH)
+00000002036D0C6E:Disarm Bomb(TH)
+0000000058A02A93:Elimiation(TH)
+0000000072AFC423:Gym
+00000000D10D296A:Room Clearing
+000000015E68747F:Bomb Defusing (Defense)
+0000000650FB2FD8:Elimiation (Situations)
+0000000650FB2FDA:Extract Hostage (Situations)
+0000000650FB2FDC:Protect Hostage (Situations)
+0000000650FB2FDE:Disarm Bomb (Situations)
+00000007A956D02F:TDM - Warmup
+000000091F72418B:Canister
+000000152E3040A2:Map Bench - Camera Fly By
+000000320CC4181E:Map Bench - Explosion Targets
+000000291132C8EE:Map Bench - Camera Teleport
+00000025A11B0495:Bomb - No Prep
+0000003EA695B452:Bomb - Wack
+0000004128C36084:Golden Gun
+00000044CDE7AC56:Bomb - 3 Team Switch
+00000045840C11F0:!!Telly / Sugar Fright
+00000043DBC5B111:!!Reverse Hostage
+000000481E7878B4:Morpheus (Purged)
+0000004A2D38B0D7:Legacy
+</DropDownList>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>RainbowSix.exe+6E3FF30</Address>
+                  <Offsets>
+                    <Offset>10</Offset>
+                    <Offset>8</Offset>
+                    <Offset>68</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2</ID>
+              <Description>"Map (+10)"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>RainbowSix.exe+6E3FF30</Address>
+              <Offsets>
+                <Offset>10</Offset>
+                <Offset>68</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>3</ID>
+                  <Description>"Resource Id (+10)"</Description>
+                  <DropDownList DisplayValueAsItem="1">00000037625C3900:House
+00000035F2901CF4:Oregon
+0000001DCA7A2258:New Hereford Base
+0000000031E6DF85:Club house
+000000009B858528:Plane
+000000006961015C:Yacht
+000000009B858E7A:Consulate
+000000009B858706:Bank
+00000000570932C9:Kanal
+0000003C7E4A5A5D:Chalet
+00000000A0C50B9A:Bartlett U
+00000000522587EA:Kafe
+00000000CE4BB240:Border
+000000077B43597E:Favela
+00000008AF15096F:Skyscraper
+00000009CCC3D997:Coastline
+0000002E8679C826:Theme Park
+0000000C7C6E5654:Tower
+00000014839B2B18:Villa
+0000001D61EAFB8F:Fortress
+0000002296804EC5:Outback
+000000431BA741C3:Neighborhood
+000000002A3A99CB:Old Hereford Base
+</DropDownList>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>RainbowSix.exe+6E3FF30</Address>
+                  <Offsets>
+                    <Offset>10</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4</ID>
+              <Description>"Time of Day (+38, +0)"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>RainbowSix.exe+6E3FF30</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+                <Offset>68</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"FireLoadOnDemandManager"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+07EBB648</Address>
+      <Offsets>
+        <Offset>0</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"GameStateMenu"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>"RainbowSix.exe"+07EBB648</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>68</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>18</ID>
+              <Description>"??"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+07EBB648</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>68</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>19</ID>
+                  <Description>"D74F36D1 (Doesn't exist)"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+07EBB648</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>68</Offset>
+                    <Offset>20</Offset>
+                    <Offset>68</Offset>
+                  </Offsets>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>20</ID>
+                      <Description>"UIUnlockInfo_Simple"</Description>
+                      <ShowAsHex>1</ShowAsHex>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>8 Bytes</VariableType>
+                      <Address>"RainbowSix.exe"+07EBB648</Address>
+                      <Offsets>
+                        <Offset>0</Offset>
+                        <Offset>40</Offset>
+                        <Offset>D0</Offset>
+                        <Offset>68</Offset>
+                        <Offset>20</Offset>
+                        <Offset>68</Offset>
+                      </Offsets>
+                      <CheatEntries>
+                        <CheatEntry>
+                          <ID>21</ID>
+                          <Description>"First Situation Gamemode"</Description>
+                          <ShowAsHex>1</ShowAsHex>
+                          <ShowAsSigned>0</ShowAsSigned>
+                          <VariableType>8 Bytes</VariableType>
+                          <Address>"RainbowSix.exe"+07EBB648</Address>
+                          <Offsets>
+                            <Offset>0</Offset>
+                            <Offset>E8</Offset>
+                            <Offset>40</Offset>
+                            <Offset>D0</Offset>
+                            <Offset>68</Offset>
+                            <Offset>20</Offset>
+                            <Offset>68</Offset>
+                          </Offsets>
+                        </CheatEntry>
+                      </CheatEntries>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>36319</ID>
+      <Description>"62B7A045"</Description>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Controller/Pawn"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(PIC,40) //Pawn Inventory Component 40 for player, 30 for Terrorist
+define(PIC2,40) //0 for Primary, 8 for Secondary, 40 for Tertiary
+registersymbol(PIC2)
+registersymbol(PIC)
+{$lua}
+function _rotl64(value, count)
+    return value &lt;&lt; count | value &gt;&gt; (64 - count)
+end
+[ENABLE]
+ControllerList = (_rotl64((readQword(readQword(getAddress("RainbowSix.exe") + 0x6E3FF30) + 0xB0) - 0x36), 0x2F)) - 0x58
+Pawn = (_rotl64(readQword(readQword(ControllerList + 0x0) + 0x50),0x1)-0x52)~0x845C1A3CE5D1D3B7
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36315</ID>
+      <Description>"Fake Pawn Pointer for Pointer Scans"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>rainbowsix.exe+6E3FF00</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Controller List"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>ControllerList</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Pawn"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>Pawn</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>36317</ID>
+              <Description>"Entity"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>Pawn+18</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>36316</ID>
+                  <Description>"Damage Component"</Description>
+                  <Options moManualExpandCollapse="1"/>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>Pawn+18</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>8</Offset>
+                    <Offset>D8</Offset>
+                  </Offsets>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>36325</ID>
+                      <Description>"Damage Data"</Description>
+                      <Options moManualExpandCollapse="1"/>
+                      <ShowAsHex>1</ShowAsHex>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>8 Bytes</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>0</Offset>
+                        <Offset>0</Offset>
+                        <Offset>B0</Offset>
+                        <Offset>8</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                      <CheatEntries>
+                        <CheatEntry>
+                          <ID>36326</ID>
+                          <Description>"DBNO Health"</Description>
+                          <ShowAsSigned>0</ShowAsSigned>
+                          <VariableType>4 Bytes</VariableType>
+                          <Address>Pawn+18</Address>
+                          <Offsets>
+                            <Offset>60</Offset>
+                            <Offset>0</Offset>
+                            <Offset>B0</Offset>
+                            <Offset>8</Offset>
+                            <Offset>D8</Offset>
+                          </Offsets>
+                        </CheatEntry>
+                        <CheatEntry>
+                          <ID>36330</ID>
+                          <Description>"Max Health"</Description>
+                          <ShowAsSigned>0</ShowAsSigned>
+                          <VariableType>4 Bytes</VariableType>
+                          <Address>Pawn+18</Address>
+                          <Offsets>
+                            <Offset>48</Offset>
+                            <Offset>0</Offset>
+                            <Offset>B0</Offset>
+                            <Offset>8</Offset>
+                            <Offset>D8</Offset>
+                          </Offsets>
+                        </CheatEntry>
+                      </CheatEntries>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>36318</ID>
+                      <Description>"Health State Bool"</Description>
+                      <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Full Health
+1:Damaged
+2:Has Been DBNO
+3:DBNO
+4:Dead
+</DropDownList>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Byte</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>150</Offset>
+                        <Offset>8</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>36324</ID>
+                      <Description>"Health"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>170</Offset>
+                        <Offset>8</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>36329</ID>
+                      <Description>"Health Multiplier (used in revive from DBNO Calc)"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>17C</Offset>
+                        <Offset>8</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>36320</ID>
+                      <Description>"DBNO Bool"</Description>
+                      <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Can Go Down
+1:Can't Go Down
+</DropDownList>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>178</Offset>
+                        <Offset>8</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>36328</ID>
+                      <Description>"DBNO Timer"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>3D0</Offset>
+                        <Offset>8</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>36333</ID>
+                  <Description>"Pawn Inventory Component"</Description>
+                  <Options moManualExpandCollapse="1"/>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>Pawn+18</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>PIC</Offset>
+                    <Offset>D8</Offset>
+                  </Offsets>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>36334</ID>
+                      <Description>"Inventory Slot (Primary Weapon)"</Description>
+                      <ShowAsHex>1</ShowAsHex>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>8 Bytes</VariableType>
+                      <Address>Pawn+18</Address>
+                      <Offsets>
+                        <Offset>0</Offset>
+                        <Offset>PIC2</Offset>
+                        <Offset>368</Offset>
+                        <Offset>PIC</Offset>
+                        <Offset>D8</Offset>
+                      </Offsets>
+                      <CheatEntries>
+                        <CheatEntry>
+                          <ID>36335</ID>
+                          <Description>"WeaponItemComponent"</Description>
+                          <ShowAsHex>1</ShowAsHex>
+                          <ShowAsSigned>0</ShowAsSigned>
+                          <VariableType>8 Bytes</VariableType>
+                          <Address>Pawn+18</Address>
+                          <Offsets>
+                            <Offset>0</Offset>
+                            <Offset>0</Offset>
+                            <Offset>18</Offset>
+                            <Offset>PIC2</Offset>
+                            <Offset>368</Offset>
+                            <Offset>PIC</Offset>
+                            <Offset>D8</Offset>
+                          </Offsets>
+                          <CheatEntries>
+                            <CheatEntry>
+                              <ID>36336</ID>
+                              <Description>"Weapon Component"</Description>
+                              <ShowAsHex>1</ShowAsHex>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>8 Bytes</VariableType>
+                              <Address>Pawn+18</Address>
+                              <Offsets>
+                                <Offset>0</Offset>
+                                <Offset>1C0</Offset>
+                                <Offset>0</Offset>
+                                <Offset>18</Offset>
+                                <Offset>PIC2</Offset>
+                                <Offset>368</Offset>
+                                <Offset>PIC</Offset>
+                                <Offset>D8</Offset>
+                              </Offsets>
+                              <CheatEntries>
+                                <CheatEntry>
+                                  <ID>36337</ID>
+                                  <Description>"Weapon Fire Data"</Description>
+                                  <ShowAsHex>1</ShowAsHex>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>8 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>A0</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36342</ID>
+                                  <Description>"Reserve Ammo Calculations"</Description>
+                                  <Options moManualExpandCollapse="1"/>
+                                  <ShowAsHex>1</ShowAsHex>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>8 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>B8</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                  <CheatEntries>
+                                    <CheatEntry>
+                                      <ID>36343</ID>
+                                      <Description>"Reserve Mag Ammo 1"</Description>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>4 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>0</Offset>
+                                        <Offset>B8</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36344</ID>
+                                      <Description>"Reserve Mag Ammo 2"</Description>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>4 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>8</Offset>
+                                        <Offset>B8</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                  </CheatEntries>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36345</ID>
+                                  <Description>"Weapon Data"</Description>
+                                  <Options moManualExpandCollapse="1"/>
+                                  <ShowAsHex>1</ShowAsHex>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>8 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>110</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                  <CheatEntries>
+                                    <CheatEntry>
+                                      <ID>36347</ID>
+                                      <Description>"Current Gun Name"</Description>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>String</VariableType>
+                                      <Length>10</Length>
+                                      <Unicode>1</Unicode>
+                                      <CodePage>0</CodePage>
+                                      <ZeroTerminate>1</ZeroTerminate>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>0</Offset>
+                                        <Offset>B0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36348</ID>
+                                      <Description>"FX Weapon Data"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>128</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36392</ID>
+                                          <Description>"Bullet Decal Size"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>88</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>128</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36349</ID>
+                                      <Description>"Animation Weapon Data"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>130</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36388</ID>
+                                          <Description>"Weapon Pull Out Speed"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>138</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>130</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36389</ID>
+                                          <Description>"Weapon Put Away Speed"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>13C</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>130</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36390</ID>
+                                          <Description>"Zoom in Speed"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>144</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>130</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36391</ID>
+                                          <Description>"Zoom Out Speed"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>144</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>130</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36350</ID>
+                                      <Description>"Recoil Weapon Data Controller"</Description>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>138</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36356</ID>
+                                      <Description>"Recoil Weapon Data PC"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>140</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36378</ID>
+                                          <Description>"Deep Data"</Description>
+                                          <Options moManualExpandCollapse="1"/>
+                                          <ShowAsHex>1</ShowAsHex>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>8 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>18</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>140</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                          <CheatEntries>
+                                            <CheatEntry>
+                                              <ID>36382</ID>
+                                              <Description>"1 Bullet Side Angle"</Description>
+                                              <ShowAsSigned>0</ShowAsSigned>
+                                              <VariableType>Float</VariableType>
+                                              <Address>Pawn+18</Address>
+                                              <Offsets>
+                                                <Offset>8</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>140</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>110</Offset>
+                                                <Offset>1C0</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>PIC2</Offset>
+                                                <Offset>368</Offset>
+                                                <Offset>PIC</Offset>
+                                                <Offset>D8</Offset>
+                                              </Offsets>
+                                            </CheatEntry>
+                                            <CheatEntry>
+                                              <ID>36383</ID>
+                                              <Description>"1 Side Switch Speed"</Description>
+                                              <ShowAsSigned>0</ShowAsSigned>
+                                              <VariableType>Float</VariableType>
+                                              <Address>Pawn+18</Address>
+                                              <Offsets>
+                                                <Offset>18</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>140</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>110</Offset>
+                                                <Offset>1C0</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>PIC2</Offset>
+                                                <Offset>368</Offset>
+                                                <Offset>PIC</Offset>
+                                                <Offset>D8</Offset>
+                                              </Offsets>
+                                            </CheatEntry>
+                                            <CheatEntry>
+                                              <ID>36384</ID>
+                                              <Description>"Recoil Speed"</Description>
+                                              <ShowAsSigned>0</ShowAsSigned>
+                                              <VariableType>Float</VariableType>
+                                              <Address>Pawn+18</Address>
+                                              <Offsets>
+                                                <Offset>20</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>140</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>110</Offset>
+                                                <Offset>1C0</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>PIC2</Offset>
+                                                <Offset>368</Offset>
+                                                <Offset>PIC</Offset>
+                                                <Offset>D8</Offset>
+                                              </Offsets>
+                                            </CheatEntry>
+                                            <CheatEntry>
+                                              <ID>36385</ID>
+                                              <Description>"Recovery to Crosshair"</Description>
+                                              <ShowAsSigned>0</ShowAsSigned>
+                                              <VariableType>Float</VariableType>
+                                              <Address>Pawn+18</Address>
+                                              <Offsets>
+                                                <Offset>24</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>140</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>110</Offset>
+                                                <Offset>1C0</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>PIC2</Offset>
+                                                <Offset>368</Offset>
+                                                <Offset>PIC</Offset>
+                                                <Offset>D8</Offset>
+                                              </Offsets>
+                                            </CheatEntry>
+                                            <CheatEntry>
+                                              <ID>36386</ID>
+                                              <Description>"Pattern Direction Y"</Description>
+                                              <ShowAsSigned>0</ShowAsSigned>
+                                              <VariableType>Float</VariableType>
+                                              <Address>Pawn+18</Address>
+                                              <Offsets>
+                                                <Offset>28</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>140</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>110</Offset>
+                                                <Offset>1C0</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>PIC2</Offset>
+                                                <Offset>368</Offset>
+                                                <Offset>PIC</Offset>
+                                                <Offset>D8</Offset>
+                                              </Offsets>
+                                            </CheatEntry>
+                                            <CheatEntry>
+                                              <ID>36387</ID>
+                                              <Description>"2 Side Switch Speed"</Description>
+                                              <ShowAsSigned>0</ShowAsSigned>
+                                              <VariableType>Float</VariableType>
+                                              <Address>Pawn+18</Address>
+                                              <Offsets>
+                                                <Offset>40</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>140</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>110</Offset>
+                                                <Offset>1C0</Offset>
+                                                <Offset>0</Offset>
+                                                <Offset>18</Offset>
+                                                <Offset>PIC2</Offset>
+                                                <Offset>368</Offset>
+                                                <Offset>PIC</Offset>
+                                                <Offset>D8</Offset>
+                                              </Offsets>
+                                            </CheatEntry>
+                                          </CheatEntries>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36379</ID>
+                                          <Description>"Kick Y Side Offset"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>70</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>140</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36380</ID>
+                                          <Description>"Kick Speed"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>74</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>140</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36381</ID>
+                                          <Description>"Kick X Jump Offset"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>78</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>140</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36351</ID>
+                                      <Description>"Damage Weapon Data"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>148</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36377</ID>
+                                          <Description>"Damage"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>6C</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>148</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36352</ID>
+                                      <Description>"Ammo Weapon Data"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>150</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36372</ID>
+                                          <Description>"Firerate"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>38</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>150</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36373</ID>
+                                          <Description>"Bullets Per Shot"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>40</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>150</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36374</ID>
+                                          <Description>"Bullet Caliber"</Description>
+                                          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+033BC036:tachanka dp27 (stationary)
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+617A0088:Normal SMG?
+</DropDownList>
+                                          <ShowAsHex>1</ShowAsHex>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>4C</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>150</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36375</ID>
+                                          <Description>"Max Mag Ammo"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>58</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>150</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36376</ID>
+                                          <Description>"Weapon Range"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>5C</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>150</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36353</ID>
+                                      <Description>"Accuracy Weapon Data"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>158</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36368</ID>
+                                          <Description>"Spread Multiplier"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>20</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>158</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36369</ID>
+                                          <Description>"Shoot Spread"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>38</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>158</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36370</ID>
+                                          <Description>"Shoot Increase"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>3C</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>158</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36371</ID>
+                                          <Description>"Move Spread"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>44</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>158</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36358</ID>
+                                      <Description>"Firemode List"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>1D8</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36361</ID>
+                                          <Description>"Firemode"</Description>
+                                          <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Automatic
+1:Double
+2:Triple
+3:Single
+</DropDownList>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>0</Offset>
+                                            <Offset>1D8</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36367</ID>
+                                          <Description>"Firemode"</Description>
+                                          <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Automatic
+1:Double
+2:Triple
+3:Single
+</DropDownList>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>4</Offset>
+                                            <Offset>1D8</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36366</ID>
+                                          <Description>"Firemode"</Description>
+                                          <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Automatic
+1:Double
+2:Triple
+3:Single
+</DropDownList>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>8</Offset>
+                                            <Offset>1D8</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36365</ID>
+                                          <Description>"Firemode"</Description>
+                                          <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Automatic
+1:Double
+2:Triple
+3:Single
+</DropDownList>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>4 Bytes</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>C</Offset>
+                                            <Offset>1D8</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>110</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36359</ID>
+                                      <Description>"Firemode Count"</Description>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>1E0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36360</ID>
+                                      <Description>"ADS Zoom Multiplier (descending)"</Description>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>Float</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>204</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>110</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                  </CheatEntries>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36394</ID>
+                                  <Description>"Projectile System"</Description>
+                                  <Options moManualExpandCollapse="1"/>
+                                  <ShowAsHex>1</ShowAsHex>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>8 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>118</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                  <CheatEntries>
+                                    <CheatEntry>
+                                      <ID>36395</ID>
+                                      <Description>"Projectile Data"</Description>
+                                      <Options moManualExpandCollapse="1"/>
+                                      <ShowAsHex>1</ShowAsHex>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>8 Bytes</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>118</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                      <CheatEntries>
+                                        <CheatEntry>
+                                          <ID>36397</ID>
+                                          <Description>"Explode Time / OFFSET"</Description>
+                                          <ShowAsHex>1</ShowAsHex>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>A8</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>118</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36398</ID>
+                                          <Description>"Speed"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>B0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>118</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36399</ID>
+                                          <Description>"HitBox Size"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Float</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>118</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                        <CheatEntry>
+                                          <ID>36400</ID>
+                                          <Description>"Always Land Flat?"</Description>
+                                          <ShowAsSigned>0</ShowAsSigned>
+                                          <VariableType>Byte</VariableType>
+                                          <Address>Pawn+18</Address>
+                                          <Offsets>
+                                            <Offset>D5</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>118</Offset>
+                                            <Offset>1C0</Offset>
+                                            <Offset>0</Offset>
+                                            <Offset>18</Offset>
+                                            <Offset>PIC2</Offset>
+                                            <Offset>368</Offset>
+                                            <Offset>PIC</Offset>
+                                            <Offset>D8</Offset>
+                                          </Offsets>
+                                        </CheatEntry>
+                                      </CheatEntries>
+                                    </CheatEntry>
+                                    <CheatEntry>
+                                      <ID>36396</ID>
+                                      <Description>"Enable"</Description>
+                                      <ShowAsSigned>0</ShowAsSigned>
+                                      <VariableType>Byte</VariableType>
+                                      <Address>Pawn+18</Address>
+                                      <Offsets>
+                                        <Offset>5C</Offset>
+                                        <Offset>118</Offset>
+                                        <Offset>1C0</Offset>
+                                        <Offset>0</Offset>
+                                        <Offset>18</Offset>
+                                        <Offset>PIC2</Offset>
+                                        <Offset>368</Offset>
+                                        <Offset>PIC</Offset>
+                                        <Offset>D8</Offset>
+                                      </Offsets>
+                                    </CheatEntry>
+                                  </CheatEntries>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36341</ID>
+                                  <Description>"Selected Fire Mode 1"</Description>
+                                  <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Automatic
+1:Double
+2:Triple
+3:Single
+</DropDownList>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>4 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>120</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36357</ID>
+                                  <Description>"Mag Ammo 1"</Description>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>4 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>124</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36393</ID>
+                                  <Description>"Reserve Ammo 1"</Description>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>4 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>128</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36401</ID>
+                                  <Description>"Selected Fire Mode 2"</Description>
+                                  <DropDownList ReadOnly="1" DisplayValueAsItem="1">0:Automatic
+1:Double
+2:Triple
+3:Single
+</DropDownList>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>4 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>1F0</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36402</ID>
+                                  <Description>"Mag Ammo 2"</Description>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>4 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>1F4</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                                <CheatEntry>
+                                  <ID>36403</ID>
+                                  <Description>"Reserve Ammo 2"</Description>
+                                  <ShowAsSigned>0</ShowAsSigned>
+                                  <VariableType>4 Bytes</VariableType>
+                                  <Address>Pawn+18</Address>
+                                  <Offsets>
+                                    <Offset>1F8</Offset>
+                                    <Offset>1C0</Offset>
+                                    <Offset>0</Offset>
+                                    <Offset>18</Offset>
+                                    <Offset>PIC2</Offset>
+                                    <Offset>368</Offset>
+                                    <Offset>PIC</Offset>
+                                    <Offset>D8</Offset>
+                                  </Offsets>
+                                </CheatEntry>
+                              </CheatEntries>
+                            </CheatEntry>
+                          </CheatEntries>
+                        </CheatEntry>
+                      </CheatEntries>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>36314</ID>
+              <Description>"Points to First Bone"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>Pawn+988</Address>
+              <Offsets>
+                <Offset>40</Offset>
+                <Offset>58</Offset>
+                <Offset>260</Offset>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36302</ID>
+      <Description>"Pause timer / Infinite time"</Description>
+      <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">365D0F95:Infinite Time Off
+11111111:Infinite Time On
+</DropDownList>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>0061C1</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>rainbowsix.exe+6E3FF30</Address>
+      <Offsets>
+        <Offset>Bf0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36404</ID>
+      <Description>"Skeleton Component"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Pawn+18</Address>
+      <Offsets>
+        <Offset>1CC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36405</ID>
+      <Description>"Pawn Inventory Component"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Pawn+18</Address>
+      <Offsets>
+        <Offset>1C8</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Score :xor eax,[r15+00000168]</Description>
+      <AddressString>RainbowSix.exe+334AF73</AddressString>
+      <Before>
+        <Byte>B8</Byte>
+        <Byte>20</Byte>
+        <Byte>5C</Byte>
+        <Byte>1E</Byte>
+        <Byte>CF</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>33</Byte>
+        <Byte>87</Byte>
+        <Byte>68</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>05</Byte>
+        <Byte>7B</Byte>
+        <Byte>52</Byte>
+        <Byte>A5</Byte>
+        <Byte>E9</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Kills :mov eax,[r15+00000158]</Description>
+      <AddressString>RainbowSix.exe+334AE35</AddressString>
+      <Before>
+        <Byte>87</Byte>
+        <Byte>D2</Byte>
+        <Byte>02</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>8B</Byte>
+        <Byte>87</Byte>
+        <Byte>58</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>89</Byte>
+        <Byte>86</Byte>
+        <Byte>BC</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>

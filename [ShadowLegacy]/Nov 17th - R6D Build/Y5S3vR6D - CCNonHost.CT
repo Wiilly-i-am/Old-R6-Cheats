@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>23930</ID>
+      <Description>"Compact Mode."</Description>
+      <LastState Activated="1"/>
+      <Color>585858</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+{$lua}
+
+if not syntaxcheck then
+
+  function cycleFullCompact( sender, force )
+    local state = not( compactmenuitem.Caption == 'Compact View Mode' )
+    if force ~= nil then
+      state = not force
+    end
+    compactmenuitem.Caption = state and 'Compact View Mode' or 'Full View Mode'
+    getMainForm().Splitter1.Visible = state
+    getMainForm().Panel4.Visible = state
+    getMainForm().Panel5.Visible = state
+  end
+
+  function addCompactMenu()
+    if compactmenualreadyexists then return end
+      local parent = getMainForm().Menu.Items
+      compactmenuitem = createMenuItem( parent )
+      parent.add( compactmenuitem )
+      compactmenuitem.Caption = 'Compact View Mode'
+      compactmenuitem.OnClick = cycleFullCompact
+      compactmenualreadyexists = 'yes'
+  end
+
+  addCompactMenu()
+  cycleFullCompact( nil, true )
+
+end
+
+[DISABLE]
+
+{$lua}
+
+if not syntaxcheck then
+  cycleFullCompact( nil, false )
+end
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32867</ID>
+      <Description>"Credit: Tavreth (Comradical)"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>0000FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32862</ID>
+          <Description>"GunFiremode"</Description>
+          <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+define(firestate,"RainbowSix.exe"+1C84DB4)
+registersymbol(firestate)
+
+[DISABLE]
+firestate:
+          nop
+          nop
+          nop
+          nop
+          nop
+          nop
+          nop
+          nop
+          nop
+          nop
+unregistersymbol(firestate)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32868</ID>
+              <Description>"The scripts will run, but won't activate"</Description>
+              <LastState Value="" RealAddress="00000000"/>
+              <Color>00FF00</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32865</ID>
+              <Description>"Semi-Auto"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+firestate:
+          mov [rax+00000080],03
+
+00000000:
+nop
+
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32864</ID>
+              <Description>"2 Shot Burst"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+firestate:
+          mov [rax+00000080],01
+
+00000000:
+nop
+
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32866</ID>
+              <Description>"3 Shot Burst"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+firestate:
+          mov [rax+00000080],02
+
+00000000:
+nop
+
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32863</ID>
+              <Description>"Automatic"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+firestate:
+          mov [rax+00000080],00
+
+00000000:
+nop
+
+[DISABLE]
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"Everyone is Laying down"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"RainbowSix.exe"+40E7BF6) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [rcx+rsi],(float)1
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+40E7BF6:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"RainbowSix.exe"+40E7BF6:
+movss [rcx+rsi],xmm6
+//Alt: db F3 0F 11 34 31
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1</ID>
+              <Description>"Auto Assemble script"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"RainbowSix.exe"+23445B9) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [rbx+000000A0],(float)-1
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+23445B9:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"RainbowSix.exe"+23445B9:
+movss [rbx+000000A0],xmm0
+//Alt: db F3 0F 11 83 A0 00 00 00
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2</ID>
+              <Description>"Auto Assemble script"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"RainbowSix.exe"+2344668) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [rbx+000000A0],(float)-1
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+2344668:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"RainbowSix.exe"+2344668:
+movss [rbx+000000A0],xmm1
+//Alt: db F3 0F 11 8B A0 00 00 00
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3</ID>
+              <Description>"Auto Assemble script"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"RainbowSix.exe"+234454D) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [rbx+000000A0],(float)-1
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+234454D:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"RainbowSix.exe"+234454D:
+movss [rbx+000000A0],xmm2
+//Alt: db F3 0F 11 93 A0 00 00 00
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32127</ID>
+      <Description>"Scopes (Cred: Olé, killahtree, benjaminstrike, roly)"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Activated="1"/>
+      <Color>0000FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+define(BootlegGameManager,6e3ff30)
+define(FirstOffset,8c0)
+
+registerSymbol(BootlegGameManager)
+registerSymbol(FirstOffset)
+[DISABLE]
+unregisterSymbol(BootlegGameManager)
+unregisterSymbol(FirstOffset)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32228</ID>
+          <Description>"Player 0"</Description>
+          <Color>0080FF</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>0</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32233</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32264</ID>
+          <Description>"Player 1"</Description>
+          <Color>0080FF</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32267</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32293</ID>
+          <Description>"Player 2"</Description>
+          <Color>0080FF</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>10</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32296</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>10</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32322</ID>
+          <Description>"Player 3"</Description>
+          <Color>0080FF</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>18</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32325</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>18</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32351</ID>
+          <Description>"Player 4"</Description>
+          <Color>0080FF</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>20</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32354</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32380</ID>
+          <Description>"Player 5"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FF8000</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>-28</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32383</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <LastState Value="0" RealAddress="1A22042AA18"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>-28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32409</ID>
+          <Description>"Player 6"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FF8000</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>-20</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32412</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>-20</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32438</ID>
+          <Description>"Player 7"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FF8000</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>-18</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32441</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>-18</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32467</ID>
+          <Description>"Player 8"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FF8000</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>-10</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32470</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>-10</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32496</ID>
+          <Description>"Player 9"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FF8000</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>-8</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32499</ID>
+              <Description>"Primary Gun Scope"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>-8</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

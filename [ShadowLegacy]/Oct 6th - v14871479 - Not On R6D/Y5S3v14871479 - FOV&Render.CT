@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"player fov"</Description>
+      <LastState Value="1.57079649" RealAddress="22EDBA30B38"/>
+      <Color>602F68</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x7ED6DA8</Address>
+      <Offsets>
+        <Offset>0xB38</Offset>
+        <Offset>0x10</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"bootleg 3rd person "</Description>
+      <LastState Value="0.05000000075" RealAddress="22EDBA30B48"/>
+      <Color>602F68</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DCE458</Address>
+      <Offsets>
+        <Offset>0x948</Offset>
+        <Offset>0x38</Offset>
+        <Offset>0x0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"render distance"</Description>
+      <LastState Value="0.009999999776" RealAddress="22EDBA30B4C"/>
+      <Color>602F68</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x7ED6DA8</Address>
+      <Offsets>
+        <Offset>0xb4c</Offset>
+        <Offset>0x10</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Weapon fov"</Description>
+      <LastState Value="0.8726646304" RealAddress="22EDBA30B3C"/>
+      <Color>602F68</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x7ED6DA8</Address>
+      <Offsets>
+        <Offset>0xB3C</Offset>
+        <Offset>0x10</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Noclip"</Description>
+      <LastState Value="-1" Activated="1" RealAddress="22F6AE0BEA0"/>
+      <Color>602F68</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe +  0x5AFC450</Address>
+      <Offsets>
+        <Offset>0x700</Offset>
+        <Offset>0x10</Offset>
+        <Offset>0x128</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"opacity"</Description>
+      <LastState Value="0.1000000015" RealAddress="22F4503121C"/>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0x11c</Offset>
+        <Offset>0xb8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"glow dist"</Description>
+      <LastState Value="-1.644790446E38" RealAddress="22F45031210"/>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0x110</Offset>
+        <Offset>0xb8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"Alpha"</Description>
+      <LastState Value="-4.951751118E16" RealAddress="22F45031218"/>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0x118</Offset>
+        <Offset>0xb8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"start dist"</Description>
+      <LastState Value="0.1000000015" RealAddress="22F45031244"/>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0x144</Offset>
+        <Offset>0xb8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Red glow ptr"</Description>
+      <LastState Value="500" Activated="1" RealAddress="22F450311D0"/>
+      <Color>0000FF</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0xD0</Offset>
+        <Offset>0xB8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Green glow ptr"</Description>
+      <LastState Value="1000" Activated="1" RealAddress="22F450311D4"/>
+      <Color>009700</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0xd4</Offset>
+        <Offset>0xB8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"Blue glow ptr"</Description>
+      <LastState Value="0" RealAddress="22F450311D8"/>
+      <Color>FF0000</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe + 0x5DF1ED0 </Address>
+      <Offsets>
+        <Offset>0d8</Offset>
+        <Offset>0b8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"Unlock all "</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>
+define(address,"RainbowSix.exe"+3836D34)
+define(bytes,34 01 41 88 46 51)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+3836D34)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov byte ptr [r14+51],00
+  nop
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+
+dealloc(newmem)
+
+
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

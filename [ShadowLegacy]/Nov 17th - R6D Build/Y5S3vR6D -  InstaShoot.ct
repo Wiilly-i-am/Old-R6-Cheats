@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>69475</ID>
+      <Description>"InstaShoot (set to 0)"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>FFFF00</Color>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>140</Offset>
+        <Offset>0</Offset>
+        <Offset>130</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+</CheatTable>

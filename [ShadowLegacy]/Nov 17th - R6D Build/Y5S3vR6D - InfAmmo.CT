@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>32142</ID>
+      <Description>"Infinite ammo (instruction NOP)."</Description>
+      <LastState/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+1C6A58D:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+1C6A58D:
+                       MOV [RAX+84], EDI
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>53277</ID>
+      <Description>"Infinite secondary gadgets (instruction NOP)."</Description>
+      <LastState/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+319BD38:
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+319BD38:
+                       mov [rcx+64],edi
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="80000008">
+      <Description>Change of mov [rcx+64],edi</Description>
+      <AddressString>RainbowSix.exe+319BD38</AddressString>
+      <Before>
+        <Byte>F8</Byte>
+        <Byte>4C</Byte>
+        <Byte>8B</Byte>
+        <Byte>71</Byte>
+        <Byte>50</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>79</Byte>
+        <Byte>64</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>06</Byte>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>

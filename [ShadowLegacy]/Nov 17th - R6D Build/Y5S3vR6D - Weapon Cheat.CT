@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>66847</ID>
+      <Description>"Gun Name"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>6B6B6B</Color>
+      <VariableType>String</VariableType>
+      <Length>10</Length>
+      <Unicode>1</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>0</ZeroTerminate>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>0</Offset>
+        <Offset>B0</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>66853</ID>
+          <Description>"Gun Projectile"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>118</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>66844</ID>
+              <Description>"Gun Projectile Enable"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>Byte</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>5C</Offset>
+                <Offset>118</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66857</ID>
+          <Description>"Gun Bullet Inpact Size"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>88</Offset>
+            <Offset>0</Offset>
+            <Offset>128</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66858</ID>
+          <Description>"Gun Sound"</Description>
+          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>9B9B00</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>F0</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66855</ID>
+          <Description>"Gun recoil"</Description>
+          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>9B9B00</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>140</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>66852</ID>
+              <Description>"spread"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>20</Offset>
+                <Offset>0</Offset>
+                <Offset>158</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66854</ID>
+          <Description>"Gun Caliber"</Description>
+          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>008000</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>4C</Offset>
+            <Offset>0</Offset>
+            <Offset>150</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>66845</ID>
+              <Description>"Gun damage."</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>6c</Offset>
+                <Offset>0</Offset>
+                <Offset>148</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>66846</ID>
+                  <Description>"Gun wall damage."</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>2B59E3</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>RainbowSix.exe+0x5e32c50</Address>
+                  <Offsets>
+                    <Offset>70</Offset>
+                    <Offset>0</Offset>
+                    <Offset>148</Offset>
+                    <Offset>0</Offset>
+                    <Offset>108</Offset>
+                    <Offset>70</Offset>
+                    <Offset>-6f+90</Offset>
+                    <Offset>30</Offset>
+                    <Offset>0</Offset>
+                    <Offset>88</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

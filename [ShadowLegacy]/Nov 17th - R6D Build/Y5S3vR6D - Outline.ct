@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="38">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>69458</ID>
+      <Description>"Outlines [enable both outlines]"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[enable]
+
+
+RainbowSix.exe+375b773:
+jne RainbowSix.exe+375B77E
+
+
+
+[disable]
+
+
+RainbowSix.exe+375b773:
+je RainbowSix.exe+375B77E
+
+
+
+
+
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69459</ID>
+      <Description>"Outlines 2     "</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[enable]
+
+
+RainbowSix.exe+375be7c:
+jne RainbowSix.exe+375BE8C
+
+
+
+[disable]
+
+
+RainbowSix.exe+375be7c:
+je RainbowSix.exe+375BE8C
+
+
+
+
+
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"Outline Thiccness "</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe+5E22F50</Address>
+      <Offsets>
+        <Offset>114</Offset>
+        <Offset>0</Offset>
+        <Offset>48</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69464</ID>
+      <Description>"BPS byte "</Description>
+      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00000020000001F4:20 Shots
+00000100000001F4:100 Shots
+</DropDownList>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>008000</Color>
+      <VariableType>Byte</VariableType>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>58-18</Offset>
+        <Offset>0</Offset>
+        <Offset>150</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69454</ID>
+      <Description>"Damage"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>008000</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>6C</Offset>
+        <Offset>0</Offset>
+        <Offset>148</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69212</ID>
+      <Description>"Weapon Animations"</Description>
+      <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>FF00FF</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>130</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>69213</ID>
+          <Description>"Weapon Swap Speed"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>0080FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>138</Offset>
+            <Offset>0</Offset>
+            <Offset>130</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69214</ID>
+          <Description>"Tactical Reload Speed"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>0080FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>16C</Offset>
+            <Offset>0</Offset>
+            <Offset>130</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>69215</ID>
+              <Description>"Full Reload Speed"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>170</Offset>
+                <Offset>0</Offset>
+                <Offset>130</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69216</ID>
+          <Description>"Zoom In Speed"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>0000FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>144</Offset>
+            <Offset>0</Offset>
+            <Offset>130</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>69217</ID>
+              <Description>"Zoom Out Speed"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>148</Offset>
+                <Offset>0</Offset>
+                <Offset>130</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

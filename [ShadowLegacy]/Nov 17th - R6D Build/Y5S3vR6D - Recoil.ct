@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>69226</ID>
+      <Description>"Gun Bullet Inpact"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>800080</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>128</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>69227</ID>
+          <Description>"Gun Bullet Inpact Size"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>575757</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>88</Offset>
+            <Offset>0</Offset>
+            <Offset>128</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69228</ID>
+      <Description>"Gun recoil"</Description>
+      <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+      <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>FF00FF</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>RainbowSix.exe+0x5e32c50</Address>
+      <Offsets>
+        <Offset>140</Offset>
+        <Offset>0</Offset>
+        <Offset>108</Offset>
+        <Offset>70</Offset>
+        <Offset>-6f+90</Offset>
+        <Offset>30</Offset>
+        <Offset>0</Offset>
+        <Offset>88</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>69229</ID>
+          <Description>"Deep"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>69230</ID>
+              <Description>"1 bullet side angle"</Description>
+              <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>8</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>140</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69231</ID>
+              <Description>"1 Side Switch Speed"</Description>
+              <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>140</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>69232</ID>
+                  <Description>"2 Side Switch Speed"</Description>
+                  <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>RainbowSix.exe+0x5e32c50</Address>
+                  <Offsets>
+                    <Offset>40</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>140</Offset>
+                    <Offset>0</Offset>
+                    <Offset>108</Offset>
+                    <Offset>70</Offset>
+                    <Offset>-6f+90</Offset>
+                    <Offset>30</Offset>
+                    <Offset>0</Offset>
+                    <Offset>88</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69233</ID>
+              <Description>"Recovery To Crosshair"</Description>
+              <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>24</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>140</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>69234</ID>
+                  <Description>"Pattern Direction Y"</Description>
+                  <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>RainbowSix.exe+0x5e32c50</Address>
+                  <Offsets>
+                    <Offset>28</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>140</Offset>
+                    <Offset>0</Offset>
+                    <Offset>108</Offset>
+                    <Offset>70</Offset>
+                    <Offset>-6f+90</Offset>
+                    <Offset>30</Offset>
+                    <Offset>0</Offset>
+                    <Offset>88</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69235</ID>
+          <Description>"Kick Y Side Offset"</Description>
+          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>0080FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>70</Offset>
+            <Offset>0</Offset>
+            <Offset>140</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69236</ID>
+          <Description>"Kick Speed"</Description>
+          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>0080FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>74</Offset>
+            <Offset>0</Offset>
+            <Offset>140</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69237</ID>
+          <Description>"Kick X Jump Offset"</Description>
+          <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+</DropDownList>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>0080FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+0x5e32c50</Address>
+          <Offsets>
+            <Offset>78</Offset>
+            <Offset>0</Offset>
+            <Offset>140</Offset>
+            <Offset>0</Offset>
+            <Offset>108</Offset>
+            <Offset>70</Offset>
+            <Offset>-6f+90</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>88</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"pepperoni? doggo/recruit"</Description>
+      <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Gun"</Description>
+          <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>67922</ID>
+              <Description>"Run and Shoot"</Description>
+              <LastState/>
+              <Color>000000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[enable]
+
+aobscanmodule(run1,rainbowsix.exe,80 B9 ? ? ? ? ? 74 15 E8)
+registerSymbol(run1)
+aobscanmodule(run2,rainbowsix.exe,80 B9 ? ? ? ? ? 0F 84 ? ? ? ? 48 89 F1 31)
+registerSymbol(run2)
+
+run1:
+cmp byte ptr [rcx+00000080],01
+
+run2:
+
+cmp byte ptr [rcx+00000080],01
+
+
+[disable]
+
+run1:
+cmp byte ptr [rcx+00000080],00
+
+run2:
+
+cmp byte ptr [rcx+00000080],00
+unregisterSymbol(run1)
+unregisterSymbol(run2)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69518</ID>
+              <Description>"Damage"</Description>
+              <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+033BC036:tachanka dp27 (stationary)
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+617A0088:Normal SMG?
+6B541DED:MEASTRO TURRET
+5E9182B4:Bosg
+4E56EB23:Bailif
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>6C</Offset>
+                <Offset>0</Offset>
+                <Offset>148</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69575</ID>
+              <Description>"Firerate"</Description>
+              <DropDownList DisplayValueAsItem="1">7CFE9C27:mav blowtorch inf (penetration and reinforced wall bypass)
+8616E1E0:tachanka dp27
+033BC036:tachanka dp27 (stationary)
+DB87EF30:kalis sniper rifle caliber
+487C2569:Skeleton Key
+0D67F306:Normal Pistol
+E6589B1F:Normal Rifle
+617A0088:Normal SMG?
+6B541DED:MEASTRO TURRET
+5E9182B4:Bosg
+4E56EB23:Bailif
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>3C</Offset>
+                <Offset>0</Offset>
+                <Offset>150</Offset>
+                <Offset>0</Offset>
+                <Offset>108</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69559</ID>
+              <Description>"No Recoil (change both to 0)"</Description>
+              <Color>000000</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+52C9434</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69560</ID>
+              <Description>"No Recoil (change both to 0)"</Description>
+              <Color>000000</Color>
+              <VariableType>Float</VariableType>
+              <Address>RainbowSix.exe+52C9430</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69521</ID>
+              <Description>"Ammo"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>124</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69520</ID>
+              <Description>"Auto Or Semi"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00:Automatic
+03:Semi Automatic
+</DropDownList>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>RainbowSix.exe+0x5e32c50</Address>
+              <Offsets>
+                <Offset>120</Offset>
+                <Offset>70</Offset>
+                <Offset>-6f+90</Offset>
+                <Offset>30</Offset>
+                <Offset>0</Offset>
+                <Offset>88</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69571</ID>
+              <Description>"bolt thing"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[enable]
+RainbowSix.exe+1c7e2d1:
+mov byte ptr [rax+00000092],00
+[disable]
+RainbowSix.exe+1c7e2d1:
+mov byte ptr [rax+00000092],01
+
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>31178</ID>
+              <Description>"Spread Script"</Description>
+              <LastState/>
+              <Color>000000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2021-01-10
+  Author : foxbr
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+1C3A2CA)
+define(bytes,F3 41 0F 10 4C 24 70)
+
+[ENABLE]
+
+
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+1C3A2CA)
+
+label(code)
+label(return)
+
+newmem:
+nop
+nop
+nop
+nop
+nop
+nop
+
+
+code:
+  movss xmm1,[r12+70]
+  jmp return
+
+address:
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // movss xmm1,[r12+70]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1C3A2CA
+
+"RainbowSix.exe"+1C3A2A3: 48 85 DB                 -  test rbx,rbx
+"RainbowSix.exe"+1C3A2A6: 74 22                    -  je RainbowSix.exe+1C3A2CA
+"RainbowSix.exe"+1C3A2A8: 83 BB AC 04 00 00 FF     -  cmp dword ptr [rbx+000004AC],-01
+"RainbowSix.exe"+1C3A2AF: 74 19                    -  je RainbowSix.exe+1C3A2CA
+"RainbowSix.exe"+1C3A2B1: F3 0F 10 0D B7 EE 44 03  -  movss xmm1,[RainbowSix.exe+5089170]
+"RainbowSix.exe"+1C3A2B9: EB 16                    -  jmp RainbowSix.exe+1C3A2D1
+"RainbowSix.exe"+1C3A2BB: F6 43 20 01              -  test byte ptr [rbx+20],01
+"RainbowSix.exe"+1C3A2BF: 74 09                    -  je RainbowSix.exe+1C3A2CA
+"RainbowSix.exe"+1C3A2C1: 80 BF D8 2B 00 00 00     -  cmp byte ptr [rdi+00002BD8],00
+"RainbowSix.exe"+1C3A2C8: 75 E7                    -  jne RainbowSix.exe+1C3A2B1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1C3A2CA: F3 41 0F 10 4C 24 70     -  movss xmm1,[r12+70]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1C3A2D1: F3 0F 59 CE              -  mulss xmm1,xmm6
+"RainbowSix.exe"+1C3A2D5: B8 28 73 FC FC           -  mov eax,FCFC7328
+"RainbowSix.exe"+1C3A2DA: 41 03 44 24 08           -  add eax,[r12+08]
+"RainbowSix.exe"+1C3A2DF: 83 F0 06                 -  xor eax,06
+"RainbowSix.exe"+1C3A2E2: 05 D1 D9 18 1A           -  add eax,1A18D9D1
+"RainbowSix.exe"+1C3A2E7: 66 0F 6E C0              -  movd xmm0,eax
+"RainbowSix.exe"+1C3A2EB: F3 0F 59 C1              -  mulss xmm0,xmm1
+"RainbowSix.exe"+1C3A2EF: 0F 28 74 24 20           -  movaps xmm6,[rsp+20]
+"RainbowSix.exe"+1C3A2F4: 0F 28 7C 24 30           -  movaps xmm7,[rsp+30]
+"RainbowSix.exe"+1C3A2F9: 44 0F 28 44 24 40        -  movaps xmm8,[rsp+40]
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69576</ID>
+          <Description>"Visual"</Description>
+          <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>69584</ID>
+              <Description>"Outlines"</Description>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>69581</ID>
+                  <Description>"Outlines  (enable b4 game)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[enable]
+
+
+RainbowSix.exe+375b773:
+jne RainbowSix.exe+375B77E
+
+
+
+[disable]
+
+
+RainbowSix.exe+375b773:
+je RainbowSix.exe+375B77E
+
+
+
+
+
+
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>69582</ID>
+                  <Description>"Outlines 2 (enable b4 game)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[enable]
+
+
+RainbowSix.exe+375be7c:
+jne RainbowSix.exe+375BE8C
+
+
+
+[disable]
+
+
+RainbowSix.exe+375be7c:
+je RainbowSix.exe+375BE8C
+
+
+
+
+
+
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>69583</ID>
+                  <Description>"Outline Thiccness "</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>RainbowSix.exe+5E22F50</Address>
+                  <Offsets>
+                    <Offset>114</Offset>
+                    <Offset>0</Offset>
+                    <Offset>48</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32543</ID>
+              <Description>"Player FOV"</Description>
+              <Color>000000</Color>
+              <VariableType>Float</VariableType>
+              <Address>"RainbowSix.exe"+07EF0EB8</Address>
+              <Offsets>
+                <Offset>BB8</Offset>
+                <Offset>10</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32544</ID>
+              <Description>"Weapon FOV"</Description>
+              <Color>000000</Color>
+              <VariableType>Float</VariableType>
+              <Address>"RainbowSix.exe"+07EF0EB8</Address>
+              <Offsets>
+                <Offset>BBC</Offset>
+                <Offset>10</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69585</ID>
+              <Description>"Noclip "</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <Color>000000</Color>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>69586</ID>
+                  <Description>"funny (enable this script)"</Description>
+                  <Options moHideChildren="1" moManualExpandCollapse="1"/>
+                  <LastState/>
+                  <Color>000000</Color>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
+rr15=0x0
+base = getAddress("RainbowSix.exe")
+[ENABLE]
+debug_setBreakpoint(base + 0x4daeb51)
+function debugger_onBreakpoint()
+  rr15=RCX
+  debug_updateGUI()
+  debug_removeBreakpoint(base + 0x4daeb51)
+  debug_continueFromBreakpoint(co_run)
+  return 1
+end
+[DISABLE]
+debug_updateGUI()
+debug_removeBreakpoint(base + 0x4daeb51)
+debug_updateGUI()
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>69587</ID>
+                  <Description>"noclip (make -1)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>000000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>rr15+a0</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69588</ID>
+          <Description>"other stuff"</Description>
+          <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>33011</ID>
+              <Description>"Fly (idk who made it srry if its urs)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-20
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+11C3530)
+define(bytes,80 B9 ED 00 00 00 02)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+11C3530)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // cmp byte ptr [rcx+000000ED],02
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+11BEC80
+
+"RainbowSix.exe"+11BEC57: 0F 28 C1              -  movaps xmm0,xmm1
+"RainbowSix.exe"+11BEC5A: 0F C6 C1 E5           -  shufps xmm0,xmm1,-1B
+"RainbowSix.exe"+11BEC5E: F3 0F 58 C1           -  addss xmm0,xmm1
+"RainbowSix.exe"+11BEC62: 0F 2E 86 E4 01 00 00  -  ucomiss xmm0,[rsi+000001E4]
+"RainbowSix.exe"+11BEC69: 0F 93 C1              -  setae cl
+"RainbowSix.exe"+11BEC6C: C0 E1 03              -  shl cl,03
+"RainbowSix.exe"+11BEC6F: 24 F7                 -  and al,-09
+"RainbowSix.exe"+11BEC71: 08 C8                 -  or al,cl
+"RainbowSix.exe"+11BEC73: 88 86 E0 03 00 00     -  mov [rsi+000003E0],al
+"RainbowSix.exe"+11BEC79: 48 8B 8E F0 01 00 00  -  mov rcx,[rsi+000001F0]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+11BEC80: 80 B9 ED 00 00 00 02  -  cmp byte ptr [rcx+000000ED],02
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+11BEC87: 0F 95 C1              -  setne cl
+"RainbowSix.exe"+11BEC8A: C0 E1 04              -  shl cl,04
+"RainbowSix.exe"+11BEC8D: 24 EF                 -  and al,-11
+"RainbowSix.exe"+11BEC8F: 08 C8                 -  or al,cl
+"RainbowSix.exe"+11BEC91: 88 86 E0 03 00 00     -  mov [rsi+000003E0],al
+"RainbowSix.exe"+11BEC97: 48 8B 8E 88 05 00 00  -  mov rcx,[rsi+00000588]
+"RainbowSix.exe"+11BEC9E: 48 8B 01              -  mov rax,[rcx]
+"RainbowSix.exe"+11BECA1: FF 50 10              -  call qword ptr [rax+10]
+"RainbowSix.exe"+11BECA4: E9 05 FA FF FF        -  jmp RainbowSix.exe+11BE6AE
+"RainbowSix.exe"+11BECA9: CC                    -  int 3 
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69570</ID>
+              <Description>"Speed"</Description>
+              <Color>000000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+05E07850</Address>
+              <Offsets>
+                <Offset>58</Offset>
+                <Offset>110</Offset>
+                <Offset>A8</Offset>
+                <Offset>E0</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>32129</ID>
+      <Description>"Position."</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>FF8080</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>31421</ID>
+          <Description>"Camera X."</Description>
+          <LastState Value="-1.012345791" RealAddress="19EE2BEA664"/>
+          <Color>0000FF</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+5e0c970</Address>
+          <Offsets>
+            <Offset>34</Offset>
+            <Offset>18</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31420</ID>
+          <Description>"Camera Y."</Description>
+          <LastState Value="1.169785976" RealAddress="19EE2BEA668"/>
+          <Color>00FF00</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+5e0c970</Address>
+          <Offsets>
+            <Offset>38</Offset>
+            <Offset>18</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31422</ID>
+          <Description>"Camera Z."</Description>
+          <LastState Value="-76.8916626" RealAddress="19EE2BEA660"/>
+          <Color>FF8000</Color>
+          <VariableType>Float</VariableType>
+          <Address>RainbowSix.exe+5e0c970</Address>
+          <Offsets>
+            <Offset>30</Offset>
+            <Offset>18</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32127</ID>
+          <Description>"Immobilize camera."</Description>
+          <LastState/>
+          <Color>8080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(stablecam,RainbowSix.exe+96FBC7)
+[ENABLE]
+stablecam:
+          NOP
+          NOP
+          NOP
+          NOP
+          NOP
+[DISABLE]
+stablecam:
+          MOVAPS [RSI+30], XMM11 ; Write float to RSI+30
+
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
