@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>70</ID>
+      <Description>"No pump/bolt animation"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+162DFDD:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+162DFDD:
+                         mov byte ptr [rax+96],1
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>71</ID>
+      <Description>"No gravity (Credits: Tavreth/Comradical)"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+231A248:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+231A248:
+                         mov [rsi+A28],cl
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>53633</ID>
+      <Description>"Soft Wall Instant Break."</Description>
+      <LastState/>
+      <Color>FF00FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+40B934E:
+              xor al,00
+[DISABLE]
+RainbowSix.exe+40B934E:
+              xor al,01
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

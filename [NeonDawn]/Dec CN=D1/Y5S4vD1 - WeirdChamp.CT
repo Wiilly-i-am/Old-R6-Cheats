@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>67372</ID>
+      <Description>"max_year_thing"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>[rainbowsix.exe+5AD30D8]</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Big weird"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RainbowSix.exe+1BA6E2F+1</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Localplayer."</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+[ENABLE]
+function rotl64(value, count)
+    return value &lt;&lt; count | value &gt;&gt; (64 - count)
+end
+local_player = readQword(getAddress("RainbowSix.exe") + 0x5DF5180)
+local_player = readQword(local_player + 0x18)
+local_player = rotl64(local_player, 0x11)
+local_player = local_player ~ 0x37012B49B22968A
+local_player = rotl64(local_player, 0x1C)
+local_player = readQword(local_player)
+local_player = readQword(local_player + 0x118)
+local_player = local_player - 0x6F
+local_player = local_player ~ 0xD6EC8724059C1BCA
+local_player = rotl64(local_player, 0x2E)
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>67375</ID>
+      <Description>"MapOffset"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(address,"RainbowSix.exe"+6D9004)
+define(bytes,48 8B 73 60 48 85 F6)
+
+[ENABLE]
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+6D9004)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov rsi,[rbx+60]
+  test rsi,rsi
+  add rsi,2A0
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+address:
+  db bytes
+dealloc(newmem)
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+	<CheatEntries>
+		<CheatEntry>
+			<ID>27</ID>
+			<Description>"Current build scene."</Description>
+			<ShowAsHex>1</ShowAsHex>
+			<ShowAsSigned>0</ShowAsSigned>
+			<VariableType>8 Bytes</VariableType>
+			<Address>"RainbowSix.exe"+06F392F8</Address>
+			<Offsets>
+				<Offset>DA0</Offset>
+				<Offset>8</Offset>
+				<Offset>2A8</Offset>
+				<Offset>C8</Offset>
+			</Offsets>
+			<CheatEntries>
+				<CheatEntry>
+					<ID>30</ID>
+					<Description>"Build state."</Description>
+					<DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Not built.
+						1:Building.
+						2:Built.
+						3:Destroying.
+						4:IDK.
+					</DropDownList>
+					<ShowAsSigned>0</ShowAsSigned>
+					<VariableType>4 Bytes</VariableType>
+					<Address>"RainbowSix.exe"+06F392F8</Address>
+					<Offsets>
+						<Offset>80</Offset>
+						<Offset>DA0</Offset>
+						<Offset>8</Offset>
+						<Offset>2A8</Offset>
+						<Offset>C8</Offset>
+					</Offsets>
+				</CheatEntry>
+				<CheatEntry>
+					<ID>31</ID>
+					<Description>"Forward position."</Description>
+					<ShowAsSigned>0</ShowAsSigned>
+					<VariableType>Float</VariableType>
+					<Address>"RainbowSix.exe"+06F392F8</Address>
+					<Offsets>
+						<Offset>94</Offset>
+						<Offset>DA0</Offset>
+						<Offset>8</Offset>
+						<Offset>2A8</Offset>
+						<Offset>C8</Offset>
+					</Offsets>
+				</CheatEntry>
+				<CheatEntry>
+					<ID>35</ID>
+					<Description>"Other forward position."</Description>
+					<ShowAsSigned>0</ShowAsSigned>
+					<VariableType>Float</VariableType>
+					<Address>"RainbowSix.exe"+06F392F8</Address>
+					<Offsets>
+						<Offset>a4</Offset>
+						<Offset>DA0</Offset>
+						<Offset>8</Offset>
+						<Offset>2A8</Offset>
+						<Offset>C8</Offset>
+					</Offsets>
+				</CheatEntry>
+				<CheatEntry>
+					<ID>32</ID>
+					<Description>"Barricade up relative positionn."</Description>
+					<ShowAsSigned>0</ShowAsSigned>
+					<VariableType>Float</VariableType>
+					<Address>"RainbowSix.exe"+06F392F8</Address>
+					<Offsets>
+						<Offset>98</Offset>
+						<Offset>DA0</Offset>
+						<Offset>8</Offset>
+						<Offset>2A8</Offset>
+						<Offset>C8</Offset>
+					</Offsets>
+				</CheatEntry>
+				<CheatEntry>
+					<ID>34</ID>
+					<Description>"Reinforce side relative position."</Description>
+					<ShowAsSigned>0</ShowAsSigned>
+					<VariableType>Float</VariableType>
+					<Address>"RainbowSix.exe"+06F392F8</Address>
+					<Offsets>
+						<Offset>90</Offset>
+						<Offset>DA0</Offset>
+						<Offset>8</Offset>
+						<Offset>2A8</Offset>
+						<Offset>C8</Offset>
+					</Offsets>
+				</CheatEntry>
+				<CheatEntry>
+					<ID>33</ID>
+					<Description>"Type."</Description>
+					<DropDownList DisplayValueAsItem="1">3:Funny barricade on reinforcement.
+						4:Double barricade.
+						5:Skinny.
+						12:Half-wall.
+						16:Reinforcement.
+						22:Hatch.
+					</DropDownList>
+					<ShowAsSigned>0</ShowAsSigned>
+					<VariableType>4 Bytes</VariableType>
+					<Address>"RainbowSix.exe"+06F392F8</Address>
+					<Offsets>
+						<Offset>8c</Offset>
+						<Offset>DA0</Offset>
+						<Offset>8</Offset>
+						<Offset>2A8</Offset>
+						<Offset>C8</Offset>
+					</Offsets>
+				</CheatEntry>
+			</CheatEntries>
+		</CheatEntry>
+	</CheatEntries>
+	<UserdefinedSymbols/>
+</CheatTable>

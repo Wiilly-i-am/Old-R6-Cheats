@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"Health"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+05D70E48</Address>
+      <Offsets>
+        <Offset>170</Offset>
+        <Offset>8</Offset>
+        <Offset>D8</Offset>
+        <Offset>0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"Noclip"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+alloc(newmem,2048,"RainbowSix.exe"+4D7D081)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+movups xmm12,[rcx+118]
+//what the fuck is this thing idk why its doing jackshit lmao
+
+originalcode:
+movups xmm12,[rcx+118]
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+4D7D081:
+jmp newmem
+nop 3
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+"RainbowSix.exe"+4D7D081:
+movups xmm12,[rcx+000000A0]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"Infinite deployable gadgets"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+"RainbowSix.exe"+3769291:
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+[DISABLE]
+"RainbowSix.exe"+3769291:
+                         mov [rax+84],esi
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"Infinite throwable gadgets"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+"RainbowSix.exe"+37E9EA4:
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+[DISABLE]
+"RainbowSix.exe"+37E9EA4:
+                         mov [rax+84],edi
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>28</ID>
+      <Description>"Infinite ammo"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+"RainbowSix.exe"+162D826:
+                         NOP
+                         NOP
+                         NOP
+[DISABLE]
+"RainbowSix.exe"+162D826:
+                         mov [rax+40],ecx
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>29</ID>
+      <Description>"No bolt/pump animation"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+"RainbowSix.exe"+1642B15:
+                         NOP
+                         NOP
+                         NOP
+                         NOP
+[DISABLE]
+"RainbowSix.exe"+1642B15:
+                         mov byte ptr [rax+44],0F
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"Unlockall"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"RainbowSix.exe"1B08350)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+mov rax, 1
+ret
+
+//this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+push r15
+push r14
+push rsi
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+1B08350:
+jmp newmem
+returnhere:
+
+
+
+
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"RainbowSix.exe"+1B08350:
+push r15
+push r14
+push rsi
+//Alt: db 41 57 41 56 56
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="20000000">
+      <Description>lol</Description>
+      <AddressString>RainbowSix.exe+3769291</AddressString>
+      <Before>
+        <Byte>18</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>78</Byte>
+        <Byte>70</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>B0</Byte>
+        <Byte>84</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>03</Byte>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>lmao</Description>
+      <AddressString>RainbowSix.exe+163512A</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>A6</Byte>
+        <Byte>86</Byte>
+        <Byte>FF</Byte>
+        <Byte>FF</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>83</Byte>
+        <Byte>86</Byte>
+        <Byte>C8</Byte>
+        <Byte>2B</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>01</Byte>
+      </Actual>
+      <After>
+        <Byte>41</Byte>
+        <Byte>8B</Byte>
+        <Byte>86</Byte>
+        <Byte>F8</Byte>
+        <Byte>02</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>lol</Description>
+      <AddressString>RainbowSix.exe+162D826</AddressString>
+      <Before>
+        <Byte>C1</Byte>
+        <Byte>CE</Byte>
+        <Byte>D2</Byte>
+        <Byte>A7</Byte>
+        <Byte>D1</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>48</Byte>
+        <Byte>40</Byte>
+      </Actual>
+      <After>
+        <Byte>49</Byte>
+        <Byte>8B</Byte>
+        <Byte>04</Byte>
+        <Byte>24</Byte>
+        <Byte>48</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>lmfao</Description>
+      <AddressString>RainbowSix.exe+1642B15</AddressString>
+      <Before>
+        <Byte>89</Byte>
+        <Byte>8B</Byte>
+        <Byte>04</Byte>
+        <Byte>EB</Byte>
+        <Byte>24</Byte>
+      </Before>
+      <Actual>
+        <Byte>C6</Byte>
+        <Byte>40</Byte>
+        <Byte>44</Byte>
+        <Byte>0F</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>F1</Byte>
+        <Byte>31</Byte>
+        <Byte>D2</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>

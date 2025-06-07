@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>53276</ID>
+      <Description>"Infinite..."</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <Color>FFFF00</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32142</ID>
+          <Description>"Infinite ammo (instruction NOP)."</Description>
+          <LastState/>
+          <Color>FFFF00</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+RainbowSix.exe+1619F62:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+1619F62:
+                       MOV [RAX+84], EDI
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53277</ID>
+          <Description>"Infinite primary gadgets (instruction NOP)."</Description>
+          <LastState/>
+          <Color>FFFF00</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+RainbowSix.exe+2A864B5:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+2A864B5:
+                       mov [rax+84],esi
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53278</ID>
+          <Description>"Infinite secondary gadgets (instruction NOP)."</Description>
+          <LastState/>
+          <Color>FFFF00</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+RainbowSix.exe+2A473B1:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+2A473B1:
+                       mov [rax+84],esi
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53279</ID>
+          <Description>"Infinite health (instruction NOP)."</Description>
+          <LastState/>
+          <Color>FFFF00</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+RainbowSix.exe+21DF38E:
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+                       NOP
+[DISABLE]
+RainbowSix.exe+21DF38E:
+                       mov [r12+170],r14d
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

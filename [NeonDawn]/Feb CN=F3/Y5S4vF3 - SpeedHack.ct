@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Speed hack."</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(address,"RainbowSix.exe"+2F2C29C)
+define(bytes,89 57 70 C6 87 C0 00 00 00 00)
+
+[ENABLE]
+registerSymbol(speedalloc)
+assert(address,bytes)
+alloc(speedalloc,$80,"RainbowSix.exe"+2F2C29C)
+
+label(code)
+label(return)
+
+speedalloc:
+	mov edx, 73
+    add edx, 77
+	xor edx, 76
+	add edx, CD92464E
+code:
+  mov [rdi+70],edx
+  mov byte ptr [rdi+000000C0],00
+  jmp return
+
+address:
+  jmp speedalloc
+  nop 5
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // mov [rdi+70],edx
+  // mov byte ptr [rdi+000000C0],00
+
+dealloc(speedalloc)
+unregisterSymbol(speedalloc)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Switch weapons after changing."</Description>
+          <LastState Value="333" RealAddress="7FF733100001"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>speedalloc + 1</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

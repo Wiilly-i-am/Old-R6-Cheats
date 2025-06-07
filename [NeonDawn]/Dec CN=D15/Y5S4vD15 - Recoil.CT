@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Horizontal (set to 0)"</Description>
+      <LastState Value="0" RealAddress="7FF712AC88A4"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RainbowSix.exe+52788A4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Vertical Recoil (set to 0) "</Description>
+      <LastState Value="0" RealAddress="7FF712AC88A0"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RainbowSix.exe+52788A0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Unlock All"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"RainbowSix.exe"1B08350)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+mov rax, 1
+ret
+
+//this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+push r15
+push r14
+push rsi
+
+exit:
+jmp returnhere
+
+"RainbowSix.exe"+1B08350:
+jmp newmem
+returnhere:
+
+
+
+
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"RainbowSix.exe"+1B08350:
+push r15
+push r14
+push rsi
+//Alt: db 41 57 41 56 56
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

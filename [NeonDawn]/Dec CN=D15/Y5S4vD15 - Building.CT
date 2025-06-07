@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"No description"</Description>
+      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">08268E90F7ABC0B3:Paused.
+08268E90F8ABC159:Unpaused.
+</DropDownList>
+      <LastState Value="08268E90F8AB6959" RealAddress="164E113EA08"/>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>[RainbowSix.exe+6e28830] + 678</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>27</ID>
+      <Description>"Current build scene."</Description>
+      <LastState Value="0000016576378E00" RealAddress="1655858D4A0"/>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+06F1D9C8</Address>
+      <Offsets>
+        <Offset>DA0</Offset>
+        <Offset>8</Offset>
+        <Offset>2A8</Offset>
+        <Offset>C8</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>30</ID>
+          <Description>"Build state."</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Not built.
+1:Building.
+2:Built.
+3:Destroying.
+4:IDK.
+</DropDownList>
+          <LastState Value="2" RealAddress="16576378E80"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"RainbowSix.exe"+06F1D9C8</Address>
+          <Offsets>
+            <Offset>80</Offset>
+            <Offset>DA0</Offset>
+            <Offset>8</Offset>
+            <Offset>2A8</Offset>
+            <Offset>C8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31</ID>
+          <Description>"Forward position."</Description>
+          <LastState Value="0" RealAddress="16576378E94"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+06F1D9C8</Address>
+          <Offsets>
+            <Offset>94</Offset>
+            <Offset>DA0</Offset>
+            <Offset>8</Offset>
+            <Offset>2A8</Offset>
+            <Offset>C8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"Other forward position."</Description>
+          <LastState Value="0.2500007451" RealAddress="16576378EA4"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+06F1D9C8</Address>
+          <Offsets>
+            <Offset>a4</Offset>
+            <Offset>DA0</Offset>
+            <Offset>8</Offset>
+            <Offset>2A8</Offset>
+            <Offset>C8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"Barricade up relative positionn."</Description>
+          <LastState Value="0" RealAddress="16576378E98"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+06F1D9C8</Address>
+          <Offsets>
+            <Offset>98</Offset>
+            <Offset>DA0</Offset>
+            <Offset>8</Offset>
+            <Offset>2A8</Offset>
+            <Offset>C8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"Reinforce side relative position."</Description>
+          <LastState Value="3.650000095" RealAddress="16576378E90"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+06F1D9C8</Address>
+          <Offsets>
+            <Offset>90</Offset>
+            <Offset>DA0</Offset>
+            <Offset>8</Offset>
+            <Offset>2A8</Offset>
+            <Offset>C8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33</ID>
+          <Description>"Type."</Description>
+          <DropDownList DisplayValueAsItem="1">3:Funny barricade on reinforcement.
+4:Double reinforcement.
+5:Skinny.
+12:Half-wall.
+16:Reinforcement.
+17:Reinforcement.
+18:Reinforcement.
+22:Hatch.
+</DropDownList>
+          <LastState Value="3" RealAddress="16576378E8C"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"RainbowSix.exe"+06F1D9C8</Address>
+          <Offsets>
+            <Offset>8c</Offset>
+            <Offset>DA0</Offset>
+            <Offset>8</Offset>
+            <Offset>2A8</Offset>
+            <Offset>C8</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>38</ID>
+      <Description>"Localplayer."</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+[ENABLE]
+function rotl64(value, count)
+	return value &lt;&lt; count | value &gt;&gt; (64 - count)
+end
+getLuaEngine().cbShowOnPrint.Checked = false
+function main(timer)
+         local_player = readQword(getAddress("RainbowSix.exe") + 0x5E18920)
+         local_player = readQword(local_player + 0x30)
+         local_player = local_player - 0x2AC930CD66630F20
+         local_player = local_player ~ 0xD7F3CA1161C2BFFF
+         local_player = rotl64(local_player, 0x13)
+         local_player = readQword(local_player + 0x0)
+         local_player = readQword(local_player + 0x28)
+         local_player = rotl64(local_player, 0x38) + 0x5DBC6F3B71E8B1C0
+
+         local_player_info = readQword(local_player + 0x40)
+         local_player_info = rotl64(local_player_info, 0x4)
+         local_player_info = local_player_info ~ 0x64
+         local_player_info = local_player_info + 0xA82E9E31642CBD5B
+
+         local_player_weapon = readQword(local_player_info + 0x1C60)
+         local_player_weapon = readQword(local_player_weapon + 0xD0)
+         local_player_weapon = readQword(local_player_weapon + 0x0)
+         local_player_weapon = readQword(local_player_weapon + 0x298)
+         local_player_weapon = local_player_weapon - 0x34DB1C1E215CC293
+         local_player_weapon = rotl64(local_player_weapon, 0x2b)
+         local_player_weapon = local_player_weapon - 0x5CD44235F42B16C8
+end
+inv_timer = createTimer(nil)
+timer_setInterval(inv_timer, 1000)
+timer_onTimer(inv_timer, main)
+timer_setEnabled(inv_timer, true)
+[DISABLE]
+
+inv_timer.destroy()
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"Weapon."</Description>
+          <LastState Value="939004880" RealAddress="165A7101160"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FFFF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>local_player_weapon</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5</ID>
+              <Description>"Spread."</Description>
+              <DropDownList DisplayValueAsItem="1">1A8AA308:No Spread
+227AA308:Spread Enabled
+</DropDownList>
+              <LastState Value="227AA308" RealAddress="165A71012E8"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FFFF00</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>local_player_weapon+0x188</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"local_player"</Description>
+          <LastState Value="939823312" RealAddress="1651A45A490"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FFFF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>local_player</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"local_player_info"</Description>
+          <LastState Value="939822000" RealAddress="165A2C99DC0"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>FFFF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>local_player_info</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>47</ID>
+      <Description>"Rappel scene."</Description>
+      <LastState Value="000001657328AE30" RealAddress="16574F77788"/>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>7B3BDB</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+059B6930</Address>
+      <Offsets>
+        <Offset>B8</Offset>
+        <Offset>70</Offset>
+        <Offset>208</Offset>
+        <Offset>1A8</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"Rappel Y."</Description>
+          <LastState Value="0" RealAddress="1657328B028"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>7B3BDB</Color>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+059B6930</Address>
+          <Offsets>
+            <Offset>1f8</Offset>
+            <Offset>B8</Offset>
+            <Offset>70</Offset>
+            <Offset>208</Offset>
+            <Offset>1A8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"Rappel Y velocity (lock)."</Description>
+          <LastState Value="0" RealAddress="1657328B048"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>7B3BDB</Color>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+059B6930</Address>
+          <Offsets>
+            <Offset>218</Offset>
+            <Offset>B8</Offset>
+            <Offset>70</Offset>
+            <Offset>208</Offset>
+            <Offset>1A8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>55</ID>
+          <Description>"Fuck up line animation."</Description>
+          <LastState Value="0" RealAddress="1657328B333"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>7B3BDB</Color>
+          <VariableType>Byte</VariableType>
+          <Address>"RainbowSix.exe"+059B6930</Address>
+          <Offsets>
+            <Offset>503</Offset>
+            <Offset>B8</Offset>
+            <Offset>70</Offset>
+            <Offset>208</Offset>
+            <Offset>1A8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>73</ID>
+          <Description>"Rappel data."</Description>
+          <LastState Value="0000016591679850" RealAddress="1654D0F1120"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>5A4DC8</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>"RainbowSix.exe"+077BF800</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>0</Offset>
+            <Offset>E8</Offset>
+            <Offset>278</Offset>
+            <Offset>168</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>74</ID>
+              <Description>"Rappel world info."</Description>
+              <LastState Value="0000000000000000" RealAddress="16591679868"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>5A4DC8</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+077BF800</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>E8</Offset>
+                <Offset>278</Offset>
+                <Offset>168</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>75</ID>
+                  <Description>"Rappel X."</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>5A4DC8</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"RainbowSix.exe"+077BF800</Address>
+                  <Offsets>
+                    <Offset>50</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>E8</Offset>
+                    <Offset>278</Offset>
+                    <Offset>168</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>76</ID>
+                  <Description>"Rappel Y."</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>5A4DC8</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"RainbowSix.exe"+077BF800</Address>
+                  <Offsets>
+                    <Offset>58</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>E8</Offset>
+                    <Offset>278</Offset>
+                    <Offset>168</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>77</ID>
+                  <Description>"Rappel Z."</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>5A4DC8</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"RainbowSix.exe"+077BF800</Address>
+                  <Offsets>
+                    <Offset>54</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>E8</Offset>
+                    <Offset>278</Offset>
+                    <Offset>168</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>71</ID>
+              <Description>"Rappel world leaf."</Description>
+              <LastState Value="0000000000000100" RealAddress="16591679D00"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>5A4DC8</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+077BF800</Address>
+              <Offsets>
+                <Offset>4B0</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>E8</Offset>
+                <Offset>278</Offset>
+                <Offset>168</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>72</ID>
+                  <Description>"Rappel Y."</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>5A4DC8</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"RainbowSix.exe"+077BF800</Address>
+                  <Offsets>
+                    <Offset>28</Offset>
+                    <Offset>4B0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>E8</Offset>
+                    <Offset>278</Offset>
+                    <Offset>168</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>78</ID>
+      <Description>"Tickrate."</Description>
+      <LastState Value="0.03378399834" RealAddress="7FF738BFB4F8"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Float</VariableType>
+      <Address>RainbowSix.exe+5efb4f8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79</ID>
+      <Description>"Pause timer thing."</Description>
+      <LastState Value="0011FDA3" RealAddress="164E1143540"/>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RainbowSix.exe+6E28830</Address>
+      <Offsets>
+        <Offset>51B0</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

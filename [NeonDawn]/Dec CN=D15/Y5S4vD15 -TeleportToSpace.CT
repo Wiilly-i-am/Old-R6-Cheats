@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"activate and reeinforce to see how it looks like outside of the space"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+RainbowSix.exe+2089C46:
+                       ADD  rsp, 0
+
+[DISABLE]
+RainbowSix.exe+2089C46:
+                       ADD  rsp, 30
+
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="20000000">
+      <Description>LUL you fool</Description>
+      <AddressString>RainbowSix.exe+3769291</AddressString>
+      <Before>
+        <Byte>18</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>78</Byte>
+        <Byte>70</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>B0</Byte>
+        <Byte>84</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>03</Byte>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>what am i doing here</Description>
+      <AddressString>RainbowSix.exe+163512A</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>A6</Byte>
+        <Byte>86</Byte>
+        <Byte>FF</Byte>
+        <Byte>FF</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>83</Byte>
+        <Byte>86</Byte>
+        <Byte>C8</Byte>
+        <Byte>2B</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>01</Byte>
+      </Actual>
+      <After>
+        <Byte>41</Byte>
+        <Byte>8B</Byte>
+        <Byte>86</Byte>
+        <Byte>F8</Byte>
+        <Byte>02</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>gotcha</Description>
+      <AddressString>RainbowSix.exe+162D826</AddressString>
+      <Before>
+        <Byte>C1</Byte>
+        <Byte>CE</Byte>
+        <Byte>D2</Byte>
+        <Byte>A7</Byte>
+        <Byte>D1</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>48</Byte>
+        <Byte>40</Byte>
+      </Actual>
+      <After>
+        <Byte>49</Byte>
+        <Byte>8B</Byte>
+        <Byte>04</Byte>
+        <Byte>24</Byte>
+        <Byte>48</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>bruh</Description>
+      <AddressString>RainbowSix.exe+1642B15</AddressString>
+      <Before>
+        <Byte>89</Byte>
+        <Byte>8B</Byte>
+        <Byte>04</Byte>
+        <Byte>EB</Byte>
+        <Byte>24</Byte>
+      </Before>
+      <Actual>
+        <Byte>C6</Byte>
+        <Byte>40</Byte>
+        <Byte>44</Byte>
+        <Byte>0F</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>F1</Byte>
+        <Byte>31</Byte>
+        <Byte>D2</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>gotcha</Description>
+      <AddressString>RainbowSix.exe+2100696</AddressString>
+      <Before>
+        <Byte>8F</Byte>
+        <Byte>9E</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>34</Byte>
+        <Byte>01</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>97</Byte>
+        <Byte>D8</Byte>
+        <Byte>03</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>
