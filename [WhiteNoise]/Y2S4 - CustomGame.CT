@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Decryptions."</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+function _rotl64(value, count)
+	return value &lt;&lt; count | value &gt;&gt; (64 - count)
+end
+[ENABLE]
+playlist_offset = 0xC8
+
+game_manager = readQword(getAddress("RainbowSix.exe") + 0x6E85930)
+game_manager = _rotl64(game_manager, 0x1f)
+game_manager = game_manager - 0x4f
+game_manager = game_manager ~ 0x1A00B0A5BDEF13BC
+
+ 
+ 
+[DISABLE]
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2030</ID>
+      <Description>"Customs."</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>2B59E3</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2028</ID>
+          <Description>"Map one."</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="000002080D9D2900" RealAddress="2081A22F310"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>game_manager+playlist_offset</Address>
+          <Offsets>
+            <Offset>10</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2073</ID>
+              <Description>"Night mode."</Description>
+              <LastState Value="00000207A1A23400" RealAddress="207B35BAC90"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32172</ID>
+              <Description>"Map one, forge id."</Description>
+              <DropDownList DisplayValueAsItem="1">00000000331CFEA6:Old House
+00000037625C3900:New House
+00000000576B0E9B:Oregon
+00000035F2901CF4:New Oregon
+000000002A3A99CB:Old Hereford
+0000000031E6DF85:Club House
+000000009B858528:Plane
+000000006961015C:Yacht
+000000009B858E7A:Consulate
+000000009B858706:Bank
+00000000570932C9:Kanal
+000000009B859057:Chalet
+0000003C7E4A5A5D:New Chalet
+00000000A0C50B9A:Bartlett
+00000000522587EA:Kafe
+00000000CE4BB240:Border
+000000077B43597E:Favela
+00000008AF15096F:Skyscraper
+0000004053835E1E:New Skyscraper
+00000009CCC3D997:PVP16_Ibiza
+0000002E8679C826:New Theme Park
+0000000C7C6E5654:Tower
+00000014839B2B18:Villa
+0000001DCA7A2258:New Hereford
+0000001D61EAFB8F:Fortress
+0000002296804EC5:Outback
+0000003EE107746E:Stadium 2
+</DropDownList>
+              <LastState Value="0000003EE107746E" RealAddress="2080D9D2910"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>10</Offset>
+                <Offset>10</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2029</ID>
+          <Description>"Map one gamemode."</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="00000207A1A857A0" RealAddress="2081A22F308"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>game_manager+playlist_offset</Address>
+          <Offsets>
+            <Offset>8</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32236</ID>
+              <Description>"Game mode resource id."</Description>
+              <LastState Value="000000483AB3E121" RealAddress="207A1A857B0"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>10</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2065</ID>
+              <Description>"Gamemode name."</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>String</VariableType>
+              <Length>32</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2120</ID>
+                  <Description>"Gamemode name."</Description>
+                  <LastState RealAddress="7FF64C7B7C80"/>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>2B59E3</Color>
+                  <VariableType>String</VariableType>
+                  <Length>32</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>game_manager+playlist_offset</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2064</ID>
+              <Description>"Gamemode ref."</Description>
+              <LastState RealAddress="2078E5A1658"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>String</VariableType>
+              <Length>32</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>0</Offset>
+                <Offset>58</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2121</ID>
+                  <Description>"Gamemode ref."</Description>
+                  <LastState RealAddress="7FF64C737360"/>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>2B59E3</Color>
+                  <VariableType>String</VariableType>
+                  <Length>32</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>game_manager+playlist_offset</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>58</Offset>
+                    <Offset>0</Offset>
+                    <Offset>8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2080</ID>
+              <Description>"Gamemode map id."</Description>
+              <LastState Value="00000000400076B0" RealAddress="2080DC7BEB8"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>8</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2081</ID>
+              <Description>"Gamemode other id."</Description>
+              <LastState Value="000000483AB3E121" RealAddress="2080DC7BEC0"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>10</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2083</ID>
+              <Description>"Gamemode unique operator listing."</Description>
+              <LastState Value="00000207A1A36080" RealAddress="2080DC7BEF0"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>40</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2115</ID>
+                  <Description>"Thing."</Description>
+                  <LastState Value="0000040040004EF7" RealAddress="207FDD9DD98"/>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>2B59E3</Color>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>game_manager+playlist_offset</Address>
+                  <Offsets>
+                    <Offset>8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                    <Offset>0</Offset>
+                    <Offset>8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2117</ID>
+                  <Description>"0x10."</Description>
+                  <LastState Value="0000003A18DB0070" RealAddress="207FDD9DDA0"/>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>2B59E3</Color>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>game_manager+playlist_offset</Address>
+                  <Offsets>
+                    <Offset>10</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                    <Offset>0</Offset>
+                    <Offset>8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32186</ID>
+              <Description>"Operator choices, objectives?"</Description>
+              <LastState Value="00000207A1A860C0" RealAddress="2080DC7BF10"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>game_manager+playlist_offset</Address>
+              <Offsets>
+                <Offset>60</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32188</ID>
+          <Description>"Terrorist setting."</Description>
+          <LastState Value="0000000000000000" RealAddress="2081A22F330"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>game_manager+playlist_offset</Address>
+          <Offsets>
+            <Offset>30</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32233</ID>
+          <Description>"Other t-hunt thing, calls the bot?"</Description>
+          <LastState Value="0000000000000000" RealAddress="2081A22F320"/>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>game_manager+playlist_offset</Address>
+          <Offsets>
+            <Offset>20</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2104</ID>
+      <Description>"Others."</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>C080FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32230</ID>
+          <Description>"No UI."</Description>
+          <LastState/>
+          <Color>C080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>aobScanModule(noui, RainbowSix.exe, F0 48 83 81 58 02 00 00 ? 4C 8B 6C 24)
+registerSymbol(noui)
+[ENABLE]
+noui:
+       LOCK ADD QWORD PTR [RCX+00000258],00
+[DISABLE]
+noui:
+       LOCK ADD QWORD PTR [RCX+00000258],01
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32231</ID>
+              <Description>"No UI instruction."</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>C080FF</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>noui</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2106</ID>
+          <Description>"Third person."</Description>
+          <LastState/>
+          <Color>C080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>aobScanModule(thirdper, RainbowSix.exe, 1c ? 40 38 c5)
+registerSymbol(thirdper)
+[ENABLE]
+thirdper:
+       SBB AL, 01
+[DISABLE]
+thirdper:
+       SBB AL, 00
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2107</ID>
+              <Description>"Third person instruction."</Description>
+              <Color>C080FF</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>thirdper</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2108</ID>
+          <Description>"No bolt."</Description>
+          <LastState/>
+          <Color>C080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>aobScanModule(nobolt, RainbowSix.exe, C6 80 ? ? ? ? ? EB ? 48 8B 87)
+registerSymbol(nobolt)
+[ENABLE]
+nobolt:
+       MOV BYTE PTR [RAX+00000092],00
+[DISABLE]
+nobolt:
+       MOV BYTE PTR [RAX+00000092],01
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2109</ID>
+              <Description>"No bolt instruction."</Description>
+              <Color>C080FF</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>nobolt</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32237</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00007FF64C73C370" RealAddress="207BBD19BC0"/>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>8 Bytes</VariableType>
+      <Address>game_manager</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32238</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0000003EE107746E" RealAddress="20790290140"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>8 Bytes</VariableType>
+      <Address>20790290140</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32239</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0000003EE107746E" RealAddress="20792A2BE20"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>8 Bytes</VariableType>
+      <Address>20792A2BE20</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32240</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0000003EE107746E" RealAddress="2079397C5E0"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>8 Bytes</VariableType>
+      <Address>2079397C5E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32241</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0000003EE107746E" RealAddress="2079397C650"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>8 Bytes</VariableType>
+      <Address>2079397C650</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32242</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0000003EE107746E" RealAddress="2080D9D2910"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>8 Bytes</VariableType>
+      <Address>2080D9D2910</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
