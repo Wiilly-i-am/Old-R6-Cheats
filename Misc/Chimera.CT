@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>221</ID>
+      <Description>"Chimera"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"FOV (Fullscreen at Native Res)"</Description>
+          <LastState Value="1.271919232E-17" RealAddress="265AE277640"/>
+          <VariableType>Float</VariableType>
+          <Address>"RainbowSix.exe"+049A7830</Address>
+          <Offsets>
+            <Offset>A50</Offset>
+            <Offset>60</Offset>
+            <Offset>6B8</Offset>
+            <Offset>1E8</Offset>
+            <Offset>48</Offset>
+            <Offset>20</Offset>
+            <Offset>90</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"Round Time(Hours)"</Description>
+          <LastState Value="0" RealAddress="265886DD74F"/>
+          <VariableType>Byte</VariableType>
+          <Address>"RainbowSix.exe"+04A23D08</Address>
+          <Offsets>
+            <Offset>46F</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"Round Time(Minutes)"</Description>
+          <LastState Value="0" RealAddress="265886DD74E"/>
+          <VariableType>Byte</VariableType>
+          <Address>"RainbowSix.exe"+04A23D08</Address>
+          <Offsets>
+            <Offset>46E</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"Round Time(Pause)"</Description>
+          <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Off
+1:On
+</DropDownList>
+          <LastState Value="0" RealAddress="265886DD751"/>
+          <VariableType>Byte</VariableType>
+          <Address>"RainbowSix.exe"+04A23D08</Address>
+          <Offsets>
+            <Offset>471</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"Hostage Health(150 Max,50 &amp; Under for injured state)"</Description>
+          <VariableType>Byte</VariableType>
+          <Address>"RainbowSix.exe"+04A4F698</Address>
+          <Offsets>
+            <Offset>118</Offset>
+            <Offset>A0</Offset>
+            <Offset>50</Offset>
+            <Offset>F0</Offset>
+            <Offset>18</Offset>
+            <Offset>60</Offset>
+            <Offset>58</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"Username (15 Max Characters or Crash)"</Description>
+          <LastState RealAddress="26623ADD670"/>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+04A1DF50</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>178</Offset>
+            <Offset>C8</Offset>
+            <Offset>118</Offset>
+            <Offset>0</Offset>
+            <Offset>28</Offset>
+            <Offset>0</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31</ID>
+          <Description>"Character"</Description>
+          <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">269:Outbreak Recruit
+0:SAS Recruit
+1:FBI Recruit
+2:GIGN Recruit
+3:SPETSNAZ Recruit
+4:GSG9 Recruit
+5:5 JTF2 Recruit
+6:6 Navy Recruit
+7:7 BOPE Recruit
+8:8 Japan Recruit
+256:Smoke
+512:Mute
+768:Sledge
+1024:Thatcher
+257:Castle
+513:Ash
+769:Pulse
+1025:Thermite
+258:Doc
+514:Rook
+770:Twitch
+1026:Montagne
+259:Glaz
+515:Fuze
+771:Kapkan
+1027:Tachanka
+260:Blitz
+516:IQ
+772:Yager
+1028:Bandit
+261:Buck
+517:Frost
+262:BlackBeard
+518:Valkyrie
+263:Capitao
+519:Caviera
+264:Hibana
+520:Echo
+265:Jackal
+521:Mira
+266:Ying
+522:Lesion
+267:Ela
+523:Zofia
+268:Dokkaebi
+524:Vigil
+525:Lion
+781:Finka
+</DropDownList>
+          <LastState Value="65535" RealAddress="265A7FE5BF0"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>"RainbowSix.exe"+04A22B00</Address>
+          <Offsets>
+            <Offset>A0</Offset>
+            <Offset>8</Offset>
+            <Offset>158</Offset>
+            <Offset>C8</Offset>
+            <Offset>18</Offset>
+            <Offset>0</Offset>
+            <Offset>40</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>22</ID>
+              <Description>"Health"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+04A1DF50</Address>
+              <Offsets>
+                <Offset>118</Offset>
+                <Offset>198</Offset>
+                <Offset>190</Offset>
+                <Offset>D0</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"Team"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">3:Attack
+4:Defense
+</DropDownList>
+              <LastState Value="6" RealAddress="265886DD530"/>
+              <VariableType>Byte</VariableType>
+              <Address>"RainbowSix.exe"+04A8BE58</Address>
+              <Offsets>
+                <Offset>8</Offset>
+                <Offset>50</Offset>
+                <Offset>C8</Offset>
+                <Offset>1F8</Offset>
+                <Offset>0</Offset>
+                <Offset>B8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>176</ID>
+              <Description>"Current Weapon"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32</ID>
+                  <Description>"Ammo"</Description>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>170</Offset>
+                    <Offset>110</Offset>
+                    <Offset>E0</Offset>
+                    <Offset>90</Offset>
+                    <Offset>18</Offset>
+                    <Offset>48</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>170</ID>
+                  <Description>"Recoil"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0.5235987902:On
+0:Off
+</DropDownList>
+                  <VariableType>Float</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>2E8</Offset>
+                    <Offset>110</Offset>
+                    <Offset>E0</Offset>
+                    <Offset>90</Offset>
+                    <Offset>18</Offset>
+                    <Offset>48</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>43</ID>
+              <Description>"Primary"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>36</ID>
+                  <Description>"Sight"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Iron Sight
+1:Red Dot
+2:Holographic
+3:Reflex
+4:Acog
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C76"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>126</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>38</ID>
+                  <Description>"Muzzle"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Supressor
+2:Flash Hider
+3:Compensator
+4:Muzzle Brake
+6:Extended Barrel
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C74"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>124</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>41</ID>
+                  <Description>"Grip"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Vertical
+2:Angled
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C70"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>120</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>44</ID>
+                  <Description>"Laser"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Laser
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C72"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>122</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>46</ID>
+              <Description>"Secondary"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>24725</ID>
+                  <Description>"Sight"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Iron Sight
+1:Red Dot
+2:Holographic
+3:Reflex
+4:Acog
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C86"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>136</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>24726</ID>
+                  <Description>"Muzzle"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Supressor
+2:Flash Hider
+3:Compensator
+4:Muzzle Brake
+6:Extended Barrel
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C84"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>134</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>24727</ID>
+                  <Description>"Laser"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Laser
+</DropDownList>
+                  <LastState Value="7" RealAddress="265A7FE5C82"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>132</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>24728</ID>
+              <Description>"Gadget"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>52</ID>
+                  <Description>"Ability"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:On
+1:Off
+</DropDownList>
+                  <LastState Value="0" RealAddress="265A7FE5C6C"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>11C</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>53</ID>
+                  <Description>"Gadget"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Gadget 1
+1:Gadget 2
+</DropDownList>
+                  <LastState Value="0" RealAddress="265A7FE5C6E"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>"RainbowSix.exe"+04A22B00</Address>
+                  <Offsets>
+                    <Offset>11E</Offset>
+                    <Offset>8</Offset>
+                    <Offset>158</Offset>
+                    <Offset>C8</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>40</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>202</ID>
+              <Description>"Blue Team"</Description>
+              <DropDownList DisplayValueAsItem="1">3:Attack
+4:Defense
+</DropDownList>
+              <LastState Value="6" RealAddress="265886DD530"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+04C85140</Address>
+              <Offsets>
+                <Offset>5E0</Offset>
+                <Offset>D0</Offset>
+                <Offset>18</Offset>
+                <Offset>10</Offset>
+                <Offset>30</Offset>
+                <Offset>50</Offset>
+                <Offset>48</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>200</ID>
+              <Description>"Orange Team"</Description>
+              <DropDownList DisplayValueAsItem="1">3:Attack
+4:Defense
+</DropDownList>
+              <LastState Value="6" RealAddress="265886DD5D8"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+04A1EE30</Address>
+              <Offsets>
+                <Offset>688</Offset>
+                <Offset>250</Offset>
+                <Offset>20</Offset>
+                <Offset>8</Offset>
+                <Offset>10</Offset>
+                <Offset>58</Offset>
+                <Offset>38</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>220</ID>
+              <Description>"Elite Skin Toggle"</Description>
+              <DropDownList DisplayValueAsItem="1">0:Off
+1:On
+2:Black Viper (No Elite but gold name on other ops)
+</DropDownList>
+              <LastState Value="0" RealAddress="265A7FE5C94"/>
+              <VariableType>Byte</VariableType>
+              <Address>"RainbowSix.exe"+04A23D08</Address>
+              <Offsets>
+                <Offset>CE4</Offset>
+                <Offset>268</Offset>
+                <Offset>8</Offset>
+                <Offset>120</Offset>
+                <Offset>0</Offset>
+                <Offset>188</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Credits:"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>008080</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"Olé - finding the important instruction and using old pointers to map new ones + Making this CT public"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24730</ID>
+          <Description>"Kill Switch - Chimera section and also mvp animations on live"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24724</ID>
+          <Description>"Roly - Old Inventory pointers and making this possible"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"maxim7w - Pointers and value collection"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>64</ID>
+          <Description>"BOT-Sam.J - Pointers and help updating"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>204</ID>
+          <Description>"Benjaminstrike - Pointers and help with sigs"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>205</ID>
+          <Description>"Zer0Bytes - Sigs and ui"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008080</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>

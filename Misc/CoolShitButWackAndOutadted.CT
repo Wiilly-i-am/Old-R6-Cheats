@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>27060</ID>
+      <Description>"Disable Gravity"</Description>
+      <LastState/>
+      <Color>0000FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(gravitybegone,RainbowSix.exe+21F28CD)
+{Sig for the gravitybegone : 80 b9 ? ? ? ? ? 74 ? 48 b9 }
+[ENABLE]
+
+gravitybegone:
+  cmp byte ptr [rcx+000000C8],01
+
+[DISABLE]
+
+gravitybegone:
+  cmp byte ptr [rcx+000000C8],00
+
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26207</ID>
+      <Description>"UnlockAll (Store items)"</Description>
+      <LastState/>
+      <Color>FF00FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(unlockaddr2,RainbowSix.exe+222EB46)
+{Sig for the unlockaddr2 : 24 ? 88 44 24 ? 8a 5c 24 ? 48 8d 4c 24 ? e8 ? ? ? ? 80 e3 ? 0f b6 c3 48 81 c4 }
+[ENABLE]
+
+unlockaddr2:
+  mov byte ptr [rsp+2B],00
+  nop
+
+[DISABLE]
+
+unlockaddr2:
+  and al,01
+  mov [rsp+2B],al
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26297</ID>
+      <Description>"Unlock All (Offline Mode)"</Description>
+      <LastState/>
+      <Color>FF00FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(showallskins,RainbowSix.exe+230F253)
+define(showalloffline,RainbowSix.exe+1603F69)
+{Sig for the showallskins : a8 ? 75 ? eb ? c7 44 24 ? ? ? ? ? eb ? 48 8b 74 24
+
+Sig for the showalloffline :
+b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 75
+}
+
+
+[ENABLE]
+
+showallskins:
+  test al,00
+
+showalloffline:
+  mov al,00
+
+[DISABLE]
+
+showallskins:
+  test al,01
+
+showalloffline:
+  mov al,01
+
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26261</ID>
+      <Description>"Unlock Uniforms / Headgear menu (Offline Mode) v1"</Description>
+      <LastState/>
+      <Color>FF00FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(unlock_offline,RainbowSix.exe+22329E8)
+{Sig for the unlock_offline : 80 e3 ? 0f b6 c3 48 83 c4 ? 5b 5e c3 cc cc cc cc cc cc cc }
+[ENABLE]
+
+unlock_offline:
+  and bl,00
+
+[DISABLE]
+
+unlock_offline:
+  and bl,01
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26299</ID>
+      <Description>"Unlock Uniforms / Headgear menu (Offline Mode) v2"</Description>
+      <LastState/>
+      <Color>FF00FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(unlock_offline_v2,RainbowSix.exe+1FE2F89)
+{Sig for the unlock_offline :
+b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 0f 85 ? ? ? ? 48 8b 43 ? 48 85 c0 74 ? 4c 8d 40 ? 48 89 f9 48 89 f2 ff 50 ? 89 c1 b0 ? 84 c9 75
+ }
+[ENABLE]
+
+unlock_offline_v2:
+  mov al,00
+
+[DISABLE]
+
+unlock_offline_v2:
+  mov al,01
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26111</ID>
+      <Description>"Show All Skins"</Description>
+      <LastState/>
+      <Color>FF0000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(showallskins,RainbowSix.exe+230F253)
+{Sig for the showallskins : a8 ? 75 ? eb ? c7 44 24 ? ? ? ? ? eb ? 48 8b 74 24 }
+
+[ENABLE]
+
+showallskins:
+  test al,00
+
+[DISABLE]
+
+showallskins:
+  test al,01
+
+
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26266</ID>
+      <Description>"Don't Render PlayerModel"</Description>
+      <LastState/>
+      <Color>FF0000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>define(player_model_be_gone,RainbowSix.exe+A7B1C6)
+{Sig for the player_model_be_gone : 41 80 bd ? ? ? ? ? 75 ? 48 8b 04 c6 }
+[ENABLE]
+
+player_model_be_gone:
+  cmp byte ptr [r13+00000862],01
+
+[DISABLE]
+
+player_model_be_gone:
+  cmp byte ptr [r13+00000862],00
+
+
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
