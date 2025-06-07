@@ -1,0 +1,3251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>32992</ID>
+      <Description>"Hacks"</Description>
+      <Options moActivateChildrenAsWell="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32994</ID>
+          <Description>"UnlockAll - 34 ? 41 88 46"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+3846044)
+define(bytes,34 01 41 88 46 51)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+3846044)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  xor al,01
+  mov [r14+51],0
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // xor al,01
+  // mov [r14+51],al
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+33A6B24
+
+"RainbowSix.exe"+33A6B02: 48 85 C9                    -  test rcx,rcx
+"RainbowSix.exe"+33A6B05: 74 28                       -  je RainbowSix.exe+33A6B2F
+"RainbowSix.exe"+33A6B07: 48 8B 01                    -  mov rax,[rcx]
+"RainbowSix.exe"+33A6B0A: BA 11 01 00 00              -  mov edx,00000111
+"RainbowSix.exe"+33A6B0F: FF 90 B8 00 00 00           -  call qword ptr [rax+000000B8]
+"RainbowSix.exe"+33A6B15: 84 C0                       -  test al,al
+"RainbowSix.exe"+33A6B17: 74 16                       -  je RainbowSix.exe+33A6B2F
+"RainbowSix.exe"+33A6B19: 48 89 F9                    -  mov rcx,rdi
+"RainbowSix.exe"+33A6B1C: 48 89 EA                    -  mov rdx,rbp
+"RainbowSix.exe"+33A6B1F: E8 7C 00 92 FE              -  call RainbowSix.exe+1CC6BA0
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+33A6B24: 34 01                       -  xor al,01
+"RainbowSix.exe"+33A6B26: 41 88 46 51                 -  mov [r14+51],al
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+33A6B2A: E9 40 FC FF FF              -  jmp RainbowSix.exe+33A676F
+"RainbowSix.exe"+33A6B2F: 48 89 F9                    -  mov rcx,rdi
+"RainbowSix.exe"+33A6B32: 48 89 EA                    -  mov rdx,rbp
+"RainbowSix.exe"+33A6B35: E8 A6 E6 91 FE              -  call RainbowSix.exe+1CC51E0
+"RainbowSix.exe"+33A6B3A: F6 40 08 02                 -  test byte ptr [rax+08],02
+"RainbowSix.exe"+33A6B3E: 74 10                       -  je RainbowSix.exe+33A6B50
+"RainbowSix.exe"+33A6B40: 83 78 0C 00                 -  cmp dword ptr [rax+0C],00
+"RainbowSix.exe"+33A6B44: 74 0A                       -  je RainbowSix.exe+33A6B50
+"RainbowSix.exe"+33A6B46: 41 C6 46 51 00              -  mov byte ptr [r14+51],00
+"RainbowSix.exe"+33A6B4B: E9 1F FC FF FF              -  jmp RainbowSix.exe+33A676F
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32563</ID>
+          <Description>"Outlines"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version:
+  Date   : 2020-10-19
+  Author : asus
+
+  This script does blah blah blah
+}
+
+{ Game   : RainbowSix.exe
+  Version:
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+375F1FF) //74 ? 48 8d 54 24 ? 4c 89 e9 e8 ? ? ? ? eb
+define(bytes,74 0F 48 8D 54 24 60)
+
+define(address2,RainbowSix.exe+375ED08) //74 ? 48 89 f9 48 89 f2 49 89 d8
+define(bytes2,74 0E 48 89 F9)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+375F1FF)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  jne RainbowSix.exe+375F210
+  lea rdx,[rsp+60]
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+assert(address2,bytes2)
+alloc(newmem2,$1000,RainbowSix.exe+375ED08)
+
+label(code2)
+label(return2)
+
+newmem2:
+
+code2:
+  jne RainbowSix.exe+375ED18
+  mov rcx,rdi
+  jmp return2
+
+address2:
+  jmp newmem2
+return2:
+
+[DISABLE]
+
+address:
+  db bytes
+  // je RainbowSix.exe+32B8890
+  // lea rdx,[rsp+60]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B887F
+
+"RainbowSix.exe"+32B8851: 4C 8D 35 70 35 C3 02           -  lea r14,[RainbowSix.exe+5EEBDC8]
+"RainbowSix.exe"+32B8858: 4C 89 F1                       -  mov rcx,r14
+"RainbowSix.exe"+32B885B: E8 20 F4 D4 FC                 -  call RainbowSix.exe+7C80
+"RainbowSix.exe"+32B8860: 48 8D 0D B9 34 C3 02           -  lea rcx,[RainbowSix.exe+5EEBD20]
+"RainbowSix.exe"+32B8867: 48 89 DA                       -  mov rdx,rbx
+"RainbowSix.exe"+32B886A: E8 61 56 B4 FD                 -  call RainbowSix.exe+DFDED0
+"RainbowSix.exe"+32B886F: 4C 89 F1                       -  mov rcx,r14
+"RainbowSix.exe"+32B8872: E8 59 FC D4 FC                 -  call RainbowSix.exe+84D0
+"RainbowSix.exe"+32B8877: 40 88 6C 24 60                 -  mov [rsp+60],bpl
+"RainbowSix.exe"+32B887C: 45 84 E4                       -  test r12l,r12l
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B887F: 74 0F                          -  je RainbowSix.exe+32B8890
+"RainbowSix.exe"+32B8881: 48 8D 54 24 60                 -  lea rdx,[rsp+60]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B8886: 4C 89 E9                       -  mov rcx,r13
+"RainbowSix.exe"+32B8889: E8 C2 0B 00 00                 -  call RainbowSix.exe+32B9450
+"RainbowSix.exe"+32B888E: EB 1D                          -  jmp RainbowSix.exe+32B88AD
+"RainbowSix.exe"+32B8890: 66 0F EF C0                    -  pxor xmm0,xmm0
+"RainbowSix.exe"+32B8894: 66 0F 7F 44 24 50              -  movdqa [rsp+50],xmm0
+"RainbowSix.exe"+32B889A: 4C 8D 4C 24 50                 -  lea r9,[rsp+50]
+"RainbowSix.exe"+32B889F: 4C 89 E9                       -  mov rcx,r13
+"RainbowSix.exe"+32B88A2: 48 89 FA                       -  mov rdx,rdi
+"RainbowSix.exe"+32B88A5: 41 89 E8                       -  mov r8d,ebp
+"RainbowSix.exe"+32B88A8: E8 D3 07 00 00                 -  call RainbowSix.exe+32B9080
+}
+address2:
+  db bytes2
+  // je RainbowSix.exe+3748F2E
+  // mov rcx,rdi
+
+dealloc(newmem2)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+3748F1E
+
+"RainbowSix.exe"+3748EFF: 83 F0 01              -  xor eax,01
+"RainbowSix.exe"+3748F02: 31 C9                 -  xor ecx,ecx
+"RainbowSix.exe"+3748F04: 09 E8                 -  or eax,ebp
+"RainbowSix.exe"+3748F06: 0F 94 C1              -  sete cl
+"RainbowSix.exe"+3748F09: 83 C1 01              -  add ecx,01
+"RainbowSix.exe"+3748F0C: 80 7F 61 00           -  cmp byte ptr [rdi+61],00
+"RainbowSix.exe"+3748F10: 74 1C                 -  je RainbowSix.exe+3748F2E
+"RainbowSix.exe"+3748F12: 83 F9 01              -  cmp ecx,01
+"RainbowSix.exe"+3748F15: 75 17                 -  jne RainbowSix.exe+3748F2E
+"RainbowSix.exe"+3748F17: 80 BF 08 03 00 00 00  -  cmp byte ptr [rdi+00000308],00
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+3748F1E: 74 0E                 -  je RainbowSix.exe+3748F2E
+"RainbowSix.exe"+3748F20: 48 89 F9              -  mov rcx,rdi
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+3748F23: 48 89 F2              -  mov rdx,rsi
+"RainbowSix.exe"+3748F26: 49 89 D8              -  mov r8,rbx
+"RainbowSix.exe"+3748F29: 41 B1 01              -  mov r9l,01
+"RainbowSix.exe"+3748F2C: EB 11                 -  jmp RainbowSix.exe+3748F3F
+"RainbowSix.exe"+3748F2E: 83 F9 02              -  cmp ecx,02
+"RainbowSix.exe"+3748F31: 75 19                 -  jne RainbowSix.exe+3748F4C
+"RainbowSix.exe"+3748F33: 48 89 F9              -  mov rcx,rdi
+"RainbowSix.exe"+3748F36: 48 89 F2              -  mov rdx,rsi
+"RainbowSix.exe"+3748F39: 45 31 C0              -  xor r8d,r8d
+"RainbowSix.exe"+3748F3C: 45 31 C9              -  xor r9d,r9d
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32553</ID>
+              <Description>"Color"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>//f3 0f 10 4f ? f3 0f 59 c8 f3 0f 2c c9
+
+define(address,RainbowSix.exe+375FED0)
+define(bytes,F3 0F 59 47 4C)
+
+define(address2,RainbowSix.exe+375FEC3)
+define(bytes2,F3 0F 10 4F 50)
+
+define(address5,RainbowSix.exe+375FEB6)
+define(bytes5,F3 0F 10 4F 54)
+
+define(address9,RainbowSix.exe+375FEA9)
+define(bytes9,F3 0F 10 4F 58)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+375FED0)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rdi+4C],(float)1
+  mulss xmm0,[rdi+4C]
+  jmp return
+
+address:
+  jmp newmem
+return:
+
+assert(address2,bytes2)
+alloc(newmem2,$1000,RainbowSix.exe+375FEC3)
+
+label(code2)
+label(return2)
+
+newmem2:
+
+code2:
+  mov [rdi+50],(float)0
+  movss xmm1,[rdi+50]
+  jmp return2
+
+address2:
+  jmp newmem2
+return2:
+
+assert(address5,bytes5)
+alloc(newmem5,$1000,RainbowSix.exe+375FEB6)
+
+label(code5)
+label(return5)
+
+newmem5:
+
+code5:
+  mov [rdi+54],(float)1
+  movss xmm1,[rdi+54]
+  jmp return5
+
+address5:
+  jmp newmem5
+return5:
+
+assert(address9,bytes9)
+alloc(newmem9,$1000,RainbowSix.exe+375FEA9)
+
+label(code9)
+label(return9)
+
+newmem9:
+
+code9:
+  mov [rdi+58],(float)1
+  movss xmm1,[rdi+58]
+  jmp return9
+
+address9:
+  jmp newmem9
+return9:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // mulss xmm0,[rdi+48]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9550
+
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+"RainbowSix.exe"+32B9559: 88 4C 24 2B                 -  mov [rsp+2B],cl
+"RainbowSix.exe"+32B955D: 88 5C 24 2A                 -  mov [rsp+2A],bl
+"RainbowSix.exe"+32B9561: 40 88 6C 24 29              -  mov [rsp+29],bpl
+"RainbowSix.exe"+32B9566: 88 54 24 28                 -  mov [rsp+28],dl
+"RainbowSix.exe"+32B956A: 80 7E 24 00                 -  cmp byte ptr [rsi+24],00
+"RainbowSix.exe"+32B956E: 0F 84 06 01 00 00           -  je RainbowSix.exe+32B967A
+"RainbowSix.exe"+32B9574: 48 8B 5E 18                 -  mov rbx,[rsi+18]
+"RainbowSix.exe"+32B9578: 48 89 DA                    -  mov rdx,rbx
+"RainbowSix.exe"+32B957B: 48 85 DB                    -  test rbx,rbx
+}
+address2:
+  db bytes2
+  // movss xmm1,[rdi+4C]
+
+dealloc(newmem2)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9543
+
+"RainbowSix.exe"+32B9511: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9517: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+32B951B: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+"RainbowSix.exe"+32B9559: 88 4C 24 2B                 -  mov [rsp+2B],cl
+"RainbowSix.exe"+32B955D: 88 5C 24 2A                 -  mov [rsp+2A],bl
+"RainbowSix.exe"+32B9561: 40 88 6C 24 29              -  mov [rsp+29],bpl
+"RainbowSix.exe"+32B9566: 88 54 24 28                 -  mov [rsp+28],dl
+"RainbowSix.exe"+32B956A: 80 7E 24 00                 -  cmp byte ptr [rsi+24],00
+"RainbowSix.exe"+32B956E: 0F 84 06 01 00 00           -  je RainbowSix.exe+32B967A
+}
+address5:
+  db bytes5
+  // movss xmm1,[rdi+50]
+
+dealloc(newmem5)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9536
+
+"RainbowSix.exe"+32B9504: 48 83 39 00                 -  cmp qword ptr [rcx],00
+"RainbowSix.exe"+32B9508: 0F 84 BC 00 00 00           -  je RainbowSix.exe+32B95CA
+"RainbowSix.exe"+32B950E: 80 3E 00                    -  cmp byte ptr [rsi],00
+"RainbowSix.exe"+32B9511: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9517: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+32B951B: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+"RainbowSix.exe"+32B9559: 88 4C 24 2B                 -  mov [rsp+2B],cl
+"RainbowSix.exe"+32B955D: 88 5C 24 2A                 -  mov [rsp+2A],bl
+"RainbowSix.exe"+32B9561: 40 88 6C 24 29              -  mov [rsp+29],bpl
+}
+address9:
+  db bytes9
+  // movss xmm1,[rdi+54]
+
+dealloc(newmem9)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+32B9529
+
+"RainbowSix.exe"+32B94F8: 74 0A                       -  je RainbowSix.exe+32B9504
+"RainbowSix.exe"+32B94FA: 83 79 08 00                 -  cmp dword ptr [rcx+08],00
+"RainbowSix.exe"+32B94FE: 0F 89 C6 00 00 00           -  jns RainbowSix.exe+32B95CA
+"RainbowSix.exe"+32B9504: 48 83 39 00                 -  cmp qword ptr [rcx],00
+"RainbowSix.exe"+32B9508: 0F 84 BC 00 00 00           -  je RainbowSix.exe+32B95CA
+"RainbowSix.exe"+32B950E: 80 3E 00                    -  cmp byte ptr [rsi],00
+"RainbowSix.exe"+32B9511: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9517: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+32B951B: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+32B960F
+"RainbowSix.exe"+32B9521: F3 0F 10 05 3F CA DF 01     -  movss xmm0,[RainbowSix.exe+50B5F68]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+32B9529: F3 0F 10 4F 54              -  movss xmm1,[rdi+54]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+32B952E: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B9532: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+32B9536: F3 0F 10 4F 50              -  movss xmm1,[rdi+50]
+"RainbowSix.exe"+32B953B: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B953F: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+32B9543: F3 0F 10 4F 4C              -  movss xmm1,[rdi+4C]
+"RainbowSix.exe"+32B9548: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+32B954C: F3 0F 2C E9                 -  cvttss2si ebp,xmm1
+"RainbowSix.exe"+32B9550: F3 0F 59 47 48              -  mulss xmm0,[rdi+48]
+"RainbowSix.exe"+32B9555: F3 0F 2C D8                 -  cvttss2si ebx,xmm0
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32975</ID>
+              <Description>"Always Show"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+375FE91)
+define(bytes,0F 85 F8 00 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+375FE91) //0f 85 ? ? ? ? 80 7f ? ? 0f 85 ? ? ? ? f3 0f 10 05
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  nop
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // jne RainbowSix.exe+374A1AF
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+374A0B1
+
+"RainbowSix.exe"+374A082: 65 48 8B 14 25 58 00 00 00  -  mov rdx,gs:[00000058]
+"RainbowSix.exe"+374A08B: 48 8B 04 C2                 -  mov rax,[rdx+rax*8]
+"RainbowSix.exe"+374A08F: 8B 80 98 06 00 00           -  mov eax,[rax+00000698]
+"RainbowSix.exe"+374A095: 83 F8 02                    -  cmp eax,02
+"RainbowSix.exe"+374A098: 74 0A                       -  je RainbowSix.exe+374A0A4
+"RainbowSix.exe"+374A09A: 83 79 08 00                 -  cmp dword ptr [rcx+08],00
+"RainbowSix.exe"+374A09E: 0F 89 C6 00 00 00           -  jns RainbowSix.exe+374A16A
+"RainbowSix.exe"+374A0A4: 48 83 39 00                 -  cmp qword ptr [rcx],00
+"RainbowSix.exe"+374A0A8: 0F 84 BC 00 00 00           -  je RainbowSix.exe+374A16A
+"RainbowSix.exe"+374A0AE: 80 3E 00                    -  cmp byte ptr [rsi],00
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+374A0B1: 0F 85 F8 00 00 00           -  jne RainbowSix.exe+374A1AF
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+374A0B7: 80 7F 60 00                 -  cmp byte ptr [rdi+60],00
+"RainbowSix.exe"+374A0BB: 0F 85 EE 00 00 00           -  jne RainbowSix.exe+374A1AF
+"RainbowSix.exe"+374A0C1: F3 0F 10 05 53 D1 92 01     -  movss xmm0,[RainbowSix.exe+507721C]
+"RainbowSix.exe"+374A0C9: E9 32 5F 84 FC              -  jmp 7FF688E90000
+"RainbowSix.exe"+374A0CE: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+374A0D2: F3 0F 2C C9                 -  cvttss2si ecx,xmm1
+"RainbowSix.exe"+374A0D6: E9 25 5F 85 FC              -  jmp 7FF688EA0000
+"RainbowSix.exe"+374A0DB: F3 0F 59 C8                 -  mulss xmm1,xmm0
+"RainbowSix.exe"+374A0DF: F3 0F 2C D1                 -  cvttss2si edx,xmm1
+"RainbowSix.exe"+374A0E3: E9 18 5F 86 FC              -  jmp 7FF688EB0000
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>33002</ID>
+              <Description>"Thickness"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-12
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+9942AF)
+define(bytes,48 8B 08 48 89 48 08)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+9942AF)//48 8b 08 48 89 48 ? 48 8b 0d
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rax+4],(float)2
+  mov rcx,[rax]
+  mov [rax+08],rcx
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // mov rcx,[rax]
+  // mov [rax+08],rcx
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+992DEF
+
+"RainbowSix.exe"+992DC1: 4C 89 E9                    -  mov rcx,r13
+"RainbowSix.exe"+992DC4: 89 F2                       -  mov edx,esi
+"RainbowSix.exe"+992DC6: 41 B8 08 00 00 00           -  mov r8d,00000008
+"RainbowSix.exe"+992DCC: 41 B9 08 00 00 00           -  mov r9d,00000008
+"RainbowSix.exe"+992DD2: E8 69 18 CD FF              -  call RainbowSix.exe+664640
+"RainbowSix.exe"+992DD7: 49 8B 47 48                 -  mov rax,[r15+48]
+"RainbowSix.exe"+992DDB: E9 E0 FE FF FF              -  jmp RainbowSix.exe+992CC0
+"RainbowSix.exe"+992DE0: 4C 89 F9                    -  mov rcx,r15
+"RainbowSix.exe"+992DE3: E8 78 AA 6C FF              -  call RainbowSix.exe+5D860
+"RainbowSix.exe"+992DE8: 48 8B 05 01 B3 43 05        -  mov rax,[RainbowSix.exe+5DCE0F0]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+992DEF: 48 8B 08                    -  mov rcx,[rax]
+"RainbowSix.exe"+992DF2: 48 89 48 08                 -  mov [rax+08],rcx
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+992DF6: 48 8B 0D D3 F0 45 05        -  mov rcx,[RainbowSix.exe+5DF1ED0]
+"RainbowSix.exe"+992DFD: E8 FE 42 61 00              -  call RainbowSix.exe+FA7100
+"RainbowSix.exe"+992E02: 48 8B 0D C7 F0 45 05        -  mov rcx,[RainbowSix.exe+5DF1ED0]
+"RainbowSix.exe"+992E09: E8 C2 40 61 00              -  call RainbowSix.exe+FA6ED0
+"RainbowSix.exe"+992E0E: 48 8B 0D BB F0 45 05        -  mov rcx,[RainbowSix.exe+5DF1ED0]
+"RainbowSix.exe"+992E15: E8 66 46 61 00              -  call RainbowSix.exe+FA7480
+"RainbowSix.exe"+992E1A: 48 8B 0D FF 96 17 05        -  mov rcx,[RainbowSix.exe+5B0C520]
+"RainbowSix.exe"+992E21: E8 DA B1 25 00              -  call RainbowSix.exe+BEE000
+"RainbowSix.exe"+992E26: 83 3D A3 51 5C 05 01        -  cmp dword ptr [RainbowSix.exe+5F57FD0],01
+"RainbowSix.exe"+992E2D: 75 0C                       -  jne RainbowSix.exe+992E3B
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32980</ID>
+          <Description>"NightMode"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-08
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+E00F33) //8b 86 ? ? ? ? 89 85 ? ? ? ? 80 4d
+define(bytes,8B 86 D4 02 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+E00F33)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov eax,0
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // mov eax,[rsi+000002D4]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+DFA933
+
+"RainbowSix.exe"+DFA8F2: F3 0F 10 84 24 88 00 00 00  -  movss xmm0,[rsp+00000088]
+"RainbowSix.exe"+DFA8FB: F2 0F 10 8C 24 80 00 00 00  -  movsd xmm1,[rsp+00000080]
+"RainbowSix.exe"+DFA904: 0F 16 C8                    -  movlhps xmm1,xmm0
+"RainbowSix.exe"+DFA907: 0F 29 8D B0 01 00 00        -  movaps [rbp+000001B0],xmm1
+"RainbowSix.exe"+DFA90E: F3 0F 10 86 D4 02 00 00     -  movss xmm0,[rsi+000002D4]
+"RainbowSix.exe"+DFA916: F3 0F 59 05 B2 57 43 04     -  mulss xmm0,[RainbowSix.exe+52300D0]
+"RainbowSix.exe"+DFA91E: 0F C6 C0 00                 -  shufps xmm0,xmm0,00
+"RainbowSix.exe"+DFA922: 0F 10 8E A8 02 00 00        -  movups xmm1,[rsi+000002A8]
+"RainbowSix.exe"+DFA929: 0F 59 C8                    -  mulps xmm1,xmm0
+"RainbowSix.exe"+DFA92C: 0F 29 8D C0 01 00 00        -  movaps [rbp+000001C0],xmm1
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+DFA933: 8B 86 D4 02 00 00           -  mov eax,[rsi+000002D4]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+DFA939: 89 85 CC 01 00 00           -  mov [rbp+000001CC],eax
+"RainbowSix.exe"+DFA93F: 80 4D 0B 40                 -  or byte ptr [rbp+0B],40
+"RainbowSix.exe"+DFA943: 48 8D 8D F0 00 00 00        -  lea rcx,[rbp+000000F0]
+"RainbowSix.exe"+DFA94A: 48 89 F2                    -  mov rdx,rsi
+"RainbowSix.exe"+DFA94D: 4D 89 F8                    -  mov r8,r15
+"RainbowSix.exe"+DFA950: E8 5B A7 D3 FF              -  call RainbowSix.exe+B350B0
+"RainbowSix.exe"+DFA955: 80 4D 0B 40                 -  or byte ptr [rbp+0B],40
+"RainbowSix.exe"+DFA959: 48 89 E9                    -  mov rcx,rbp
+"RainbowSix.exe"+DFA95C: E8 6F 94 D3 FF              -  call RainbowSix.exe+B33DD0
+"RainbowSix.exe"+DFA961: 8B 05 79 4A BE 04           -  mov eax,[RainbowSix.exe+59DF3E0]
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32978</ID>
+          <Description>"No Recoil"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-08
+  Author : asus
+
+  This script does blah blah blah
+}
+
+{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-08
+  Author : asus
+
+  This script does blah blah blah
+}
+
+{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-08
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+1C4A455)//allow modify recoil 41 80 bf ? ? ? ? ? 74 ? 0f 28 05 ? ? ? ? 0f 29 44 24 ? 0f 29 44 24
+define(bytes,41 80 BF 98 01 00 00 00)
+
+define(address2,RainbowSix.exe+1C44350)//horizontal 41 8b 4f ? 89 4f ? f3 41 0f 10 47
+define(bytes2,41 8B 4F 04 89 4F 20)
+
+define(address5,RainbowSix.exe+1C44377)//vertical f3 41 0f 10 77 ? f3 0f 59 70
+define(bytes5,F3 41 0F 10 77 14)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+1C4A455)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov byte ptr [r15+00000198],00
+  jmp return
+
+address:
+  jmp newmem
+  nop 3
+return:
+
+assert(address2,bytes2)
+alloc(newmem2,$1000,RainbowSix.exe+1C44350)
+
+label(code2)
+label(return2)
+
+newmem2:
+
+code2:
+  mov ecx,(float)0.4
+  mov [rdi+20],ecx
+  jmp return2
+
+address2:
+  jmp newmem2
+  nop 2
+return2:
+
+assert(address5,bytes5)
+alloc(newmem5,$1000,RainbowSix.exe+1C44377)
+
+label(code5)
+label(return5)
+
+newmem5:
+
+code5:
+  mov [r15+14],(float)0.4
+  movss xmm6,[r15+14]
+  jmp return5
+
+address5:
+  jmp newmem5
+  nop
+return5:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // cmp byte ptr [r15+00000198],00
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1C43E45
+
+"RainbowSix.exe"+1C43E2D: 90                          -  nop 
+"RainbowSix.exe"+1C43E2E: 90                          -  nop 
+"RainbowSix.exe"+1C43E2F: 90                          -  nop 
+"RainbowSix.exe"+1C43E30: 48 8B 01                    -  mov rax,[rcx]
+"RainbowSix.exe"+1C43E33: 48 8B 71 08                 -  mov rsi,[rcx+08]
+"RainbowSix.exe"+1C43E37: 0F 28 CE                    -  movaps xmm1,xmm6
+"RainbowSix.exe"+1C43E3A: FF 50 08                    -  call qword ptr [rax+08]
+"RainbowSix.exe"+1C43E3D: 48 89 F1                    -  mov rcx,rsi
+"RainbowSix.exe"+1C43E40: 48 39 FE                    -  cmp rsi,rdi
+"RainbowSix.exe"+1C43E43: 75 EB                       -  jne RainbowSix.exe+1C43E30
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1C43E45: 41 80 BF 98 01 00 00 00     -  cmp byte ptr [r15+00000198],00
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1C43E4D: 74 61                       -  je RainbowSix.exe+1C43EB0
+"RainbowSix.exe"+1C43E4F: 0F 28 05 2A 33 43 03        -  movaps xmm0,[RainbowSix.exe+5077180]
+"RainbowSix.exe"+1C43E56: 0F 29 44 24 20              -  movaps [rsp+20],xmm0
+"RainbowSix.exe"+1C43E5B: 0F 29 44 24 30              -  movaps [rsp+30],xmm0
+"RainbowSix.exe"+1C43E60: 41 8B 9F 70 01 00 00        -  mov ebx,[r15+00000170]
+"RainbowSix.exe"+1C43E67: C1 E3 03                    -  shl ebx,03
+"RainbowSix.exe"+1C43E6A: 85 DB                       -  test ebx,ebx
+"RainbowSix.exe"+1C43E6C: 74 28                       -  je RainbowSix.exe+1C43E96
+"RainbowSix.exe"+1C43E6E: 49 8B AF 68 01 00 00        -  mov rbp,[r15+00000168]
+"RainbowSix.exe"+1C43E75: 31 F6                       -  xor esi,esi
+}
+address2:
+  db bytes2
+  // mov ecx,[r15+04]
+  // mov [rdi+20],ecx
+
+dealloc(newmem2)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1C3DE90
+
+"RainbowSix.exe"+1C3DE6C: 48 83 C2 C8              -  add rdx,-38
+"RainbowSix.exe"+1C3DE70: 75 EE                    -  jne RainbowSix.exe+1C3DE60
+"RainbowSix.exe"+1C3DE72: 48 8B 08                 -  mov rcx,[rax]
+"RainbowSix.exe"+1C3DE75: 48 89 0F                 -  mov [rdi],rcx
+"RainbowSix.exe"+1C3DE78: 48 8B 48 08              -  mov rcx,[rax+08]
+"RainbowSix.exe"+1C3DE7C: 48 89 4F 18              -  mov [rdi+18],rcx
+"RainbowSix.exe"+1C3DE80: 48 8B 48 10              -  mov rcx,[rax+10]
+"RainbowSix.exe"+1C3DE84: 48 89 4F 08              -  mov [rdi+08],rcx
+"RainbowSix.exe"+1C3DE88: 48 8B 48 18              -  mov rcx,[rax+18]
+"RainbowSix.exe"+1C3DE8C: 48 89 4F 10              -  mov [rdi+10],rcx
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1C3DE90: 41 8B 4F 04              -  mov ecx,[r15+04]
+"RainbowSix.exe"+1C3DE94: 89 4F 20                 -  mov [rdi+20],ecx
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1C3DE97: F3 41 0F 10 47 0C        -  movss xmm0,[r15+0C]
+"RainbowSix.exe"+1C3DE9D: F3 0F 59 40 2C           -  mulss xmm0,[rax+2C]
+"RainbowSix.exe"+1C3DEA2: F3 0F 11 47 24           -  movss [rdi+24],xmm0
+"RainbowSix.exe"+1C3DEA7: F3 41 0F 10 47 08        -  movss xmm0,[r15+08]
+"RainbowSix.exe"+1C3DEAD: F3 0F 59 40 30           -  mulss xmm0,[rax+30]
+"RainbowSix.exe"+1C3DEB2: F3 0F 11 47 28           -  movss [rdi+28],xmm0
+"RainbowSix.exe"+1C3DEB7: F3 41 0F 10 77 14        -  movss xmm6,[r15+14]
+"RainbowSix.exe"+1C3DEBD: F3 0F 59 70 28           -  mulss xmm6,[rax+28]
+"RainbowSix.exe"+1C3DEC2: F3 44 0F 10 46 70        -  movss xmm8,[rsi+70]
+"RainbowSix.exe"+1C3DEC8: F3 0F 10 7E 74           -  movss xmm7,[rsi+74]
+}
+address5:
+  db bytes5
+  // movss xmm6,[r15+14]
+
+dealloc(newmem5)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1C3DEB7
+
+"RainbowSix.exe"+1C3DE88: 48 8B 48 18              -  mov rcx,[rax+18]
+"RainbowSix.exe"+1C3DE8C: 48 89 4F 10              -  mov [rdi+10],rcx
+"RainbowSix.exe"+1C3DE90: 41 8B 4F 04              -  mov ecx,[r15+04]
+"RainbowSix.exe"+1C3DE94: 89 4F 20                 -  mov [rdi+20],ecx
+"RainbowSix.exe"+1C3DE97: F3 41 0F 10 47 0C        -  movss xmm0,[r15+0C]
+"RainbowSix.exe"+1C3DE9D: F3 0F 59 40 2C           -  mulss xmm0,[rax+2C]
+"RainbowSix.exe"+1C3DEA2: F3 0F 11 47 24           -  movss [rdi+24],xmm0
+"RainbowSix.exe"+1C3DEA7: F3 41 0F 10 47 08        -  movss xmm0,[r15+08]
+"RainbowSix.exe"+1C3DEAD: F3 0F 59 40 30           -  mulss xmm0,[rax+30]
+"RainbowSix.exe"+1C3DEB2: F3 0F 11 47 28           -  movss [rdi+28],xmm0
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1C3DEB7: F3 41 0F 10 77 14        -  movss xmm6,[r15+14]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1C3DEBD: F3 0F 59 70 28           -  mulss xmm6,[rax+28]
+"RainbowSix.exe"+1C3DEC2: F3 44 0F 10 46 70        -  movss xmm8,[rsi+70]
+"RainbowSix.exe"+1C3DEC8: F3 0F 10 7E 74           -  movss xmm7,[rsi+74]
+"RainbowSix.exe"+1C3DECD: 48 89 D9                 -  mov rcx,rbx
+"RainbowSix.exe"+1C3DED0: E8 3B F1 41 FE           -  call RainbowSix.exe+5D010
+"RainbowSix.exe"+1C3DED5: 8B 43 30                 -  mov eax,[rbx+30]
+"RainbowSix.exe"+1C3DED8: 8B 4B 34                 -  mov ecx,[rbx+34]
+"RainbowSix.exe"+1C3DEDB: 83 C0 01                 -  add eax,01
+"RainbowSix.exe"+1C3DEDE: 83 F8 38                 -  cmp eax,38
+"RainbowSix.exe"+1C3DEE1: BA 01 00 00 00           -  mov edx,00000001
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"Hook to game"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>//A8 Offset Write Instruction == 49 87 94 24 ? ? ? ? 48 85 d2 74 ? 48 c7 c0 ? ? ? ? f0 48 0f c1 42 ? 83 c0 ? a9 ? ? ? ? 75 ? 48 8d 0d ? ? ? ? e8 ? ? ? ? 49 8b 07
+
+{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+[ENABLE]
+
+PROCESS_NAME = 'RainbowSix.exe'
+--------
+-------- Auto Attach
+--------
+local autoAttachTimer = nil ---- variable to hold timer object
+local autoAttachTimerInterval = 1000 ---- Timer intervals are in milliseconds
+local autoAttachTimerTicks = 0 ---- variable to count number of times the timer has run
+local autoAttachTimerTickMax = 5000 ---- Set to zero to disable ticks max
+local function autoAttachTimer_tick(timer) ---- Timer tick call back
+        ---- Destroy timer if max ticks is reached
+	if autoAttachTimerTickMax &gt; 0 and autoAttachTimerTicks &gt;= autoAttachTimerTickMax then
+		timer.destroy()
+	end
+        ---- Check if process is running
+	if getProcessIDFromProcessName(PROCESS_NAME) ~= nil then
+		timer.destroy() ---- Destroy timer
+		openProcess(PROCESS_NAME) ---- Open the process
+	end
+	autoAttachTimerTicks = autoAttachTimerTicks + 1 ---- Increase ticks
+end
+autoAttachTimer = createTimer(getMainForm()) ---- Create timer with the main form as it's parent
+autoAttachTimer.Interval = autoAttachTimerInterval ---- Set timer interval
+autoAttachTimer.OnTimer = autoAttachTimer_tick ---- Set timer tick call back
+
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32127</ID>
+      <Description>"Inventory Pointers"</Description>
+      <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+      <LastState/>
+      <Color>008000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+define(BootlegGameManager,6E3D4A0)
+define(FirstOffset,630)
+
+registerSymbol(BootlegGameManager)
+registerSymbol(FirstOffset)
+[DISABLE]
+unregisterSymbol(BootlegGameManager)
+unregisterSymbol(FirstOffset)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32228</ID>
+          <Description>"Player 0"</Description>
+          <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+          <Color>0080FF</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>0</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32230</ID>
+              <Description>"Primary Gun"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32231</ID>
+                  <Description>"Primary Gun Name"</Description>
+                  <VariableType>String</VariableType>
+                  <Length>64</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>b8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>48</Offset>
+                    <Offset>0</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32232</ID>
+                  <Description>"Primary Gun Properties"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>8</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32233</ID>
+                  <Description>"Primary Gun Scope"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>28</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32234</ID>
+                  <Description>"Primary Gun Barrel"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32235</ID>
+                  <Description>"Primary Gun Laser"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>30</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32236</ID>
+                  <Description>"Primary Gun Grip"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32237</ID>
+                  <Description>"Primary Gun Mag Model"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32238</ID>
+              <Description>"Secondary Gun"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>18</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32239</ID>
+                  <Description>"Secondary Gun Name"</Description>
+                  <VariableType>String</VariableType>
+                  <Length>64</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>b8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>48</Offset>
+                    <Offset>0</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32240</ID>
+                  <Description>"Secondary Gun Properties"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>8</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32241</ID>
+                  <Description>"Secondary Gun Scope"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>28</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32242</ID>
+                  <Description>"Secondary Gun Barrel"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32243</ID>
+                  <Description>"Secondary Gun Laser"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>30</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32244</ID>
+                  <Description>"Secondary Gun Grip"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32245</ID>
+                  <Description>"Secondary Gun Mag Model"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32246</ID>
+              <Description>"Terciary Gun"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>20</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32247</ID>
+                  <Description>"Terciary Gun Name"</Description>
+                  <VariableType>String</VariableType>
+                  <Length>64</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>b8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>48</Offset>
+                    <Offset>0</Offset>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32248</ID>
+                  <Description>"Terciary Gun Properties"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>8</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32249</ID>
+                  <Description>"Terciary Gun Scope"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>28</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32250</ID>
+                  <Description>"Terciary Gun Barrel"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32251</ID>
+                  <Description>"Terciary Gun Laser"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>30</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32252</ID>
+                  <Description>"Terciary Gun Grip"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32253</ID>
+                  <Description>"Terciary Gun Mag Model"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>0</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32254</ID>
+              <Description>"Primary Gadget"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32255</ID>
+              <Description>"Primary Gadget Name"</Description>
+              <VariableType>String</VariableType>
+              <Length>64</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>b8</Offset>
+                <Offset>0</Offset>
+                <Offset>48</Offset>
+                <Offset>0</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32256</ID>
+              <Description>"Secondary Gadget"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>38</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32257</ID>
+              <Description>"Secondary Gadget Name"</Description>
+              <VariableType>String</VariableType>
+              <Length>64</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>b8</Offset>
+                <Offset>0</Offset>
+                <Offset>48</Offset>
+                <Offset>0</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>38</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32258</ID>
+              <Description>"Rappel Slot"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>50</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32259</ID>
+              <Description>"Extra Slot"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>48</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32260</ID>
+              <Description>"Extra Slot Name"</Description>
+              <VariableType>String</VariableType>
+              <Length>64</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>b8</Offset>
+                <Offset>0</Offset>
+                <Offset>48</Offset>
+                <Offset>0</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>48</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32261</ID>
+              <Description>"Uniform"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32262</ID>
+              <Description>"Headgear"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>8</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32263</ID>
+              <Description>"MVP Animation"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>68</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32380</ID>
+          <Description>"Player 5"</Description>
+          <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+          <Color>FF8000</Color>
+          <VariableType>String</VariableType>
+          <Length>15</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>1B8</Offset>
+            <Offset>8</Offset>
+            <Offset>30</Offset>
+            <Offset>0</Offset>
+            <Offset>28</Offset>
+            <Offset>FirstOffset</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32381</ID>
+              <Description>"Primary Gun"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32382</ID>
+                  <Description>"Primary Gun Properties"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>8</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32383</ID>
+                  <Description>"Primary Gun Scope"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>28</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32384</ID>
+                  <Description>"Primary Gun Barrel"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32385</ID>
+                  <Description>"Primary Gun Laser"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>30</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32386</ID>
+                  <Description>"Primary Gun Grip"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32387</ID>
+                  <Description>"Primary Gun Mag Model"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32388</ID>
+              <Description>"Secondary Gun"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>18</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32389</ID>
+                  <Description>"Secondary Gun Properties"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>8</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32390</ID>
+                  <Description>"Secondary Gun Scope"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>28</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32391</ID>
+                  <Description>"Secondary Gun Barrel"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32392</ID>
+                  <Description>"Secondary Gun Laser"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>30</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32393</ID>
+                  <Description>"Secondary Gun Grip"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32394</ID>
+                  <Description>"Secondary Gun Mag Model"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32395</ID>
+              <Description>"Terciary Gun"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>20</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>32396</ID>
+                  <Description>"Terciary Gun Properties"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>8</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32397</ID>
+                  <Description>"Terciary Gun Scope"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>28</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32398</ID>
+                  <Description>"Terciary Gun Barrel"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32399</ID>
+                  <Description>"Terciary Gun Laser"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>30</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32400</ID>
+                  <Description>"Terciary Gun Grip"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32401</ID>
+                  <Description>"Terciary Gun Mag Model"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>20</Offset>
+                    <Offset>20</Offset>
+                    <Offset>38</Offset>
+                    <Offset>0</Offset>
+                    <Offset>A8</Offset>
+                    <Offset>0</Offset>
+                    <Offset>28</Offset>
+                    <Offset>FirstOffset</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32402</ID>
+              <Description>"Primary Gadget"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>28</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32403</ID>
+              <Description>"Secondary Gadget"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>38</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32404</ID>
+              <Description>"Rappel Slot"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>50</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32405</ID>
+              <Description>"Extra Slot"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>48</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32406</ID>
+              <Description>"Uniform"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>0</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32407</ID>
+              <Description>"Headgear"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>8</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32408</ID>
+              <Description>"MVP Animation"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"RainbowSix.exe"+BootlegGameManager</Address>
+              <Offsets>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>20</Offset>
+                <Offset>68</Offset>
+                <Offset>38</Offset>
+                <Offset>0</Offset>
+                <Offset>A8</Offset>
+                <Offset>0</Offset>
+                <Offset>28</Offset>
+                <Offset>FirstOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32973</ID>
+      <Description>"Hook to Cheat Engine"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>//A8 Offset Write Instruction == 49 87 94 24 ? ? ? ? 48 85 d2 74 ? 48 c7 c0 ? ? ? ? f0 48 0f c1 42 ? 83 c0 ? a9 ? ? ? ? 75 ? 48 8d 0d ? ? ? ? e8 ? ? ? ? 49 8b 07
+
+{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+[ENABLE]
+
+PROCESS_NAME = 'cheatengine-x86_64.exe'
+--------
+-------- Auto Attach
+--------
+local autoAttachTimer = nil ---- variable to hold timer object
+local autoAttachTimerInterval = 1000 ---- Timer intervals are in milliseconds
+local autoAttachTimerTicks = 0 ---- variable to count number of times the timer has run
+local autoAttachTimerTickMax = 5000 ---- Set to zero to disable ticks max
+local function autoAttachTimer_tick(timer) ---- Timer tick call back
+        ---- Destroy timer if max ticks is reached
+	if autoAttachTimerTickMax &gt; 0 and autoAttachTimerTicks &gt;= autoAttachTimerTickMax then
+		timer.destroy()
+	end
+        ---- Check if process is running
+	if getProcessIDFromProcessName(PROCESS_NAME) ~= nil then
+		timer.destroy() ---- Destroy timer
+		openProcess(PROCESS_NAME) ---- Open the process
+	end
+	autoAttachTimerTicks = autoAttachTimerTicks + 1 ---- Increase ticks
+end
+autoAttachTimer = createTimer(getMainForm()) ---- Create timer with the main form as it's parent
+autoAttachTimer.Interval = autoAttachTimerInterval ---- Set timer interval
+autoAttachTimer.OnTimer = autoAttachTimer_tick ---- Set timer tick call back
+
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33011</ID>
+      <Description>"No Fall Damage"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-20
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+11BEC80)
+define(bytes,80 B9 ED 00 00 00 02)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+11BEC80)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // cmp byte ptr [rcx+000000ED],02
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+11BEC80
+
+"RainbowSix.exe"+11BEC57: 0F 28 C1              -  movaps xmm0,xmm1
+"RainbowSix.exe"+11BEC5A: 0F C6 C1 E5           -  shufps xmm0,xmm1,-1B
+"RainbowSix.exe"+11BEC5E: F3 0F 58 C1           -  addss xmm0,xmm1
+"RainbowSix.exe"+11BEC62: 0F 2E 86 E4 01 00 00  -  ucomiss xmm0,[rsi+000001E4]
+"RainbowSix.exe"+11BEC69: 0F 93 C1              -  setae cl
+"RainbowSix.exe"+11BEC6C: C0 E1 03              -  shl cl,03
+"RainbowSix.exe"+11BEC6F: 24 F7                 -  and al,-09
+"RainbowSix.exe"+11BEC71: 08 C8                 -  or al,cl
+"RainbowSix.exe"+11BEC73: 88 86 E0 03 00 00     -  mov [rsi+000003E0],al
+"RainbowSix.exe"+11BEC79: 48 8B 8E F0 01 00 00  -  mov rcx,[rsi+000001F0]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+11BEC80: 80 B9 ED 00 00 00 02  -  cmp byte ptr [rcx+000000ED],02
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+11BEC87: 0F 95 C1              -  setne cl
+"RainbowSix.exe"+11BEC8A: C0 E1 04              -  shl cl,04
+"RainbowSix.exe"+11BEC8D: 24 EF                 -  and al,-11
+"RainbowSix.exe"+11BEC8F: 08 C8                 -  or al,cl
+"RainbowSix.exe"+11BEC91: 88 86 E0 03 00 00     -  mov [rsi+000003E0],al
+"RainbowSix.exe"+11BEC97: 48 8B 8E 88 05 00 00  -  mov rcx,[rsi+00000588]
+"RainbowSix.exe"+11BEC9E: 48 8B 01              -  mov rax,[rcx]
+"RainbowSix.exe"+11BECA1: FF 50 10              -  call qword ptr [rax+10]
+"RainbowSix.exe"+11BECA4: E9 05 FA FF FF        -  jmp RainbowSix.exe+11BE6AE
+"RainbowSix.exe"+11BECA9: CC                    -  int 3 
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33012</ID>
+      <Description>"No Smoke"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-20
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+AD806A) //80 f1 ? 88 8e ? ? ? ? 8a 88 ? ? ? ? 80 f1 ? 88 8e ? ? ? ? 8a 88
+define(bytes,80 F1 01 88 8E 66 08 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+AD806A)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  xor cl,01
+  mov [rsi+00000866],cl
+  jmp return
+
+address:
+  jmp newmem
+  nop 4
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // xor cl,01
+  // mov [rsi+00000866],cl
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+AD806A
+
+"RainbowSix.exe"+AD803B: 88 8E 64 08 00 00     -  mov [rsi+00000864],cl
+"RainbowSix.exe"+AD8041: 8A 88 C7 00 00 00     -  mov cl,[rax+000000C7]
+"RainbowSix.exe"+AD8047: 80 F1 01              -  xor cl,01
+"RainbowSix.exe"+AD804A: 88 8E 65 08 00 00     -  mov [rsi+00000865],cl
+"RainbowSix.exe"+AD8050: 80 B8 C4 00 00 00 00  -  cmp byte ptr [rax+000000C4],00
+"RainbowSix.exe"+AD8057: 74 04                 -  je RainbowSix.exe+AD805D
+"RainbowSix.exe"+AD8059: 31 C9                 -  xor ecx,ecx
+"RainbowSix.exe"+AD805B: EB 10                 -  jmp RainbowSix.exe+AD806D
+"RainbowSix.exe"+AD805D: 48 8B 88 50 01 00 00  -  mov rcx,[rax+00000150]
+"RainbowSix.exe"+AD8064: 8A 89 8B 00 00 00     -  mov cl,[rcx+0000008B]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+AD806A: 80 F1 01              -  xor cl,01
+"RainbowSix.exe"+AD806D: 88 8E 66 08 00 00     -  mov [rsi+00000866],cl
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+AD8073: 8A 88 CC 00 00 00     -  mov cl,[rax+000000CC]
+"RainbowSix.exe"+AD8079: 80 F1 01              -  xor cl,01
+"RainbowSix.exe"+AD807C: 88 8E 67 08 00 00     -  mov [rsi+00000867],cl
+"RainbowSix.exe"+AD8082: 8A 88 F8 00 00 00     -  mov cl,[rax+000000F8]
+"RainbowSix.exe"+AD8088: 88 8E 70 08 00 00     -  mov [rsi+00000870],cl
+"RainbowSix.exe"+AD808E: 8A 88 D0 00 00 00     -  mov cl,[rax+000000D0]
+"RainbowSix.exe"+AD8094: 80 F1 01              -  xor cl,01
+"RainbowSix.exe"+AD8097: 88 8E 71 08 00 00     -  mov [rsi+00000871],cl
+"RainbowSix.exe"+AD809D: 8A 88 DD 00 00 00     -  mov cl,[rax+000000DD]
+"RainbowSix.exe"+AD80A3: 88 8E 73 08 00 00     -  mov [rsi+00000873],cl
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>48</ID>
+      <Description>"Noclip"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+[ENABLE]
+
+function increasesun(timer)
+if (isKeyPressed(VK_NUMPAD8)) then
+  writeFloat('[[["RainbowSix.exe"+0x5B0F6F0]+128]+10]+708',-1)
+  else
+    writeFloat('[[["RainbowSix.exe"+0x5B0F6F0]+128]+10]+708',1)
+end
+end
+
+t=createTimer(nil)
+timer_setInterval(t, 100)
+timer_onTimer(t, increasesun)
+timer_setEnabled(t, true)
+
+[DISABLE]
+t.destroy();
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33010</ID>
+      <Description>"Outdated"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32998</ID>
+          <Description>"Chams"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-07
+  Author : asus
+
+  This script does blah blah blah
+}
+// 41 0f 10 87 ? ? ? ?
+define(address,RainbowSix.exe+301FDA7) //red address
+define(bytes,41 0F 10 87 D0 00 00 00)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+301FDA7)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [r15+000000D0],(float)0.05     //red
+  mov [r15+000000D4],(float)0     //green
+  mov [r15+000000D8],(float)1  //blue
+  mov [r15+00000110],(float)0     //distance
+  mov [r15+0000011C],(float)3333  //opacity
+  movups xmm0,[r15+000000D0]
+  jmp return
+
+address:
+  jmp newmem
+  nop 3
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // movups xmm0,[r15+000000D0]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+B75D21
+
+"RainbowSix.exe"+B75CED: 83 C0 C7                    -  add eax,-39
+"RainbowSix.exe"+B75CF0: B9 CF 47 39 62              -  mov ecx,623947CF
+"RainbowSix.exe"+B75CF5: 41 33 8F 10 01 00 00        -  xor ecx,[r15+00000110]
+"RainbowSix.exe"+B75CFC: 66 0F 6E C0                 -  movd xmm0,eax
+"RainbowSix.exe"+B75D00: 81 C1 47 78 33 C7           -  add ecx,C7337847
+"RainbowSix.exe"+B75D06: 81 F1 10 B5 01 64           -  xor ecx,6401B510
+"RainbowSix.exe"+B75D0C: 66 0F 6E D1                 -  movd xmm2,ecx
+"RainbowSix.exe"+B75D10: 66 0F 62 D0                 -  punpckldq xmm2,xmm0
+"RainbowSix.exe"+B75D14: 66 0F 6C D1                 -  punpcklqdq xmm2,xmm1
+"RainbowSix.exe"+B75D18: 66 41 0F 7F 96 F0 01 00 00  -  movdqa [r14+000001F0],xmm2
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+B75D21: 41 0F 10 87 D0 00 00 00     -  movups xmm0,[r15+000000D0]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+B75D29: 4C 8B BC 24 98 00 00 00     -  mov r15,[rsp+00000098]
+"RainbowSix.exe"+B75D31: EB 2F                       -  jmp RainbowSix.exe+B75D62
+"RainbowSix.exe"+B75D33: 48 8B 05 76 6D 29 05        -  mov rax,[RainbowSix.exe+5E0CAB0]
+"RainbowSix.exe"+B75D3A: 48 8B 40 20                 -  mov rax,[rax+20]
+"RainbowSix.exe"+B75D3E: 48 83 C0 50                 -  add rax,50
+"RainbowSix.exe"+B75D42: 49 89 86 80 00 00 00        -  mov [r14+00000080],rax
+"RainbowSix.exe"+B75D49: 0F 28 05 D0 A5 6B 04        -  movaps xmm0,[RainbowSix.exe+5230320]
+"RainbowSix.exe"+B75D50: 41 0F 29 86 F0 01 00 00     -  movaps [r14+000001F0],xmm0
+"RainbowSix.exe"+B75D58: 0F 28 05 21 14 50 04        -  movaps xmm0,[RainbowSix.exe+5077180]
+"RainbowSix.exe"+B75D5F: 49 89 CF                    -  mov r15,rcx
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33005</ID>
+          <Description>"RGB GLOW (epilepsy)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+[ENABLE]
+
+function increasesun(timer)
+if readFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D0') ~= nil then
+  writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D0',math.random(2,3)-math.random(0,1)) --&gt;red
+  writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D4',math.random(0,8)-math.random(1,3)) --&gt;green
+  writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D8',math.random(0,16)-math.random(2,5)) --&gt;blue
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+110',0)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+114',100)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+118',3333)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+11C',3333)
+end
+end
+
+t=createTimer(nil)
+timer_setInterval(t, 250)
+timer_onTimer(t, increasesun)
+timer_setEnabled(t, true)
+ 
+[DISABLE]
+t.destroy();
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33006</ID>
+          <Description>"RGB GLOW 2 (Change Colors Fast)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+x = 0;
+y = 0;
+r = 0;
+g = 0;
+b = 0;
+
+[ENABLE]
+function increasesun(timer)
+
+	if y &gt;= 0 and y &lt; 255 then
+		r = 255;
+		g = 0;
+		b = x;
+	else if y &gt;= 255 and y &lt; 510 then
+		r = 255 - x;
+		g = 0;
+		b = 255;
+	else if y &gt;= 510 and y &lt; 765 then
+		r = 0;
+		g = x;
+		b = 255;
+	else if y &gt;= 765 and y &lt; 1020 then
+		r = 0;
+		g = 255;
+		b = 255 - x;
+	else if y &gt;= 1020 and y &lt; 1275 then
+		r = x;
+		g = 255;
+		b = 0;
+	else if y &gt;= 1275 and y &lt; 1530 then
+		r = 255;
+		g = 255 - x;
+		b = 0;
+    end
+    end
+    end
+    end
+    end
+    end
+
+	x = x + 60; --increase this value to switch colors faster
+	if x &gt;= 255 then x = 0; end
+
+	y = y + 60; --increase this value to switch colors faster
+	if y &gt; 1530 then y = 0; end
+
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D0',r) --&gt;red
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D4',g) --&gt;green
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D8',b) --&gt;blue
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+110',0)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+114',100)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+118',3333)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+11C',3333)
+end
+
+t=createTimer(nil)
+timer_setInterval(t, 250)
+timer_onTimer(t, increasesun)
+timer_setEnabled(t, true)
+ 
+[DISABLE]
+t.destroy();
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33008</ID>
+          <Description>"RGB GLOW 2.5 (true rgb)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+x = 0;
+y = 0;
+r = 0;
+g = 0;
+b = 0;
+
+[ENABLE]
+function increasesun(timer)
+
+	if y &gt;= 0 and y &lt; 5 then
+		r = 1;
+		g = 0;
+		b = 0;
+	else if y &gt;= 5 and y &lt; 10 then
+		r = 1 - x;
+		g = x;
+		b = 0;
+	else if y &gt;= 10 and y &lt; 15 then
+		r = 0;
+		g = 1;
+		b = 0;
+	else if y &gt;= 15 and y &lt; 20 then
+		r = 0;
+		g = 1 - x;
+		b = x;
+	else if y &gt;= 20 and y &lt; 25 then
+		r = 0;
+		g = 0;
+		b = 1;
+	else if y &gt;= 25 and y &lt; 30 then
+		r = x;
+		g = 0;
+		b = 1 - x;
+    end
+    end
+    end
+    end
+    end
+    end
+
+	x = x + 0.05; --increase this value to switch colors faster
+	if x &gt;= 1 then x = 0; end
+
+	y = y + 0.5; --increase this value to make the time faster
+	if y &gt;= 30 then y = 0; end
+
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D0',r) --&gt;red
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D4',g) --&gt;green
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D8',b) --&gt;blue
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+110',0)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+114',100)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+118',3333)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+11C',3333)
+end
+
+t=createTimer(nil)
+timer_setInterval(t, 100)
+timer_onTimer(t, increasesun)
+timer_setEnabled(t, true)
+ 
+[DISABLE]
+t.destroy();
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33007</ID>
+          <Description>"RGB GLOW 3 (Random)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+r = 0;
+g = 0;
+b = 0;
+
+[ENABLE]
+function increasesun(timer)
+	r = math.cos(math.random()) * 0.5 + 0.5;
+	g = math.cos(math.random() - 2 * 3.14 / 3) * 0.5 + 0.5;
+	b = math.cos(math.random() - 4 * 3.14 / 3) * 0.5 + 0.5;
+
+	r = r * math.random();
+	g = g * math.random();
+	b = b * math.random();
+
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D0',r) --&gt;red
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D4',g) --&gt;green
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+D8',b) --&gt;blue
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+110',0)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+114',100)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+118',3333)
+writeFloat('[["RainbowSix.exe"+0x5DF1ED0]+B8]+11C',3333)
+end
+
+t=createTimer(nil)
+timer_setInterval(t, 250)
+timer_onTimer(t, increasesun)
+timer_setEnabled(t, true)
+ 
+[DISABLE]
+t.destroy();
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33009</ID>
+          <Description>"RGB GLOW 4 (true and best rgb)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+errorOnLookupFailure(false); --&gt; No errors if couldn't read memory.
+
+x = 0;
+y = 0;
+r = 0;
+g = 0;
+b = 0;
+
+[ENABLE]
+function increasesun(timer)
+
+	if y &gt;= 0 and y &lt; 5 then
+		r = 25;
+		g = 0;
+		b = 5 - x;
+	else if y &gt;= 5 and y &lt; 10 then
+		r = 25 - x;
+		g = x;
+		b = 0;
+	else if y &gt;= 10 and y &lt; 15 then
+		r = 5 - x;
+		g = 25;
+		b = 0;
+	else if y &gt;= 15 and y &lt; 20 then
+		r = 0;
+		g = 25 - x;
+		b = x;
+	else if y &gt;= 20 and y &lt; 25 then
+		r = 0;
+		g = 5 - x;
+		b = 25;
+	else if y &gt;= 25 and y &lt; 30 then
+		r = x;
+		g = 0;
+		b = 25 - x;
+    end
+    end
+    end
+    end
+    end
+    end
+
+	x = x + 0.5; --increase this value to switch colors faster
+	if x &gt;= 5 then x = 0; end
+
+	y = y + 0.5; --increase this value to make the time faster
+	if y &gt;= 30 then y = 0; end
+
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+D0',r) --&gt;red
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+D4',g) --&gt;green
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+D8',b) --&gt;blue
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+110',0)
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+114',100)
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+118',3333)
+writeFloat('[["RainbowSix.exe"+0x5E06DD0]+B8]+11C',3333)
+end
+
+t=createTimer(nil)
+timer_setInterval(t, 250)
+timer_onTimer(t, increasesun)
+timer_setEnabled(t, true)
+ 
+[DISABLE]
+t.destroy();
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33003</ID>
+          <Description>"Obviouso Hackeroos Outdated"</Description>
+          <Options moActivateChildrenAsWell="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>32559</ID>
+              <Description>"Force-Fire - c6 80 ? ? ? ? ? eb ? 48 8b 87"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-06
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,RainbowSix.exe+1C70F8C)
+define(bytes,C6 80 92 00 00 00 01)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,RainbowSix.exe+1C70F8C)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov byte ptr [rax+00000092],00
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // mov byte ptr [rax+00000092],01
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1793D76
+
+"RainbowSix.exe"+1793D52: 48 85 C0                       -  test rax,rax
+"RainbowSix.exe"+1793D55: 48 0F 44 CA                    -  cmove rcx,rdx
+"RainbowSix.exe"+1793D59: 48 8B 09                       -  mov rcx,[rcx]
+"RainbowSix.exe"+1793D5C: 48 8B 39                       -  mov rdi,[rcx]
+"RainbowSix.exe"+1793D5F: 80 BF B3 02 00 00 00           -  cmp byte ptr [rdi+000002B3],00
+"RainbowSix.exe"+1793D66: 74 17                          -  je RainbowSix.exe+1793D7F
+"RainbowSix.exe"+1793D68: 48 85 C0                       -  test rax,rax
+"RainbowSix.exe"+1793D6B: 74 12                          -  je RainbowSix.exe+1793D7F
+"RainbowSix.exe"+1793D6D: 83 B8 84 00 00 00 00           -  cmp dword ptr [rax+00000084],00
+"RainbowSix.exe"+1793D74: 74 09                          -  je RainbowSix.exe+1793D7F
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1793D76: C6 80 92 00 00 00 01           -  mov byte ptr [rax+00000092],01
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1793D7D: EB 5F                          -  jmp RainbowSix.exe+1793DDE
+"RainbowSix.exe"+1793D7F: 48 8B 87 30 01 00 00           -  mov rax,[rdi+00000130]
+"RainbowSix.exe"+1793D86: 48 8B 00                       -  mov rax,[rax]
+"RainbowSix.exe"+1793D89: 0F 57 C0                       -  xorps xmm0,xmm0
+"RainbowSix.exe"+1793D8C: 0F 2E 80 60 01 00 00           -  ucomiss xmm0,[rax+00000160]
+"RainbowSix.exe"+1793D93: 73 49                          -  jae RainbowSix.exe+1793DDE
+"RainbowSix.exe"+1793D95: 48 89 F1                       -  mov rcx,rsi
+"RainbowSix.exe"+1793D98: BA 03 00 00 00                 -  mov edx,00000003
+"RainbowSix.exe"+1793D9D: E8 5E 7A 00 00                 -  call RainbowSix.exe+179B800
+"RainbowSix.exe"+1793DA2: 48 8B 87 30 01 00 00           -  mov rax,[rdi+00000130]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32987</ID>
+              <Description>"3 Speed"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-11
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+25EC54F)
+define(bytes,01 47 58 48 8B 44 24 20)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+25EC54F)//01 47 ? 48 8b 44 24 ? 48 8b 08
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  add [rdi+58],AA
+  mov rax,[rsp+20]
+  jmp return
+
+address:
+  jmp newmem
+  nop 3
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // add [rdi+58],eax
+  // mov rax,[rsp+20]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+25EC54F
+
+"RainbowSix.exe"+25EC525: 48 83 F8 FF                 -  cmp rax,-01
+"RainbowSix.exe"+25EC529: 75 3A                       -  jne RainbowSix.exe+25EC565
+"RainbowSix.exe"+25EC52B: 48 C7 44 24 30 FF FF FF FF  -  mov qword ptr [rsp+30],FFFFFFFFFFFFFFFF
+"RainbowSix.exe"+25EC534: 48 C7 C0 FF FF FF FF        -  mov rax,FFFFFFFFFFFFFFFF
+"RainbowSix.exe"+25EC53B: EB 10                       -  jmp RainbowSix.exe+25EC54D
+"RainbowSix.exe"+25EC53D: 48 C7 44 24 30 00 00 00 00  -  mov qword ptr [rsp+30],00000000
+"RainbowSix.exe"+25EC546: EB 27                       -  jmp RainbowSix.exe+25EC56F
+"RainbowSix.exe"+25EC548: 48 89 F1                    -  mov rcx,rsi
+"RainbowSix.exe"+25EC54B: EB 0D                       -  jmp RainbowSix.exe+25EC55A
+"RainbowSix.exe"+25EC54D: 8B 00                       -  mov eax,[rax]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+25EC54F: 01 47 58                    -  add [rdi+58],eax
+"RainbowSix.exe"+25EC552: 48 8B 44 24 20              -  mov rax,[rsp+20]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+25EC557: 48 8B 08                    -  mov rcx,[rax]
+"RainbowSix.exe"+25EC55A: 48 89 DA                    -  mov rdx,rbx
+"RainbowSix.exe"+25EC55D: 45 31 C0                    -  xor r8d,r8d
+"RainbowSix.exe"+25EC560: E8 4B C6 23 FF              -  call RainbowSix.exe+1828BB0
+"RainbowSix.exe"+25EC565: 48 89 44 24 30              -  mov [rsp+30],rax
+"RainbowSix.exe"+25EC56A: 48 85 C0                    -  test rax,rax
+"RainbowSix.exe"+25EC56D: 75 DE                       -  jne RainbowSix.exe+25EC54D
+"RainbowSix.exe"+25EC56F: 48 8B 05 A2 B5 A3 04        -  mov rax,[RainbowSix.exe+7027B18]
+"RainbowSix.exe"+25EC576: 48 8B 80 60 01 00 00        -  mov rax,[rax+00000160]
+"RainbowSix.exe"+25EC57D: 48 83 C0 92                 -  add rax,-6E
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32979</ID>
+              <Description>"No Spread"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-08
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+1C2D45A)//f3 41 0f 10 4c 24 ? f3 0f 59 ce
+define(bytes,F3 41 0F 10 4C 24 70)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+1C2D45A)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [r12+70],0
+  movss xmm1,[r12+70]
+  jmp return
+
+address:
+  jmp newmem
+  nop 2
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // movss xmm1,[r12+70]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+1C2D45A
+
+"RainbowSix.exe"+1C2D433: 48 85 DB                 -  test rbx,rbx
+"RainbowSix.exe"+1C2D436: 74 22                    -  je RainbowSix.exe+1C2D45A
+"RainbowSix.exe"+1C2D438: 83 BB AC 04 00 00 FF     -  cmp dword ptr [rbx+000004AC],-01
+"RainbowSix.exe"+1C2D43F: 74 19                    -  je RainbowSix.exe+1C2D45A
+"RainbowSix.exe"+1C2D441: F3 0F 10 0D 27 9D 44 03  -  movss xmm1,[RainbowSix.exe+5077170]
+"RainbowSix.exe"+1C2D449: EB 16                    -  jmp RainbowSix.exe+1C2D461
+"RainbowSix.exe"+1C2D44B: F6 43 20 01              -  test byte ptr [rbx+20],01
+"RainbowSix.exe"+1C2D44F: 74 09                    -  je RainbowSix.exe+1C2D45A
+"RainbowSix.exe"+1C2D451: 80 BF D8 2B 00 00 00     -  cmp byte ptr [rdi+00002BD8],00
+"RainbowSix.exe"+1C2D458: 75 E7                    -  jne RainbowSix.exe+1C2D441
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+1C2D45A: F3 41 0F 10 4C 24 70     -  movss xmm1,[r12+70]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+1C2D461: F3 0F 59 CE              -  mulss xmm1,xmm6
+"RainbowSix.exe"+1C2D465: 41 8B 44 24 08           -  mov eax,[r12+08]
+"RainbowSix.exe"+1C2D46A: 83 C0 D6                 -  add eax,-2A
+"RainbowSix.exe"+1C2D46D: 66 0F 6E C0              -  movd xmm0,eax
+"RainbowSix.exe"+1C2D471: F3 0F 59 C1              -  mulss xmm0,xmm1
+"RainbowSix.exe"+1C2D475: 0F 28 74 24 20           -  movaps xmm6,[rsp+20]
+"RainbowSix.exe"+1C2D47A: 0F 28 7C 24 30           -  movaps xmm7,[rsp+30]
+"RainbowSix.exe"+1C2D47F: 44 0F 28 44 24 40        -  movaps xmm8,[rsp+40]
+"RainbowSix.exe"+1C2D485: 48 83 C4 58              -  add rsp,58
+"RainbowSix.exe"+1C2D489: 5B                       -  pop rbx
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32977</ID>
+              <Description>"GunModel Fov"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : RainbowSix.exe
+  Version: 
+  Date   : 2020-10-07
+  Author : asus
+
+  This script does blah blah blah
+}
+
+define(address,"RainbowSix.exe"+2511C4F)
+define(bytes,F3 44 0F 10 40 3C)
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+assert(address,bytes)
+alloc(newmem,$1000,"RainbowSix.exe"+2511C4F)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rax+3C],(float)1.5
+  movss xmm8,[rax+3C]
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+address:
+  db bytes
+  // movss xmm8,[rax+3C]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "RainbowSix.exe"+2511C4F
+
+"RainbowSix.exe"+2511C1D: 48 8B 40 40                 -  mov rax,[rax+40]
+"RainbowSix.exe"+2511C21: 48 8B 49 58                 -  mov rcx,[rcx+58]
+"RainbowSix.exe"+2511C25: 0F B7 40 04                 -  movzx eax,word ptr [rax+04]
+"RainbowSix.exe"+2511C29: F3 0F 10 34 01              -  movss xmm6,[rcx+rax]
+"RainbowSix.exe"+2511C2E: 0F 28 3D 5B 55 B6 02        -  movaps xmm7,[RainbowSix.exe+5077190]
+"RainbowSix.exe"+2511C35: 0F 54 FE                    -  andps xmm7,xmm6
+"RainbowSix.exe"+2511C38: 48 8B 0D 51 5E 7E 04        -  mov rcx,[RainbowSix.exe+6CF7A90]
+"RainbowSix.exe"+2511C3F: 48 8B 01                    -  mov rax,[rcx]
+"RainbowSix.exe"+2511C42: FF 90 98 00 00 00           -  call qword ptr [rax+00000098]
+"RainbowSix.exe"+2511C48: 0F 2E 3D 21 56 B6 02        -  ucomiss xmm7,[RainbowSix.exe+5077270]
+// ---------- INJECTING HERE ----------
+"RainbowSix.exe"+2511C4F: F3 44 0F 10 40 3C           -  movss xmm8,[rax+3C]
+// ---------- DONE INJECTING  ----------
+"RainbowSix.exe"+2511C55: 76 43                       -  jna RainbowSix.exe+2511C9A
+"RainbowSix.exe"+2511C57: F3 45 0F 5C C8              -  subss xmm9,xmm8
+"RainbowSix.exe"+2511C5C: F3 44 0F 59 CE              -  mulss xmm9,xmm6
+"RainbowSix.exe"+2511C61: 48 8B 86 B0 05 00 00        -  mov rax,[rsi+000005B0]
+"RainbowSix.exe"+2511C68: 48 8B 88 A8 00 00 00        -  mov rcx,[rax+000000A8]
+"RainbowSix.exe"+2511C6F: 48 85 C9                    -  test rcx,rcx
+"RainbowSix.exe"+2511C72: 74 22                       -  je RainbowSix.exe+2511C96
+"RainbowSix.exe"+2511C74: 8B 15 66 D7 4C 03           -  mov edx,[RainbowSix.exe+59DF3E0]
+"RainbowSix.exe"+2511C7A: 65 48 8B 34 25 58 00 00 00  -  mov rsi,gs:[00000058]
+"RainbowSix.exe"+2511C83: 48 8B 14 D6                 -  mov rdx,[rsi+rdx*8]
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
