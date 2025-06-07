@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="37">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>349425</ID>
+      <Description>"UnlockAll"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>4080FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+define(unlockallFunction, RainbowSix.exe+6CFF35+12)
+registerSymbol(unlockallFunction)
+[DISABLE]
+unregisterSymbol(unlockallFunction)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>349426</ID>
+          <Description>"automatic UnlockAll"</Description>
+          <LastState/>
+          <Color>808080</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+[ENABLE]
+
+function debugger_onBreakpoint()
+RAX=0x01
+return 1
+end
+ 
+reinitializeSymbolhandler()
+debugProcess(2)
+debug_setBreakpoint("unlockallFunction")
+
+[DISABLE]
+debug_removeBreakpoint("unlockallFunction")
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

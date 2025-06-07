@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Unlock All (Y6S2)"</Description>
+      <LastState/>
+      <Color>800000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+_unlock=[[
+registersymbol(newmem)
+alloc(newmem,$1000,RainbowSix.exe+7f9b80)
+
+label(code)
+
+newmem:
+
+code:
+  ret
+  nop
+]]
+
+function debugger_onBreakpoint()
+RIP=getAddress("newmem")  -- EIP 32bit  RIP 64 Bit
+debug_continueFromBreakpoint(co_run)
+end
+
+reinitializeSymbolhandler()
+autoAssemble(_unlock)
+debugProcess(2)
+debug_setBreakpoint("RainbowSix.exe+7f9b80")
+
+{$asm}
+[DISABLE]
+{$lua}
+debug_removeBreakpoint("RainbowSix.exe+7f9b80")
+{$asm}
+unregistersymbol(newmem)
+dealloc(newmem)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>192</Key>
+          </Keys>
+          <Description>Enable Unlock All</Description>
+          <ID>2</ID>
+          <ActivateSound>Activate</ActivateSound>
+          <DeactivateSound>Deactivate</DeactivateSound>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"Gamemode1 ID"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Map1 ID"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>10</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>85</ID>
+      <Description>"gmgameplay"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>60</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>88</ID>
+      <Description>"matchflow"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>58</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>96</ID>
+      <Description>"name"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>28</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>87</ID>
+      <Description>"op"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>40</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>86</ID>
+      <Description>"spawns or idk"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>8</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>98</ID>
+      <Description>"announcer? idk"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>C08000</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>"RainbowSix.exe"+0620B7F0</Address>
+      <Offsets>
+        <Offset>f8</Offset>
+        <Offset>0</Offset>
+        <Offset>8</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>

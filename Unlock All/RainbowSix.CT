@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="37">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>349425</ID>
+      <Description>"UnlockAll"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>4080FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+define(unlockallFunction, RainbowSix.exe+6CFF35+12)
+registerSymbol(unlockallFunction)
+[DISABLE]
+unregisterSymbol(unlockallFunction)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>349426</ID>
+          <Description>"automatic UnlockAll"</Description>
+          <LastState/>
+          <Color>808080</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+[ENABLE]
+
+function debugger_onBreakpoint()
+RAX=0x01
+return 1
+end
+ 
+reinitializeSymbolhandler()
+debugProcess(2)
+debug_setBreakpoint("unlockallFunction")
+
+[DISABLE]
+debug_removeBreakpoint("unlockallFunction")
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Auto Assemble script"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+define(plAddr, [RainbowSix.exe+6194020 - 20] + 10 + 88)
+registerSymbol(plAddr)
+[DISABLE]
+unregisterSymbol(plAddr)
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>349429</ID>
+      <Description>"Gm"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>plAddr</Address>
+      <Offsets>
+        <Offset>8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>349428</ID>
+      <Description>"Gm"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>plAddr</Address>
+      <Offsets>
+        <Offset>8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79581</ID>
+      <Description>"Map one."</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>2B59E3</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>plAddr</Address>
+      <Offsets>
+        <Offset>10</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>79582</ID>
+          <Description>"Night mode."</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>38</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79583</ID>
+          <Description>"Map one, forge id."</Description>
+          <DropDownList DisplayValueAsItem="1">00000000331CFEA6:Old House
+00000037625C3900:New House
+00000000576B0E9B:Oregon
+00000035F2901CF4:New Oregon
+000000002A3A99CB:Old Hereford
+0000000031E6DF85:Club House
+000000009B858528:Plane
+000000006961015C:Yacht
+000000009B858E7A:Consulate
+000000009B858706:Bank
+00000000570932C9:Kanal
+000000009B859057:Chalet
+0000003C7E4A5A5D:New Chalet
+00000000A0C50B9A:Bartlett
+00000000522587EA:Kafe
+00000000CE4BB240:Border
+000000077B43597E:Favela
+00000008AF15096F:Skyscraper
+0000004053835E1E:New Skyscraper
+00000009CCC3D997:PVP16_Ibiza
+0000002E8679C826:New Theme Park
+0000000C7C6E5654:Tower
+00000014839B2B18:Villa
+0000001DCA7A2258:New Hereford
+0000001D61EAFB8F:Fortress
+0000002296804EC5:Outback
+0000003EE107746E:Stadium 2
+</DropDownList>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>10</Offset>
+            <Offset>10</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79584</ID>
+      <Description>"Map one gamemode."</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>2B59E3</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>plAddr</Address>
+      <Offsets>
+        <Offset>8</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>79585</ID>
+          <Description>"Game mode resource id."</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>10</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79586</ID>
+          <Description>"Gamemode name."</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>String</VariableType>
+          <Length>32</Length>
+          <Unicode>1</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>20</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>79587</ID>
+              <Description>"Gamemode name."</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>String</VariableType>
+              <Length>32</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>plAddr</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79588</ID>
+          <Description>"Gamemode ref."</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>String</VariableType>
+          <Length>32</Length>
+          <Unicode>1</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>20</Offset>
+            <Offset>0</Offset>
+            <Offset>58</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>79589</ID>
+              <Description>"Gamemode ref."</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>String</VariableType>
+              <Length>32</Length>
+              <Unicode>1</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>plAddr</Address>
+              <Offsets>
+                <Offset>0</Offset>
+                <Offset>18</Offset>
+                <Offset>0</Offset>
+                <Offset>58</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79590</ID>
+          <Description>"Gamemode map id."</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>8</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79591</ID>
+          <Description>"Gamemode other id."</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>10</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79592</ID>
+          <Description>"Gamemode unique operator listing."</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>40</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>79593</ID>
+              <Description>"Thing."</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>plAddr</Address>
+              <Offsets>
+                <Offset>8</Offset>
+                <Offset>0</Offset>
+                <Offset>40</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>79594</ID>
+              <Description>"0x10."</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>2B59E3</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>plAddr</Address>
+              <Offsets>
+                <Offset>10</Offset>
+                <Offset>0</Offset>
+                <Offset>40</Offset>
+                <Offset>0</Offset>
+                <Offset>8</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79595</ID>
+          <Description>"Operator choices, objectives?"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>2B59E3</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>plAddr</Address>
+          <Offsets>
+            <Offset>60</Offset>
+            <Offset>0</Offset>
+            <Offset>8</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79596</ID>
+      <Description>"Terrorist setting."</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>2B59E3</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>plAddr</Address>
+      <Offsets>
+        <Offset>30</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79597</ID>
+      <Description>"Other t-hunt thing, calls the bot?"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>2B59E3</Color>
+      <VariableType>8 Bytes</VariableType>
+      <Address>plAddr</Address>
+      <Offsets>
+        <Offset>20</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>specValue</Name>
+      <Address>20CD74B0000</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>randomvalue</Name>
+      <Address>1EA166F0000</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"RainbowSix.exe"+105B275</Address>
+      <Comment>Ammo change
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>

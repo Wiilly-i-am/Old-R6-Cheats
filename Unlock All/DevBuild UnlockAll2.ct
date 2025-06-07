@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>52913</ID>
+      <Description>"UnlockAll + DisplayAll"</Description>
+      <LastState/>
+      <Color>4080FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobScanModule(displayall, RainbowSix.exe, FF 90 ?? ?? ?? ?? B1 01 84 C0 0F 85)
+aobScanModule(unlockall, RainbowSix.exe, 4D ?? ?? 75 ?? 31 C0 48 83 C4 20)
+define(displayallFunction, displayall+8)
+define(unlockallFunction, unlockall+12)
+registerSymbol(displayallFunction)
+registerSymbol(unlockallFunction)
+[DISABLE]
+unregisterSymbol(displayallFunction)
+unregisterSymbol(unlockallFunction)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>52915</ID>
+          <Description>"automatic LockAll"</Description>
+          <LastState/>
+          <Color>808080</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+[ENABLE]
+
+function debugger_onBreakpoint()
+RAX=0x00
+return 1
+end
+ 
+reinitializeSymbolhandler()
+debugProcess(2)
+debug_setBreakpoint("unlockallFunction")
+
+[DISABLE]
+debug_removeBreakpoint("unlockallFunction")
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>52931</ID>
+          <Description>"automatic UnlockAll"</Description>
+          <LastState/>
+          <Color>808080</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+[ENABLE]
+
+function debugger_onBreakpoint()
+RAX=0x01
+return 1
+end
+ 
+reinitializeSymbolhandler()
+debugProcess(2)
+debug_setBreakpoint("unlockallFunction")
+
+[DISABLE]
+debug_removeBreakpoint("unlockallFunction")
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>52932</ID>
+          <Description>"automatic ShowAll"</Description>
+          <LastState/>
+          <Color>808080</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+[ENABLE]
+
+function debugger_onBreakpoint()
+RAX=0x01
+return 1
+end
+
+reinitializeSymbolhandler()
+debugProcess(2)
+debug_setBreakpoint("displayallFunction")
+
+[DISABLE]
+debug_removeBreakpoint("displayallFunction")
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32229</ID>
+          <Description>"UnlockAll function for breakpoint [RAX =&gt; 1]"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>404000</Color>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>4</ByteLength>
+          <Address>unlockallFunction</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32228</ID>
+          <Description>"DisplayAll function for breakpoint [RAX =&gt; 1]"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>404000</Color>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>2</ByteLength>
+          <Address>displayallFunction</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>specValue</Name>
+      <Address>20CD74B0000</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>randomvalue</Name>
+      <Address>1EA166F0000</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"RainbowSix.exe"+105B275</Address>
+      <Comment>Ammo change
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
